@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Monitor, Server, Database, Cpu } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -14,7 +14,7 @@ const categoryIcons: Record<string, React.ElementType> = {
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 }
 
 const itemVariants = {
@@ -27,24 +27,19 @@ const chipVariants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.35 } },
 }
 
+const tabAccents = ['#6366f1', '#06b6d4', '#a78bfa', '#f59e0b']
+const tabGradients = [
+  'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.06))',
+  'linear-gradient(135deg, rgba(6,182,212,0.12), rgba(59,130,246,0.06))',
+  'linear-gradient(135deg, rgba(139,92,246,0.12), rgba(236,72,153,0.06))',
+  'linear-gradient(135deg, rgba(245,158,11,0.12), rgba(249,115,22,0.06))',
+]
+
 export default function Skills() {
   const { t } = useLanguage()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-
-  const gradients = [
-    'from-indigo-500/20 to-purple-500/10',
-    'from-cyan-500/20 to-blue-500/10',
-    'from-purple-500/20 to-pink-500/10',
-    'from-amber-500/20 to-orange-500/10',
-  ]
-
-  const accentColors = [
-    'var(--accent-indigo)',
-    'var(--accent-cyan)',
-    '#a78bfa',
-    '#f59e0b',
-  ]
+  const [activeTab, setActiveTab] = useState(0)
 
   return (
     <section id="skills" className="section-padding relative">
@@ -62,7 +57,7 @@ export default function Skills() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.div
             variants={itemVariants}
@@ -84,60 +79,132 @@ export default function Skills() {
           </motion.p>
         </motion.div>
 
-        {/* Categories Grid */}
+        {/* Tab Bar */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="flex justify-center mb-10"
         >
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex gap-2 p-1.5 rounded-2xl overflow-x-auto scrollbar-hide"
+            style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+          >
+            {t.skills.categories.map((category, idx) => {
+              const IconComp = categoryIcons[category.icon] || Monitor
+              const isActive = activeTab === idx
+              return (
+                <motion.button
+                  key={category.name}
+                  onClick={() => setActiveTab(idx)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap"
+                  style={{
+                    color: isActive ? tabAccents[idx] : 'var(--text-muted)',
+                    background: isActive ? `${tabAccents[idx]}15` : 'transparent',
+                  }}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 rounded-xl"
+                      style={{
+                        background: `${tabAccents[idx]}12`,
+                        border: `1px solid ${tabAccents[idx]}33`,
+                      }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 35 }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-2">
+                    <IconComp className="w-4 h-4" />
+                    <span className="hidden sm:inline">{category.name}</span>
+                  </span>
+                </motion.button>
+              )
+            })}
+          </motion.div>
+        </motion.div>
+
+        {/* Active Category Content */}
+        <AnimatePresence mode="wait">
           {t.skills.categories.map((category, catIdx) => {
-            const IconComp = categoryIcons[category.icon] || Monitor
+            if (catIdx !== activeTab) return null
+            const accent = tabAccents[catIdx]
+
             return (
               <motion.div
                 key={category.name}
-                variants={itemVariants}
-                className={`glass-card rounded-2xl p-6 bg-gradient-to-br ${gradients[catIdx % gradients.length]}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
               >
-                {/* Category Header */}
-                <div className="flex items-center gap-3 mb-5">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: `${accentColors[catIdx % accentColors.length]}22` }}
-                  >
-                    <IconComp
-                      className="w-5 h-5"
-                      style={{ color: accentColors[catIdx % accentColors.length] }}
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--text)' }}>
-                    {category.name}
-                  </h3>
-                </div>
-
-                {/* Skill Chips */}
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate={inView ? 'visible' : 'hidden'}
-                  className="flex flex-wrap gap-2"
+                {/* Category Card */}
+                <div
+                  className="glass-card rounded-2xl p-8 md:p-10"
+                  style={{ background: tabGradients[catIdx] }}
                 >
-                  {category.skills.map((skill) => (
-                    <motion.span
-                      key={skill.name}
-                      variants={chipVariants}
-                      whileHover={{ scale: 1.08, y: -2 }}
-                      className="tag-chip cursor-default"
+                  {/* Category Header */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                      style={{ background: `${accent}20` }}
                     >
-                      <span className="text-base">{skill.icon}</span>
-                      <span>{skill.name}</span>
-                    </motion.span>
-                  ))}
-                </motion.div>
+                      {(() => {
+                        const IconComp = categoryIcons[category.icon] || Monitor
+                        return <IconComp className="w-7 h-7" style={{ color: accent }} />
+                      })()}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold font-heading" style={{ color: 'var(--text)' }}>
+                        {category.name}
+                      </h3>
+                      <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                        {category.skills.length} technologies
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Skill Chips Grid */}
+                  <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"
+                  >
+                    {category.skills.map((skill, skillIdx) => (
+                      <motion.div
+                        key={skill.name}
+                        variants={chipVariants}
+                        whileHover={{ scale: 1.05, y: -3 }}
+                        className="flex items-center gap-3 p-3.5 rounded-xl cursor-default transition-all duration-200"
+                        style={{
+                          background: 'var(--surface)',
+                          border: '1px solid var(--border)',
+                        }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLElement).style.borderColor = `${accent}55`
+                          ;(e.currentTarget as HTMLElement).style.boxShadow = `0 4px 20px ${accent}22`
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLElement).style.borderColor = ''
+                          ;(e.currentTarget as HTMLElement).style.boxShadow = ''
+                        }}
+                      >
+                        <span className="text-xl">{skill.icon}</span>
+                        <span className="text-sm font-medium" style={{ color: 'var(--text)' }}>
+                          {skill.name}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
               </motion.div>
             )
           })}
-        </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   )

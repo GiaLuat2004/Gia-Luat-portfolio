@@ -7,6 +7,8 @@ import About from '@/sections/About'
 import Skills from '@/sections/Skills'
 import Projects from '@/sections/Projects'
 import Education from '@/sections/Education'
+import Goals from '@/sections/Goals'
+import Interests from '@/sections/Interests'
 import Contact from '@/sections/Contact'
 
 export default function Home() {
@@ -20,6 +22,8 @@ export default function Home() {
         <Skills />
         <Projects />
         <Education />
+        <Goals />
+        <Interests />
         <Contact />
       </main>
       <Footer />

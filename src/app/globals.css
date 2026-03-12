@@ -133,6 +133,13 @@
     background-position: right center;
   }
 
+  .btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
   .btn-secondary {
     @apply relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300;
     background: transparent;
@@ -234,6 +241,181 @@
     left: 30%;
     animation-delay: 5s;
   }
+
+  /* ============================================
+     TIMELINE STYLES
+     ============================================ */
+  .timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-indigo) 0%, var(--accent-cyan) 50%, var(--accent-purple) 100%);
+    border-radius: 2px;
+    opacity: 0.3;
+  }
+
+  @media (min-width: 768px) {
+    .timeline-line {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .timeline-dot-wrapper {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .timeline-dot-wrapper {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    animation: dot-pulse 2.5s ease-in-out infinite;
+  }
+
+  .timeline-dot-ring {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid;
+    z-index: 1;
+    animation: ring-pulse 2.5s ease-in-out infinite;
+  }
+
+  /* Timeline card positioning */
+  .timeline-card {
+    padding-left: 48px;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .timeline-card {
+      width: 45%;
+      padding-left: 0;
+    }
+
+    .timeline-card-left {
+      margin-left: 0;
+      margin-right: auto;
+      padding-right: 32px;
+    }
+
+    .timeline-card-right {
+      margin-left: auto;
+      margin-right: 0;
+      padding-left: 32px;
+    }
+  }
+
+  /* Scroll-driven glowing overlay */
+  .timeline-line-glow {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #6366f1, #06b6d4, #a78bfa);
+    border-radius: 2px;
+    z-index: 1;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.6), 0 0 24px rgba(6, 182, 212, 0.3);
+  }
+
+  @media (min-width: 768px) {
+    .timeline-line-glow {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Date positioned on the OPPOSITE side of card */
+  .timeline-date-opposite {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .timeline-date-opposite {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .timeline-opposite-right {
+      left: 55%;
+      padding-left: 40px;
+    }
+
+    .timeline-opposite-left {
+      right: 55%;
+      padding-right: 40px;
+      text-align: right;
+    }
+  }
+
+  /* ============================================
+     FORM STYLES
+     ============================================ */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 outline-none;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    color: var(--text);
+  }
+
+  .form-input::placeholder {
+    color: var(--text-subtle);
+    font-weight: 400;
+  }
+
+  .form-input:focus {
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 0 3px var(--glow-indigo), 0 4px 16px rgba(99, 102, 241, 0.15);
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 outline-none resize-none;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    color: var(--text);
+  }
+
+  .form-textarea::placeholder {
+    color: var(--text-subtle);
+    font-weight: 400;
+  }
+
+  .form-textarea:focus {
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 0 3px var(--glow-indigo), 0 4px 16px rgba(99, 102, 241, 0.15);
+  }
+
+  /* ============================================
+     SCROLLBAR HIDE
+     ============================================ */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
@@ -287,4 +469,14 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@keyframes ring-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.5); opacity: 0; }
 }

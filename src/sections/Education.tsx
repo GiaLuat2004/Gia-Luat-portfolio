@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, useInView, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { GraduationCap, Award, BookOpen } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
@@ -15,10 +15,23 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
 
+const certAccents = ['var(--accent-cyan)', 'var(--accent-indigo)', '#4ade80']
+const certAccentHex = ['#06b6d4', '#6366f1', '#4ade80']
+
 export default function Education() {
   const { t } = useLanguage()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+
+  // Track which layout each cert is in: 'wide' or 'square'
+  const [certLayouts, setCertLayouts] = useState<Record<number, 'wide' | 'square'>>({})
+
+  const toggleCertLayout = (idx: number) => {
+    setCertLayouts((prev) => ({
+      ...prev,
+      [idx]: prev[idx] === 'square' ? 'wide' : 'square',
+    }))
+  }
 
   return (
     <section id="education" className="section-padding relative">
@@ -69,7 +82,6 @@ export default function Education() {
               className="glass-card rounded-2xl p-6 h-full relative overflow-hidden"
               style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.05))' }}
             >
-              {/* Decorative corner */}
               <div
                 className="absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-10"
                 style={{ background: 'var(--accent-cyan)' }}
@@ -105,7 +117,6 @@ export default function Education() {
                   {t.education.degree_label}: {t.education.education.major}
                 </p>
 
-                {/* GPA */}
                 <div
                   className="flex items-center gap-3 p-3 rounded-xl"
                   style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}
@@ -120,53 +131,119 @@ export default function Education() {
             </div>
           </motion.div>
 
-          {/* Certifications */}
-          <motion.div variants={containerVariants} className="lg:col-span-3 space-y-4">
+          {/* Certifications with Layout Swapping */}
+          <motion.div variants={containerVariants} className="lg:col-span-3">
             <motion.h3 variants={itemVariants} className="text-xl font-bold font-heading mb-6 flex items-center gap-2">
               <Award className="w-5 h-5" style={{ color: 'var(--accent-indigo)' }} />
               {t.education.certifications_title}
             </motion.h3>
 
-            {t.education.certifications.map((cert, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                className="glass-card rounded-xl p-5 flex items-center gap-4 cursor-default"
-                style={{
-                  borderLeft: '3px solid',
-                  borderLeftColor: idx === 0 ? 'var(--accent-cyan)' : idx === 1 ? 'var(--accent-indigo)' : '#4ade80',
-                }}
-              >
-                <span className="text-3xl flex-shrink-0">{cert.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2">
-                    <h4 className="text-sm font-semibold leading-snug" style={{ color: 'var(--text)' }}>
-                      {cert.name}
-                    </h4>
-                    <span
-                      className="text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0"
+            <LayoutGroup>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {t.education.certifications.map((cert, idx) => {
+                  const layout = certLayouts[idx] || 'wide'
+                  const isSquare = layout === 'square'
+                  const accent = certAccents[idx % certAccents.length]
+                  const accentHex = certAccentHex[idx % certAccentHex.length]
+
+                  return (
+                    <motion.div
+                      key={idx}
+                      layoutId={`cert-${idx}`}
+                      onClick={() => toggleCertLayout(idx)}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`glass-card cursor-pointer overflow-hidden transition-all duration-300 ${
+                        isSquare ? 'rounded-2xl sm:col-span-1' : 'rounded-xl sm:col-span-2'
+                      }`}
                       style={{
-                        background: 'var(--surface-alt)',
-                        color: 'var(--text-subtle)',
+                        borderLeft: isSquare ? 'none' : '3px solid',
+                        borderLeftColor: isSquare ? 'var(--border)' : accent,
+                        borderColor: isSquare ? `${accentHex}44` : undefined,
                       }}
                     >
-                      {cert.date}
-                    </span>
-                  </div>
-                  {cert.score && (
-                    <p className="text-xs mt-1 font-bold" style={{ color: 'var(--accent-cyan)' }}>
-                      Score: {cert.score}
-                    </p>
-                  )}
-                  {(cert as any).issuer && (
-                    <p className="text-xs mt-1" style={{ color: 'var(--text-subtle)' }}>
-                      {(cert as any).issuer}
-                    </p>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                      <AnimatePresence mode="wait">
+                        {isSquare ? (
+                          /* SQUARE LAYOUT – Compact card */
+                          <motion.div
+                            key="square"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="p-5 flex flex-col items-center text-center"
+                            style={{ aspectRatio: '1 / 0.85' }}
+                          >
+                            <div
+                              className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
+                              style={{ background: `${accentHex}15` }}
+                            >
+                              <span className="text-3xl">{cert.icon}</span>
+                            </div>
+                            <h4 className="text-sm font-semibold leading-snug mb-2" style={{ color: 'var(--text)' }}>
+                              {cert.name}
+                            </h4>
+                            {cert.score && (
+                              <p className="text-xs font-bold mb-1" style={{ color: accent }}>
+                                {cert.score}
+                              </p>
+                            )}
+                            <span
+                              className="text-xs font-medium px-2 py-0.5 rounded-full mt-auto"
+                              style={{ background: `${accentHex}12`, color: accent }}
+                            >
+                              {cert.date}
+                            </span>
+                          </motion.div>
+                        ) : (
+                          /* WIDE LAYOUT – Horizontal bar */
+                          <motion.div
+                            key="wide"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="p-5 flex items-center gap-4"
+                          >
+                            <span className="text-3xl flex-shrink-0">{cert.icon}</span>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-start justify-between gap-2">
+                                <h4 className="text-sm font-semibold leading-snug" style={{ color: 'var(--text)' }}>
+                                  {cert.name}
+                                </h4>
+                                <span
+                                  className="text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0"
+                                  style={{
+                                    background: 'var(--surface-alt)',
+                                    color: 'var(--text-subtle)',
+                                  }}
+                                >
+                                  {cert.date}
+                                </span>
+                              </div>
+                              {cert.score && (
+                                <p className="text-xs mt-1 font-bold" style={{ color: accent }}>
+                                  Score: {cert.score}
+                                </p>
+                              )}
+                              {(cert as any).issuer && (
+                                <p className="text-xs mt-1" style={{ color: 'var(--text-subtle)' }}>
+                                  {(cert as any).issuer}
+                                </p>
+                              )}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </LayoutGroup>
+
+            <p className="text-xs mt-4 text-center" style={{ color: 'var(--text-subtle)' }}>
+              ✨ Click on a certification to change its display layout
+            </p>
           </motion.div>
         </motion.div>
       </div>

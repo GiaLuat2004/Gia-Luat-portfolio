@@ -5,6 +5,7 @@
     "skills": "Kỹ năng",
     "projects": "Dự án",
     "education": "Học vấn",
+    "goals": "Mục tiêu",
     "contact": "Liên hệ"
   },
   "hero": {
@@ -98,9 +99,11 @@
   },
   "projects": {
     "title": "Dự Án Nổi Bật",
-    "subtitle": "Những sản phẩm tôi đã xây dựng và tự hào",
+    "subtitle": "Hành trình qua các dự án tôi đã xây dựng — từ gần đây nhất đến xa nhất",
     "view_github": "Xem trên GitHub",
     "live_demo": "Xem Demo",
+    "show_more": "Xem Chi Tiết",
+    "show_less": "Ẩn Chi Tiết",
     "items": [
       {
         "id": "anomaly",
@@ -108,6 +111,8 @@
         "role": "Backend Developer",
         "team": "Nhóm: 3 người",
         "period": "12/2025 – 02/2026",
+        "date_start": "2025-12",
+        "date_end": "2026-02",
         "description": "Hệ thống AI giám sát thời gian thực ứng dụng Computer Vision để phát hiện hành vi bất thường (té ngã), hỗ trợ bảo vệ an toàn cho người già và trẻ em. Đạt độ chính xác 90%.",
         "highlights": [
           "Thuật toán 4-path hybrid detection (tỷ lệ Bounding Box, góc độ và vận tốc)",
@@ -125,6 +130,8 @@
         "role": "Fullstack Developer",
         "team": "Nhóm: 5 người",
         "period": "07/2025 – 09/2025",
+        "date_start": "2025-07",
+        "date_end": "2025-09",
         "description": "Hệ thống tiếp nhận và quản lý thẩm định kim cương (chuẩn 4C GIA) dựa trên kiến trúc Microservices, đảm bảo khả năng mở rộng và bảo trì.",
         "highlights": [
           "Giao diện tra cứu định giá và Dashboard thống kê với Next.js",
@@ -142,6 +149,8 @@
         "role": "Frontend Developer",
         "team": "Nhóm: 4 người",
         "period": "03/2025 – 05/2025",
+        "date_start": "2025-03",
+        "date_end": "2025-05",
         "description": "Nền tảng web hỗ trợ thuê xe tự lái, tích hợp định vị GPS, vehicle tracking và hỗ trợ tìm kiếm trạm xe gần nhất (trong bán kính 10-20km) dựa trên vị trí người dùng.",
         "highlights": [
           "UI/UX tương tác cao với ReactJS, Tailwind CSS và Framer Motion",
@@ -188,6 +197,66 @@
       }
     ]
   },
+  "goals": {
+    "title": "Mục Tiêu & Sở Thích",
+    "subtitle": "Hướng đi của tôi và những điều thúc đẩy tôi tiến về phía trước",
+    "goals_title": "Mục Tiêu Sự Nghiệp",
+    "interests_title": "Sở Thích & Đam Mê",
+    "goals_items": [
+      {
+        "icon": "🎯",
+        "title": "Làm Chủ Fullstack",
+        "description": "Làm chủ toàn bộ stack phát triển web từ frontend đến backend, cung cấp giải pháp end-to-end với kiến trúc sạch."
+      },
+      {
+        "icon": "🤖",
+        "title": "Sản Phẩm AI",
+        "description": "Tích hợp AI và Machine Learning vào ứng dụng thực tế, xây dựng hệ thống thông minh tạo ra sự khác biệt."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Kiến Trúc Hệ Thống",
+        "description": "Thiết kế hệ thống có khả năng mở rộng và bảo trì sử dụng Microservices, Cloud-native và DevOps."
+      },
+      {
+        "icon": "🌍",
+        "title": "Tầm Ảnh Hưởng Toàn Cầu",
+        "description": "Đóng góp cho open-source và xây dựng sản phẩm tiếp cận người dùng toàn cầu, tạo giá trị bền vững."
+      }
+    ],
+    "interests_items": [
+      {
+        "icon": "💻",
+        "title": "Open Source",
+        "description": "Đóng góp và học hỏi từ cộng đồng mã nguồn mở. Chia sẻ kiến thức qua code."
+      },
+      {
+        "icon": "📚",
+        "title": "Học Hỏi Liên Tục",
+        "description": "Luôn khám phá công nghệ mới, đọc blog công nghệ và tham gia khóa học trực tuyến."
+      },
+      {
+        "icon": "🎮",
+        "title": "Gaming & E-sports",
+        "description": "Yêu thích gaming cạnh tranh như cách rèn luyện tư duy chiến lược và kỹ năng teamwork."
+      },
+      {
+        "icon": "🏃",
+        "title": "Thể Dục & Sức Khỏe",
+        "description": "Duy trì lối sống cân bằng với tập luyện đều đặn, tin rằng cơ thể khỏe mạnh tạo nên tư duy hiệu quả."
+      },
+      {
+        "icon": "🎵",
+        "title": "Âm Nhạc",
+        "description": "Nghe đa dạng thể loại nhạc khi code. Âm nhạc nuôi dưỡng sáng tạo và giúp duy trì sự tập trung."
+      },
+      {
+        "icon": "✈️",
+        "title": "Du Lịch & Văn Hóa",
+        "description": "Khám phá những vùng đất và văn hóa mới, lấy cảm hứng và mở rộng tầm nhìn sáng tạo."
+      }
+    ]
+  },
   "contact": {
     "title": "Kết Nối Với Tôi",
     "subtitle": "Sẵn sàng cho các cơ hội thực tập, hợp tác và cùng nhau tạo ra những điều tuyệt vời.",
@@ -200,7 +269,15 @@
     "github": "https://github.com/GiaLuat2004",
     "phone": "0325 428 387",
     "location": "TP. Hồ Chí Minh, Việt Nam",
-    "message": "Hãy liên hệ nếu bạn muốn cùng xây dựng những điều thú vị!"
+    "message": "Hãy liên hệ nếu bạn muốn cùng xây dựng những điều thú vị!",
+    "form_name": "Họ và Tên",
+    "form_email": "Email của bạn",
+    "form_subject": "Chủ đề",
+    "form_message": "Nội dung tin nhắn",
+    "form_send": "Gửi Tin Nhắn",
+    "form_sending": "Đang gửi...",
+    "form_success": "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi sớm nhất.",
+    "form_title": "Gửi tin nhắn cho tôi"
   },
   "footer": {
     "made_with": "Được tạo với",

@@ -5,6 +5,7 @@
     "skills": "Skills",
     "projects": "Projects",
     "education": "Education",
+    "goals": "Goals",
     "contact": "Contact"
   },
   "hero": {
@@ -98,16 +99,20 @@
   },
   "projects": {
     "title": "Featured Projects",
-    "subtitle": "Things I've built that I'm proud of",
+    "subtitle": "A journey through the projects I've built — from most recent to earliest",
     "view_github": "View on GitHub",
     "live_demo": "Live Demo",
+    "show_more": "Show Details",
+    "show_less": "Hide Details",
     "items": [
       {
         "id": "anomaly",
         "title": "Human Anomaly Localization",
         "role": "Backend Developer",
-        "team": "Team size: 3",
+        "team": "Team of 3",
         "period": "Dec 2025 – Feb 2026",
+        "date_start": "2025-12",
+        "date_end": "2026-02",
         "description": "A real-time AI surveillance system utilizing Computer Vision to detect abnormal behaviors (falling), helping to ensure the safety of the elderly and children. Achieved 90% accuracy.",
         "highlights": [
           "4-path hybrid detection algorithm (Bounding Box ratio, angle, and velocity)",
@@ -123,8 +128,10 @@
         "id": "jewelry",
         "title": "Jewelry Sales System",
         "role": "Fullstack Developer",
-        "team": "Team size: 5",
+        "team": "Team of 5",
         "period": "Jul 2025 – Sep 2025",
+        "date_start": "2025-07",
+        "date_end": "2025-09",
         "description": "A diamond appraisal and management system following GIA 4C standards, built on Microservices architecture for scalability and maintainability.",
         "highlights": [
           "Next.js online appraisal lookup interface with statistical Dashboard",
@@ -140,8 +147,10 @@
         "id": "sevina",
         "title": "SEVINA",
         "role": "Frontend Developer",
-        "team": "Team size: 4",
+        "team": "Team of 4",
         "period": "Mar 2025 – May 2025",
+        "date_start": "2025-03",
+        "date_end": "2025-05",
         "description": "A self-driving car rental web platform integrating GPS positioning, real-time vehicle tracking, and nearest station search algorithm (10–20km radius) based on user location.",
         "highlights": [
           "Interactive UI with ReactJS, Tailwind CSS, and Framer Motion animations",
@@ -188,6 +197,66 @@
       }
     ]
   },
+  "goals": {
+    "title": "Goals & Interests",
+    "subtitle": "Where I'm heading and what drives me forward",
+    "goals_title": "Career Goals",
+    "interests_title": "Interests & Hobbies",
+    "goals_items": [
+      {
+        "icon": "🎯",
+        "title": "Fullstack Mastery",
+        "description": "Master the entire web development stack from frontend to backend, delivering end-to-end solutions with clean architecture."
+      },
+      {
+        "icon": "🤖",
+        "title": "AI-Powered Products",
+        "description": "Integrate AI and Machine Learning into real-world applications, building smart systems that make a difference."
+      },
+      {
+        "icon": "🏗️",
+        "title": "System Architecture",
+        "description": "Design scalable, maintainable systems using Microservices, Cloud-native tech, and DevOps best practices."
+      },
+      {
+        "icon": "🌍",
+        "title": "Global Impact",
+        "description": "Contribute to open-source projects and build products that reach users worldwide, creating sustainable value."
+      }
+    ],
+    "interests_items": [
+      {
+        "icon": "💻",
+        "title": "Open Source",
+        "description": "Contributing to and learning from the open-source community. Sharing knowledge through code."
+      },
+      {
+        "icon": "📚",
+        "title": "Continuous Learning",
+        "description": "Always exploring new technologies, reading tech blogs, and taking online courses to stay updated."
+      },
+      {
+        "icon": "🎮",
+        "title": "Gaming & E-sports",
+        "description": "Enjoying competitive gaming as a way to sharpen strategic thinking and teamwork skills."
+      },
+      {
+        "icon": "🏃",
+        "title": "Fitness & Health",
+        "description": "Maintaining a balanced lifestyle with regular exercise, believing in a healthy body for a productive mind."
+      },
+      {
+        "icon": "🎵",
+        "title": "Music",
+        "description": "Listening to diverse genres while coding. Music fuels creativity and helps maintain focus during deep work."
+      },
+      {
+        "icon": "✈️",
+        "title": "Travel & Culture",
+        "description": "Exploring new places and cultures, gaining inspiration and broadening perspectives for creative problem-solving."
+      }
+    ]
+  },
   "contact": {
     "title": "Let's Connect",
     "subtitle": "Open to internship opportunities, collaborations, and building great things together.",
@@ -200,7 +269,15 @@
     "github": "https://github.com/GiaLuat2004",
     "phone": "0325 428 387",
     "location": "Ho Chi Minh City, Vietnam",
-    "message": "Feel free to reach out if you want to build something amazing together!"
+    "message": "Feel free to reach out if you want to build something amazing together!",
+    "form_name": "Your Name",
+    "form_email": "Your Email",
+    "form_subject": "Subject",
+    "form_message": "Your Message",
+    "form_send": "Send Message",
+    "form_sending": "Sending...",
+    "form_success": "Message sent successfully! I'll get back to you soon.",
+    "form_title": "Send me a message"
   },
   "footer": {
     "made_with": "Made with",

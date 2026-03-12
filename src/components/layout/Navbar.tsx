@@ -7,7 +7,7 @@ import { Sun, Moon, Menu, X, Globe } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { cn } from '@/lib/utils'
 
-const navItems = ['about', 'skills', 'projects', 'education', 'contact'] as const
+const navItems = ['about', 'skills', 'projects', 'education', 'goals', 'contact'] as const
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
@@ -22,7 +22,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
 
-      const sections = ['home', 'about', 'skills', 'projects', 'education', 'contact']
+      const sections = ['home', 'about', 'skills', 'projects', 'education', 'goals', 'contact']
       const scrollPos = window.scrollY + 100
 
       for (const id of sections.reverse()) {
