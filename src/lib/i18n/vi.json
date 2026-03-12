@@ -1,0 +1,218 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "education": "Học vấn",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Cao Bảo Gia Luật",
+    "title": "Fullstack Developer Intern",
+    "roles": ["Fullstack Developer", "React / Next.js Engineer", "Backend API Builder", "Lập trình viên Clean Code"],
+    "tagline": "Biến những bài toán phức tạp thành phần mềm hiệu suất cao, thanh lịch.",
+    "cta_primary": "Xem Dự Án",
+    "cta_secondary": "Tải CV",
+    "cta_contact": "Liên Hệ",
+    "scroll_hint": "Cuộn để khám phá"
+  },
+  "about": {
+    "title": "Về Tôi",
+    "subtitle": "Lập trình viên đam mê xây dựng những trải nghiệm số có tác động",
+    "bio": "Tôi là sinh viên năm cuối chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM, với nền tảng vững chắc về Cấu trúc dữ liệu, Giải thuật và tư duy lập trình hướng đối tượng. Tôi chuyên về hệ sinh thái React/Next.js và Node.js, và đam mê xây dựng các hệ thống phần mềm sạch, hiệu suất cao, dễ bảo trì.",
+    "bio2": "Hiện đang tìm kiếm vị trí Full-stack Intern để rèn luyện kỹ năng viết Clean Code, áp dụng best-practice vào thực tế và khám phá tích hợp AI vào sản phẩm. Mục tiêu dài hạn của tôi là trở thành Software Engineer chuyên nghiệp, mang lại giá trị bền vững cho doanh nghiệp.",
+    "info": {
+      "dob": "25/08/2004",
+      "location": "Tân Bình, TP. Hồ Chí Minh",
+      "email": "gialuat2004vk@gmail.com",
+      "github": "github.com/GiaLuat2004",
+      "phone": "0325 428 387",
+      "status": "Sẵn sàng cho cơ hội thực tập"
+    },
+    "labels": {
+      "dob": "Ngày sinh",
+      "location": "Địa chỉ",
+      "email": "Email",
+      "github": "GitHub",
+      "phone": "Điện thoại",
+      "status": "Trạng thái"
+    },
+    "available_badge": "Sẵn sàng nhận cơ hội"
+  },
+  "skills": {
+    "title": "Kỹ Năng & Công Nghệ",
+    "subtitle": "Những công nghệ tôi sử dụng và không ngừng nâng cao",
+    "categories": [
+      {
+        "name": "Frontend",
+        "icon": "Monitor",
+        "skills": [
+          { "name": "TypeScript", "icon": "⚡" },
+          { "name": "JavaScript ES6+", "icon": "🟨" },
+          { "name": "React.js", "icon": "⚛️" },
+          { "name": "Next.js", "icon": "▲" },
+          { "name": "TailwindCSS", "icon": "🌊" },
+          { "name": "Framer Motion", "icon": "🎭" },
+          { "name": "Redux", "icon": "🔮" },
+          { "name": "ShadcnUI", "icon": "🎨" }
+        ]
+      },
+      {
+        "name": "Backend",
+        "icon": "Server",
+        "skills": [
+          { "name": "Node.js", "icon": "🟢" },
+          { "name": "Express.js", "icon": "🚀" },
+          { "name": "FastAPI", "icon": "⚡" },
+          { "name": "RESTful API", "icon": "🔗" },
+          { "name": "WebSocket", "icon": "🔄" },
+          { "name": "JWT & RBAC", "icon": "🔐" },
+          { "name": "Microservices", "icon": "🏗️" }
+        ]
+      },
+      {
+        "name": "Database & Cloud",
+        "icon": "Database",
+        "skills": [
+          { "name": "PostgreSQL", "icon": "🐘" },
+          { "name": "MySQL", "icon": "🗄️" },
+          { "name": "Docker", "icon": "🐳" },
+          { "name": "Git / GitHub", "icon": "🐙" },
+          { "name": "Google Cloud", "icon": "☁️" },
+          { "name": "Vercel", "icon": "▲" }
+        ]
+      },
+      {
+        "name": "AI & Thị Giác Máy Tính",
+        "icon": "Cpu",
+        "skills": [
+          { "name": "Python", "icon": "🐍" },
+          { "name": "OpenCV", "icon": "👁️" },
+          { "name": "YOLOv8", "icon": "🎯" },
+          { "name": "Computer Vision", "icon": "🤖" }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Dự Án Nổi Bật",
+    "subtitle": "Những sản phẩm tôi đã xây dựng và tự hào",
+    "view_github": "Xem trên GitHub",
+    "live_demo": "Xem Demo",
+    "items": [
+      {
+        "id": "anomaly",
+        "title": "Human Anomaly Localization",
+        "role": "Backend Developer",
+        "team": "Nhóm: 3 người",
+        "period": "12/2025 – 02/2026",
+        "description": "Hệ thống AI giám sát thời gian thực ứng dụng Computer Vision để phát hiện hành vi bất thường (té ngã), hỗ trợ bảo vệ an toàn cho người già và trẻ em. Đạt độ chính xác 90%.",
+        "highlights": [
+          "Thuật toán 4-path hybrid detection (tỷ lệ Bounding Box, góc độ và vận tốc)",
+          "Cơ chế Border Integrity Check loại bỏ nhiễu viền camera",
+          "Truyền phát video thời gian thực qua WebSocket với FastAPI",
+          "Đóng gói mô hình YOLOv8s-pose với bất đồng bộ RESTful APIs"
+        ],
+        "tech": ["ReactJS", "Python", "FastAPI", "OpenCV", "YOLOv8s-pose", "WebSocket"],
+        "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
+        "image": "/images/projects/anomaly.jpg"
+      },
+      {
+        "id": "jewelry",
+        "title": "Jewelry Sales System",
+        "role": "Fullstack Developer",
+        "team": "Nhóm: 5 người",
+        "period": "07/2025 – 09/2025",
+        "description": "Hệ thống tiếp nhận và quản lý thẩm định kim cương (chuẩn 4C GIA) dựa trên kiến trúc Microservices, đảm bảo khả năng mở rộng và bảo trì.",
+        "highlights": [
+          "Giao diện tra cứu định giá và Dashboard thống kê với Next.js",
+          "Appraisal Service độc lập với kiến trúc Microservice Express.js",
+          "Thiết kế schema PostgreSQL đảm bảo tính toàn vẹn dữ liệu",
+          "Container hóa toàn bộ service bằng Docker"
+        ],
+        "tech": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "RESTful API"],
+        "github": "https://github.com/Jewelry-Sales-System",
+        "image": "/images/projects/jewelry.jpg"
+      },
+      {
+        "id": "sevina",
+        "title": "SEVINA",
+        "role": "Frontend Developer",
+        "team": "Nhóm: 4 người",
+        "period": "03/2025 – 05/2025",
+        "description": "Nền tảng web hỗ trợ thuê xe tự lái, tích hợp định vị GPS, vehicle tracking và hỗ trợ tìm kiếm trạm xe gần nhất (trong bán kính 10-20km) dựa trên vị trí người dùng.",
+        "highlights": [
+          "UI/UX tương tác cao với ReactJS, Tailwind CSS và Framer Motion",
+          "Tích hợp sâu Goong Map API cho GPS và tìm kiếm trạm xe",
+          "Quản lý state phức tạp tập trung với Redux",
+          "Deploy trên Vercel với CI/CD pipeline tự động"
+        ],
+        "tech": ["ReactJS", "TailwindCSS", "Framer Motion", "Redux", "ShadcnUI", "Goong Map API"],
+        "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
+        "image": "/images/projects/sevina.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "Học Vấn & Chứng Chỉ",
+    "subtitle": "Nền tảng học thuật và bằng cấp chuyên môn",
+    "degree_label": "Chuyên ngành",
+    "gpa_label": "GPA",
+    "education": {
+      "school": "Đại học Giao thông Vận tải TP. Hồ Chí Minh",
+      "degree": "Cử nhân Công nghệ Thông tin",
+      "major": "Công Nghệ Thông Tin",
+      "period": "2022 – 2026",
+      "gpa": "3.43 / 4.0"
+    },
+    "certifications_title": "Chứng Chỉ",
+    "certifications": [
+      {
+        "name": "TOEIC Listening & Reading",
+        "score": "670 / 990",
+        "date": "10/2025",
+        "icon": "🌐"
+      },
+      {
+        "name": "Google Cloud Computing Foundations",
+        "date": "07/2025",
+        "icon": "☁️"
+      },
+      {
+        "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
+        "issuer": "UDEMY",
+        "date": "05/2025",
+        "icon": "🟢"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kết Nối Với Tôi",
+    "subtitle": "Sẵn sàng cho các cơ hội thực tập, hợp tác và cùng nhau tạo ra những điều tuyệt vời.",
+    "open_to": "Sẵn Sàng Nhận Cơ Hội",
+    "email_label": "Email",
+    "github_label": "GitHub",
+    "phone_label": "Điện thoại",
+    "location_label": "Địa chỉ",
+    "email": "gialuat2004vk@gmail.com",
+    "github": "https://github.com/GiaLuat2004",
+    "phone": "0325 428 387",
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "message": "Hãy liên hệ nếu bạn muốn cùng xây dựng những điều thú vị!"
+  },
+  "footer": {
+    "made_with": "Được tạo với",
+    "by": "bởi",
+    "rights": "Tất cả quyền được bảo lưu."
+  },
+  "theme": {
+    "toggle_dark": "Chuyển sang Chế độ Tối",
+    "toggle_light": "Chuyển sang Chế độ Sáng"
+  },
+  "lang": {
+    "switch_to_vi": "Tiếng Việt",
+    "switch_to_en": "English"
+  }
+}

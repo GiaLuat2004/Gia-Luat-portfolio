@@ -1,0 +1,218 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Cao Bao Gia Luat",
+    "title": "Fullstack Developer Intern",
+    "roles": ["Fullstack Developer", "React / Next.js Engineer", "Backend API Builder", "Clean Code Enthusiast"],
+    "tagline": "Turning complex problems into elegant, high-performance software.",
+    "cta_primary": "View Projects",
+    "cta_secondary": "Download CV",
+    "cta_contact": "Contact Me",
+    "scroll_hint": "Scroll to explore"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A passionate developer crafting impactful digital experiences",
+    "bio": "I'm a final-year Information Technology student at the University of Transport Ho Chi Minh City with a solid foundation in Data Structures, Algorithms, and Object-Oriented Programming. I specialize in the React/Next.js and Node.js ecosystems, and I'm passionate about building clean, high-performance, maintainable software systems.",
+    "bio2": "Currently seeking a Full-stack Intern position to sharpen my Clean Code skills, apply best practices in real-world scenarios, and explore AI integration into products. My long-term goal is to grow into a professional Software Engineer who delivers sustainable value to businesses.",
+    "info": {
+      "dob": "Aug 25, 2004",
+      "location": "Tan Binh, Ho Chi Minh City",
+      "email": "gialuat2004vk@gmail.com",
+      "github": "github.com/GiaLuat2004",
+      "phone": "0325 428 387",
+      "status": "Open to Internship Opportunities"
+    },
+    "labels": {
+      "dob": "Date of Birth",
+      "location": "Location",
+      "email": "Email",
+      "github": "GitHub",
+      "phone": "Phone",
+      "status": "Status"
+    },
+    "available_badge": "Available for Opportunities"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies I work with and continue to master",
+    "categories": [
+      {
+        "name": "Frontend",
+        "icon": "Monitor",
+        "skills": [
+          { "name": "TypeScript", "icon": "⚡" },
+          { "name": "JavaScript ES6+", "icon": "🟨" },
+          { "name": "React.js", "icon": "⚛️" },
+          { "name": "Next.js", "icon": "▲" },
+          { "name": "TailwindCSS", "icon": "🌊" },
+          { "name": "Framer Motion", "icon": "🎭" },
+          { "name": "Redux", "icon": "🔮" },
+          { "name": "ShadcnUI", "icon": "🎨" }
+        ]
+      },
+      {
+        "name": "Backend",
+        "icon": "Server",
+        "skills": [
+          { "name": "Node.js", "icon": "🟢" },
+          { "name": "Express.js", "icon": "🚀" },
+          { "name": "FastAPI", "icon": "⚡" },
+          { "name": "RESTful API", "icon": "🔗" },
+          { "name": "WebSocket", "icon": "🔄" },
+          { "name": "JWT & RBAC", "icon": "🔐" },
+          { "name": "Microservices", "icon": "🏗️" }
+        ]
+      },
+      {
+        "name": "Database & Cloud",
+        "icon": "Database",
+        "skills": [
+          { "name": "PostgreSQL", "icon": "🐘" },
+          { "name": "MySQL", "icon": "🗄️" },
+          { "name": "Docker", "icon": "🐳" },
+          { "name": "Git / GitHub", "icon": "🐙" },
+          { "name": "Google Cloud", "icon": "☁️" },
+          { "name": "Vercel", "icon": "▲" }
+        ]
+      },
+      {
+        "name": "AI & Computer Vision",
+        "icon": "Cpu",
+        "skills": [
+          { "name": "Python", "icon": "🐍" },
+          { "name": "OpenCV", "icon": "👁️" },
+          { "name": "YOLOv8", "icon": "🎯" },
+          { "name": "Computer Vision", "icon": "🤖" }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Things I've built that I'm proud of",
+    "view_github": "View on GitHub",
+    "live_demo": "Live Demo",
+    "items": [
+      {
+        "id": "anomaly",
+        "title": "Human Anomaly Localization",
+        "role": "Backend Developer",
+        "team": "Team size: 3",
+        "period": "Dec 2025 – Feb 2026",
+        "description": "A real-time AI surveillance system utilizing Computer Vision to detect abnormal behaviors (falling), helping to ensure the safety of the elderly and children. Achieved 90% accuracy.",
+        "highlights": [
+          "4-path hybrid detection algorithm (Bounding Box ratio, angle, and velocity)",
+          "Border Integrity Check mechanism to eliminate camera edge noise",
+          "Real-time WebSocket video streaming with FastAPI",
+          "YOLOv8s-pose model serving with async RESTful APIs"
+        ],
+        "tech": ["ReactJS", "Python", "FastAPI", "OpenCV", "YOLOv8s-pose", "WebSocket"],
+        "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
+        "image": "/images/projects/anomaly.jpg"
+      },
+      {
+        "id": "jewelry",
+        "title": "Jewelry Sales System",
+        "role": "Fullstack Developer",
+        "team": "Team size: 5",
+        "period": "Jul 2025 – Sep 2025",
+        "description": "A diamond appraisal and management system following GIA 4C standards, built on Microservices architecture for scalability and maintainability.",
+        "highlights": [
+          "Next.js online appraisal lookup interface with statistical Dashboard",
+          "Independent Appraisal Service with Express.js Microservice",
+          "PostgreSQL schema design with data integrity guarantees",
+          "Full Docker containerization for consistent deployment"
+        ],
+        "tech": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "RESTful API"],
+        "github": "https://github.com/Jewelry-Sales-System",
+        "image": "/images/projects/jewelry.jpg"
+      },
+      {
+        "id": "sevina",
+        "title": "SEVINA",
+        "role": "Frontend Developer",
+        "team": "Team size: 4",
+        "period": "Mar 2025 – May 2025",
+        "description": "A self-driving car rental web platform integrating GPS positioning, real-time vehicle tracking, and nearest station search algorithm (10–20km radius) based on user location.",
+        "highlights": [
+          "Interactive UI with ReactJS, Tailwind CSS, and Framer Motion animations",
+          "Goong Map API integration for GPS routing and station search",
+          "Redux for complex global state management",
+          "Deployed on Vercel with CI/CD pipelines"
+        ],
+        "tech": ["ReactJS", "TailwindCSS", "Framer Motion", "Redux", "ShadcnUI", "Goong Map API"],
+        "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
+        "image": "/images/projects/sevina.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "subtitle": "Academic background and professional credentials",
+    "degree_label": "Major",
+    "gpa_label": "GPA",
+    "education": {
+      "school": "University of Transport Ho Chi Minh City",
+      "degree": "Bachelor of Information Technology",
+      "major": "Information Technology",
+      "period": "2022 – 2026",
+      "gpa": "3.43 / 4.0"
+    },
+    "certifications_title": "Certifications",
+    "certifications": [
+      {
+        "name": "TOEIC Listening & Reading",
+        "score": "670 / 990",
+        "date": "Oct 2025",
+        "icon": "🌐"
+      },
+      {
+        "name": "Google Cloud Computing Foundations",
+        "date": "Jul 2025",
+        "icon": "☁️"
+      },
+      {
+        "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
+        "issuer": "UDEMY",
+        "date": "May 2025",
+        "icon": "🟢"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Open to internship opportunities, collaborations, and building great things together.",
+    "open_to": "Open to Opportunities",
+    "email_label": "Email",
+    "github_label": "GitHub",
+    "phone_label": "Phone",
+    "location_label": "Location",
+    "email": "gialuat2004vk@gmail.com",
+    "github": "https://github.com/GiaLuat2004",
+    "phone": "0325 428 387",
+    "location": "Ho Chi Minh City, Vietnam",
+    "message": "Feel free to reach out if you want to build something amazing together!"
+  },
+  "footer": {
+    "made_with": "Made with",
+    "by": "by",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "toggle_dark": "Switch to Dark Mode",
+    "toggle_light": "Switch to Light Mode"
+  },
+  "lang": {
+    "switch_to_vi": "Tiếng Việt",
+    "switch_to_en": "English"
+  }
+}
