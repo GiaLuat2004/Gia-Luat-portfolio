@@ -107,7 +107,7 @@ export default function Hero() {
           {/* Greeting */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl mb-2 font-medium"
+            className="text-xl md:text-2xl mb-2 font-medium"
             style={{ color: 'var(--text-muted)' }}
           >
             {t.hero.greeting}
@@ -116,7 +116,7 @@ export default function Hero() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading mb-4 leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-bold font-heading mb-4 leading-tight"
           >
             <span className="gradient-text">{t.hero.name}</span>
           </motion.h1>
@@ -124,12 +124,12 @@ export default function Hero() {
           {/* Typewriter Role */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center gap-2 text-xl md:text-2xl lg:text-3xl font-semibold mb-6 h-10"
+            className="flex items-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 h-12"
           >
             <span style={{ color: 'var(--text-muted)' }}>&lt;</span>
             <span className="gradient-text-2">{typedText}</span>
             <span
-              className="w-0.5 h-7 animate-pulse rounded-full"
+              className="w-0.5 h-8 animate-pulse rounded-full"
               style={{ background: 'var(--accent-indigo)' }}
             />
             <span style={{ color: 'var(--text-muted)' }}>/&gt;</span>
@@ -138,7 +138,7 @@ export default function Hero() {
           {/* Tagline */}
           <motion.p
             variants={itemVariants}
-            className="text-base md:text-lg max-w-xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed"
             style={{ color: 'var(--text-muted)' }}
           >
             {t.hero.tagline}
@@ -150,19 +150,19 @@ export default function Hero() {
               onClick={scrollToProjects}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="btn-primary text-sm"
+              className="btn-primary"
             >
               {t.hero.cta_primary}
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </motion.button>
 
             <motion.button
               onClick={scrollToContact}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="btn-secondary text-sm"
+              className="btn-secondary"
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-5 h-5" />
               {t.hero.cta_contact}
             </motion.button>
 
@@ -171,9 +171,9 @@ export default function Hero() {
               download
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="btn-secondary text-sm"
+              className="btn-secondary"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-5 h-5" />
               {t.hero.cta_secondary}
             </motion.a>
           </motion.div>
@@ -184,31 +184,31 @@ export default function Hero() {
               href="https://github.com/GiaLuat2004"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.08, y: -3 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
+              className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-base font-semibold transition-all duration-200"
               style={{
                 background: 'var(--surface)',
                 border: '1px solid var(--border)',
                 color: 'var(--text-muted)',
               }}
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-5 h-5" />
               GitHub
             </motion.a>
 
             <motion.a
               href="mailto:gialuat2004vk@gmail.com"
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.08, y: -3 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
+              className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-base font-semibold transition-all duration-200"
               style={{
                 background: 'var(--surface)',
                 border: '1px solid var(--border)',
                 color: 'var(--text-muted)',
               }}
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-5 h-5" />
               Email
             </motion.a>
           </motion.div>
@@ -223,12 +223,12 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ color: 'var(--text-subtle)' }}
       >
-        <span className="text-xs tracking-widest uppercase">{t.hero.scroll_hint}</span>
+        <span className="text-sm tracking-widest uppercase font-medium">{t.hero.scroll_hint}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
         >
-          <ArrowDown className="w-4 h-4" />
+          <ArrowDown className="w-5 h-5" />
         </motion.div>
       </motion.div>
     </section>

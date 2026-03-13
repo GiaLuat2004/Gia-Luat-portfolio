@@ -121,10 +121,10 @@ export default function Goals() {
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.5, opacity: 0 }}
                   transition={{ duration: 0.4, ease: 'easeOut' }}
-                  className="w-28 h-28 rounded-3xl flex items-center justify-center"
+                  className="w-36 h-36 rounded-3xl flex items-center justify-center"
                   style={{ background: `${accent}18` }}
                 >
-                  <span className="text-6xl">{activeItem.icon}</span>
+                  <span className="text-7xl">{activeItem.icon}</span>
                 </motion.div>
                 <div className="flex gap-1">
                   {items.map((_, idx) => (
@@ -162,13 +162,13 @@ export default function Goals() {
                       {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
                     </span>
                     <h3
-                      className="text-2xl md:text-3xl font-bold font-heading mb-4"
+                      className="text-3xl md:text-4xl font-bold font-heading mb-4"
                       style={{ color: 'var(--text)' }}
                     >
                       {activeItem.title}
                     </h3>
                     <p
-                      className="text-base md:text-lg leading-relaxed max-w-lg"
+                      className="text-lg md:text-xl leading-relaxed max-w-lg"
                       style={{ color: 'var(--text-muted)' }}
                     >
                       {activeItem.description}
@@ -183,27 +183,27 @@ export default function Goals() {
                   onClick={prev}
                   whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
                   style={{
                     background: `${accent}15`,
                     border: `1px solid ${accent}33`,
                     color: accent,
                   }}
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-6 h-6" />
                 </motion.button>
                 <motion.button
                   onClick={next}
                   whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
                   style={{
                     background: `${accent}15`,
                     border: `1px solid ${accent}33`,
                     color: accent,
                   }}
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-6 h-6" />
                 </motion.button>
               </div>
             </div>

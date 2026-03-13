@@ -97,6 +97,9 @@ export default function Interests() {
             <Heart className="w-3.5 h-3.5" />
             {t.goals.interests_title}
           </motion.div>
+          <motion.h2 variants={itemVariants} className="section-title mb-4">
+            {t.goals.interests_title}
+          </motion.h2>
         </motion.div>
 
         {/* Square Image Cards Grid */}
@@ -165,8 +168,8 @@ export default function Interests() {
 
                     {/* Content */}
                     <div className="relative z-10 h-full p-5 flex flex-col justify-end">
-                      <span className="text-3xl mb-3">{item.icon}</span>
-                      <h4 className="text-lg font-bold font-heading text-white mb-1.5">
+                      <span className="text-4xl mb-3">{item.icon}</span>
+                      <h4 className="text-xl font-bold font-heading text-white mb-1.5">
                         {item.title}
                       </h4>
 
@@ -177,7 +180,7 @@ export default function Interests() {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="text-sm leading-relaxed text-gray-300 overflow-hidden"
+                            className="text-base leading-relaxed text-gray-200 overflow-hidden"
                           >
                             {item.description}
                           </motion.p>
@@ -185,7 +188,7 @@ export default function Interests() {
                       </AnimatePresence>
 
                       {!isActive && (
-                        <p className="text-xs text-gray-400 mt-1">Click to read more</p>
+                        <p className="text-sm font-medium text-gray-300 mt-1">Click to read more</p>
                       )}
                     </div>
                   </motion.div>
@@ -201,14 +204,14 @@ export default function Interests() {
                 onClick={prevPage}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-9 h-9 rounded-full flex items-center justify-center"
+                className="w-11 h-11 rounded-full flex items-center justify-center"
                 style={{
                   background: 'rgba(6,182,212,0.12)',
                   border: '1px solid rgba(6,182,212,0.3)',
                   color: 'var(--accent-cyan)',
                 }}
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-5 h-5" />
               </motion.button>
               <div className="flex gap-1.5">
                 {Array.from({ length: maxPage + 1 }).map((_, dotIdx) => (
@@ -228,14 +231,14 @@ export default function Interests() {
                 onClick={nextPage}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-9 h-9 rounded-full flex items-center justify-center"
+                className="w-11 h-11 rounded-full flex items-center justify-center"
                 style={{
                   background: 'rgba(6,182,212,0.12)',
                   border: '1px solid rgba(6,182,212,0.3)',
                   color: 'var(--accent-cyan)',
                 }}
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-5 h-5" />
               </motion.button>
             </div>
           )}

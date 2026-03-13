@@ -100,7 +100,7 @@ export default function Skills() {
                   onClick={() => setActiveTab(idx)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap"
+                  className="relative flex items-center gap-2 px-5 py-3 rounded-xl text-base font-semibold transition-all duration-300 whitespace-nowrap"
                   style={{
                     color: isActive ? tabAccents[idx] : 'var(--text-muted)',
                     background: isActive ? `${tabAccents[idx]}15` : 'transparent',
@@ -118,7 +118,7 @@ export default function Skills() {
                     />
                   )}
                   <span className="relative z-10 flex items-center gap-2">
-                    <IconComp className="w-4 h-4" />
+                    <IconComp className="w-5 h-5" />
                     <span className="hidden sm:inline">{category.name}</span>
                   </span>
                 </motion.button>
@@ -149,19 +149,19 @@ export default function Skills() {
                   {/* Category Header */}
                   <div className="flex items-center gap-4 mb-8">
                     <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center"
                       style={{ background: `${accent}20` }}
                     >
                       {(() => {
                         const IconComp = categoryIcons[category.icon] || Monitor
-                        return <IconComp className="w-7 h-7" style={{ color: accent }} />
+                        return <IconComp className="w-8 h-8" style={{ color: accent }} />
                       })()}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold font-heading" style={{ color: 'var(--text)' }}>
+                      <h3 className="text-2xl font-bold font-heading" style={{ color: 'var(--text)' }}>
                         {category.name}
                       </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                      <p className="text-base" style={{ color: 'var(--text-muted)' }}>
                         {category.skills.length} technologies
                       </p>
                     </div>
@@ -172,14 +172,14 @@ export default function Skills() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
                   >
                     {category.skills.map((skill, skillIdx) => (
                       <motion.div
                         key={skill.name}
                         variants={chipVariants}
                         whileHover={{ scale: 1.05, y: -3 }}
-                        className="flex items-center gap-3 p-3.5 rounded-xl cursor-default transition-all duration-200"
+                        className="flex items-center gap-3 p-4 rounded-xl cursor-default transition-all duration-200"
                         style={{
                           background: 'var(--surface)',
                           border: '1px solid var(--border)',
@@ -193,8 +193,8 @@ export default function Skills() {
                           ;(e.currentTarget as HTMLElement).style.boxShadow = ''
                         }}
                       >
-                        <span className="text-xl">{skill.icon}</span>
-                        <span className="text-sm font-medium" style={{ color: 'var(--text)' }}>
+                        <span className="text-2xl">{skill.icon}</span>
+                        <span className="text-base font-medium" style={{ color: 'var(--text)' }}>
                           {skill.name}
                         </span>
                       </motion.div>

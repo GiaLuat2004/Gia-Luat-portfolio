@@ -83,7 +83,7 @@ export default function About() {
                 className="absolute -inset-1 rounded-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: 'linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan))' }}
               />
-              <div className="relative w-64 h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden"
+              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden"
                 style={{ background: 'var(--surface-alt)' }}
               >
                 <Image
@@ -121,10 +121,10 @@ export default function About() {
           <motion.div variants={containerVariants} className="lg:col-span-3 space-y-8">
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                 {t.about.bio}
               </p>
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                 {t.about.bio2}
               </p>
             </motion.div>
@@ -152,13 +152,13 @@ export default function About() {
                     className="glass-card rounded-xl p-4 flex items-start gap-3 group transition-all duration-200"
                   >
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{ background: 'rgba(99,102,241,0.1)' }}
                     >
-                      <IconComp className="w-4 h-4" style={{ color: 'var(--accent-indigo)' }} />
+                      <IconComp className="w-4.5 h-4.5" style={{ color: 'var(--accent-indigo)' }} />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-xs font-medium mb-0.5" style={{ color: 'var(--text-subtle)' }}>
+                      <p className="text-sm font-medium mb-0.5" style={{ color: 'var(--text-subtle)' }}>
                         {t.about.labels[key]}
                       </p>
                       {isLink && href ? (
@@ -166,13 +166,13 @@ export default function About() {
                           href={href}
                           target={key === 'github' ? '_blank' : undefined}
                           rel="noopener noreferrer"
-                          className="text-sm font-medium truncate block hover:underline"
+                          className="text-base font-semibold truncate block hover:underline"
                           style={{ color: 'var(--accent-indigo)' }}
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="text-sm font-medium truncate" style={{ color: 'var(--text)' }}>
+                        <p className="text-base font-semibold truncate" style={{ color: 'var(--text)' }}>
                           {value}
                         </p>
                       )}

@@ -65,9 +65,9 @@ export default function Navbar() {
             onClick={() => scrollToSection('home')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 font-heading font-bold text-lg select-none"
+            className="flex items-center gap-2 font-heading font-bold text-xl select-none"
           >
-            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
+            <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
               GL
             </span>
             <span className="gradient-text-2">Gia Luat</span>

@@ -133,17 +133,17 @@ export default function Projects() {
                       className="flex flex-col items-center gap-1"
                     >
                       <div
-                        className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold"
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-2xl font-bold"
                         style={{
                           background: `${accent}15`,
                           border: `1px solid ${accent}33`,
                           color: accent,
                         }}
                       >
-                        <Calendar className="w-3.5 h-3.5" />
+                        <Calendar className="w-5 h-5" />
                         {project.period}
                       </div>
-                      <span className="text-xs font-medium" style={{ color: 'var(--text-subtle)' }}>
+                      <span className="text-2xl font-medium" style={{ color: 'var(--text-subtle)' }}>
                         {project.role}
                       </span>
                     </motion.div>
@@ -166,7 +166,7 @@ export default function Projects() {
                     >
                       {/* Thumbnail */}
                       <div
-                        className="relative h-40 overflow-hidden"
+                        className="relative h-52 overflow-hidden"
                         style={{ background: 'var(--surface-alt)' }}
                       >
                         <Image
@@ -203,11 +203,11 @@ export default function Projects() {
                           </span>
                         </div>
 
-                        <h3 className="text-lg font-bold font-heading mb-2" style={{ color: 'var(--text)' }}>
+                        <h3 className="text-xl font-bold font-heading mb-2" style={{ color: 'var(--text)' }}>
                           {project.title}
                         </h3>
 
-                        <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                        <p className="text-base mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                           {project.description}
                         </p>
 
@@ -223,8 +223,8 @@ export default function Projects() {
                             >
                               <ul className="space-y-2 mb-4">
                                 {project.highlights.map((highlight, hIdx) => (
-                                  <li key={hIdx} className="flex items-start gap-2 text-xs" style={{ color: 'var(--text-muted)' }}>
-                                    <span className="mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: accent }} />
+                                  <li key={hIdx} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+                                    <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: accent }} />
                                     {highlight}
                                   </li>
                                 ))}
@@ -246,11 +246,11 @@ export default function Projects() {
                         </button>
 
                         {/* Tech */}
-                        <div className="flex flex-wrap gap-1.5 mb-4">
+                        <div className="flex flex-wrap gap-2 mb-4">
                           {project.tech.map((tech) => (
                             <span
                               key={tech}
-                              className="px-2 py-1 rounded-lg text-xs font-medium"
+                              className="px-2.5 py-1 rounded-lg text-sm font-medium"
                               style={{
                                 background: `${accent}11`,
                                 border: `1px solid ${accent}33`,

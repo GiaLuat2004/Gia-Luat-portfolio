@@ -1,242 +1,160 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence, LayoutGroup } from 'framer-motion'
-import { Award, ChevronRight } from 'lucide-react'
+import { useRef, useState, useEffect } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { Award, Calendar, ExternalLink, Star, CheckCircle2, ChevronRight } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import Image from 'next/image'
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 }
-
-const certAccentHex = ['#06b6d4', '#6366f1', '#4ade80']
-const certBg = [
-  'linear-gradient(135deg, rgba(6,182,212,0.08), rgba(6,182,212,0.02))',
-  'linear-gradient(135deg, rgba(99,102,241,0.08), rgba(99,102,241,0.02))',
-  'linear-gradient(135deg, rgba(74,222,128,0.08), rgba(74,222,128,0.02))',
-]
 
 export default function Certifications() {
   const { t } = useLanguage()
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
-  // featuredIdx: the cert currently in the "big square" position on the left
-  const [featuredIdx, setFeaturedIdx] = useState(0)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [activeIdx, setActiveIdx] = useState(0)
 
   const certs = t.education.certifications
-  const featuredCert = certs[featuredIdx]
-  const featuredAccent = certAccentHex[featuredIdx % certAccentHex.length]
-  const featuredBg = certBg[featuredIdx % certBg.length]
-
-  // the rest on the right side
-  const sideItems = certs
-    .map((cert, idx) => ({ cert, idx }))
-    .filter(({ idx }) => idx !== featuredIdx)
 
   return (
-    <section id="certifications" className="section-padding relative pt-0">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-1/2 right-0 w-80 h-80 rounded-full opacity-[0.05]"
-          style={{ background: 'radial-gradient(circle, var(--accent-indigo) 0%, transparent 70%)' }}
-        />
-      </div>
+    <section id="certifications" className="section-padding relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(129,140,248,0.03)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="section-container" ref={ref}>
-        {/* Section Header */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="text-center mb-12"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 mb-4 text-sm font-medium px-4 py-2 rounded-full"
-            style={{
-              background: 'rgba(99,102,241,0.08)',
-              border: '1px solid rgba(99,102,241,0.25)',
-              color: 'var(--accent-indigo)',
-            }}
-          >
-            <Award className="w-3.5 h-3.5" />
-            {t.education.certifications_title}
-          </motion.div>
-          <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-bold font-heading mb-2" style={{ color: 'var(--text)' }}>
-            {t.education.certifications_title}
-          </motion.h2>
-          <motion.p variants={itemVariants} className="text-sm" style={{ color: 'var(--text-muted)' }}>
-            Click a certificate on the right to feature it
-          </motion.p>
-        </motion.div>
-
-        {/* Main Layout */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="max-w-4xl mx-auto"
-        >
-          <LayoutGroup>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-5 items-start">
-
-              {/* LEFT – Featured cert */}
-              <motion.div
-                layoutId={`cert-card-${featuredIdx}`}
-                className="md:col-span-3"
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={featuredIdx}
-                    initial={{ opacity: 0, scale: 0.95, x: -20 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.4, ease: 'easeOut' }}
-                    className="glass-card rounded-2xl p-8 relative overflow-hidden h-full"
-                    style={{
-                      background: featuredBg,
-                      border: `1.5px solid ${featuredAccent}33`,
-                      minHeight: 280,
-                    }}
-                  >
-                    {/* Glow orb */}
-                    <div
-                      className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-20 pointer-events-none"
-                      style={{
-                        background: `radial-gradient(circle, ${featuredAccent}, transparent 70%)`,
-                        transform: 'translate(30%, -30%)',
-                      }}
-                    />
-
-                    <div className="relative z-10 h-full flex flex-col">
-                      {/* Icon area */}
-                      <div
-                        className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 text-4xl"
-                        style={{ background: `${featuredAccent}15` }}
-                      >
-                        {featuredCert.icon}
-                      </div>
-
-                      {/* Badge */}
-                      <span
-                        className="inline-flex items-center text-xs font-bold px-3 py-1 rounded-full mb-4 self-start"
-                        style={{ background: `${featuredAccent}18`, color: featuredAccent }}
-                      >
-                        ★ Featured
-                      </span>
-
-                      <h3
-                        className="text-lg md:text-xl font-bold font-heading leading-snug mb-3 flex-1"
-                        style={{ color: 'var(--text)' }}
-                      >
-                        {featuredCert.name}
-                      </h3>
-
-                      <div className="flex flex-wrap gap-2 mt-auto">
-                        {featuredCert.score && (
-                          <span
-                            className="text-sm font-bold px-3 py-1.5 rounded-xl"
-                            style={{ background: `${featuredAccent}18`, color: featuredAccent }}
-                          >
-                            Score: {featuredCert.score}
-                          </span>
-                        )}
-                        {(featuredCert as any).issuer && (
-                          <span
-                            className="text-sm font-medium px-3 py-1.5 rounded-xl"
-                            style={{ background: 'var(--surface-alt)', color: 'var(--text-muted)', border: '1px solid var(--border)' }}
-                          >
-                            {(featuredCert as any).issuer}
-                          </span>
-                        )}
-                        <span
-                          className="text-sm font-medium px-3 py-1.5 rounded-xl ml-auto"
-                          style={{ background: 'var(--surface-alt)', color: 'var(--text-subtle)', border: '1px solid var(--border)' }}
-                        >
-                          {featuredCert.date}
-                        </span>
-                      </div>
+      <div className="section-container relative z-10" ref={ref}>
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
+          
+          {/* LEFT COLUMN: Visual Preview */}
+          <div className="w-full md:w-1/2 sticky top-24">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8 }}
+              className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-2xl"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIdx}
+                  initial={{ opacity: 0, filter: 'blur(10px)' }}
+                  animate={{ opacity: 1, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, filter: 'blur(10px)' }}
+                  transition={{ duration: 0.4 }}
+                  className="relative w-full h-full p-4 flex items-center justify-center"
+                >
+                  {/* Nếu bạn có ảnh thật, hãy dùng <Image />. Ở đây mình dùng Placeholder nghệ thuật */}
+                  <div className="w-full h-full rounded-xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5">
+                    <div className="text-8xl mb-4">{certs[activeIdx].icon}</div>
+                    <div className="text-center px-8">
+                       <h4 className="text-xl font-bold mb-2">{certs[activeIdx].name}</h4>
+                       <p className="text-sm text-muted opacity-70">{certs[activeIdx].issuer}</p>
                     </div>
-                  </motion.div>
-                </AnimatePresence>
-              </motion.div>
+                  </div>
+                  
+                  {/* Verified Watermark Overlay */}
+                  <div className="absolute bottom-6 right-6 rotate-12 opacity-20">
+                     <CheckCircle2 className="w-24 h-24 text-indigo-500" />
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
 
-              {/* RIGHT – Side list */}
-              <div className="md:col-span-2 flex flex-col gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--text-subtle)' }}>
-                  Other Certifications
-                </p>
+            {/* Stats Row under image */}
+            <div className="grid grid-cols-3 gap-4 mt-8">
+               <div className="p-4 rounded-2xl bg-surface/50 border border-border text-center">
+                  <p className="text-2xl font-bold">{certs.length}</p>
+                  <p className="text-[10px] uppercase tracking-wider text-muted">Total</p>
+               </div>
+               <div className="p-4 rounded-2xl bg-surface/50 border border-border text-center">
+                  <p className="text-2xl font-bold">3+</p>
+                  <p className="text-[10px] uppercase tracking-wider text-muted">Platforms</p>
+               </div>
+               <div className="p-4 rounded-2xl bg-surface/50 border border-border text-center">
+                  <p className="text-2xl font-bold">2025</p>
+                  <p className="text-[10px] uppercase tracking-wider text-muted">Latest</p>
+               </div>
+            </div>
+          </div>
 
-                {sideItems.map(({ cert, idx }) => {
-                  const accent = certAccentHex[idx % certAccentHex.length]
-                  return (
-                    <motion.button
-                      key={idx}
-                      layoutId={`cert-card-${idx}`}
-                      onClick={() => setFeaturedIdx(idx)}
-                      whileHover={{ x: 4, scale: 1.01 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="glass-card rounded-xl p-4 text-left w-full group transition-all duration-200 relative overflow-hidden"
-                      style={{
-                        border: `1px solid var(--border)`,
-                        cursor: 'pointer',
-                      }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.borderColor = `${accent}55`
-                        ;(e.currentTarget as HTMLElement).style.boxShadow = `0 4px 20px ${accent}18`
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLElement).style.borderColor = ''
-                        ;(e.currentTarget as HTMLElement).style.boxShadow = ''
-                      }}
-                    >
-                      {/* Left accent bar */}
-                      <div
-                        className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl"
-                        style={{ background: accent }}
-                      />
-
-                      <div className="pl-3 flex items-center gap-3">
-                        <span className="text-2xl flex-shrink-0">{cert.icon}</span>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-sm font-semibold leading-snug truncate" style={{ color: 'var(--text)' }}>
-                            {cert.name}
-                          </p>
-                          <div className="flex items-center gap-2 mt-1">
-                            {cert.score && (
-                              <span className="text-xs font-bold" style={{ color: accent }}>
-                                {cert.score}
-                              </span>
-                            )}
-                            <span className="text-xs" style={{ color: 'var(--text-subtle)' }}>
-                              {cert.date}
-                            </span>
-                          </div>
-                        </div>
-                        <ChevronRight
-                          className="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                          style={{ color: accent }}
-                        />
-                      </div>
-                    </motion.button>
-                  )
-                })}
-
-                <p className="text-xs mt-2 text-center" style={{ color: 'var(--text-subtle)' }}>
-                  👆 Click to feature
-                </p>
+          {/* RIGHT COLUMN: List */}
+          <div className="w-full md:w-1/2">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              className="space-y-4"
+            >
+              <div className="mb-10">
+                <h2 className="text-3xl font-bold mb-4 tracking-tight">
+                  {t.education.certifications_title}
+                </h2>
+                <div className="h-1 w-20 bg-indigo-500 rounded-full" />
               </div>
 
-            </div>
-          </LayoutGroup>
-        </motion.div>
+              {certs.map((cert: any, idx: number) => {
+                const isActive = activeIdx === idx
+                return (
+                  <motion.div
+                    key={idx}
+                    variants={itemVariants}
+                    onClick={() => setActiveIdx(idx)}
+                    className={`group relative cursor-pointer p-5 rounded-2xl transition-all duration-300 border ${
+                      isActive 
+                        ? 'bg-surface border-indigo-500/50 shadow-lg shadow-indigo-500/5' 
+                        : 'bg-transparent border-border hover:border-muted'
+                    }`}
+                  >
+                    <div className="flex items-center gap-5">
+                      {/* Small Icon Indicator */}
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-colors ${
+                        isActive ? 'bg-indigo-500/20' : 'bg-surface-alt group-hover:bg-surface'
+                      }`}>
+                        {cert.icon}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className={`font-bold truncate transition-colors ${isActive ? 'text-indigo-400' : 'text-text'}`}>
+                            {cert.name}
+                          </h3>
+                          {isActive && <ExternalLink className="w-3 h-3 text-indigo-400" />}
+                        </div>
+                        
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                          <span className="flex items-center gap-1">
+                            <Calendar className="w-3 h-3" />
+                            {cert.date}
+                          </span>
+                          <span className="w-1 h-1 rounded-full bg-border" />
+                          <span className="font-medium text-muted">{cert.issuer}</span>
+                        </div>
+                      </div>
+
+                      <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
+                        isActive ? 'rotate-90 text-indigo-500' : 'text-muted opacity-0 group-hover:opacity-100'
+                      }`} />
+                    </div>
+
+                    {/* Active Progress Line */}
+                    {isActive && (
+                      <motion.div 
+                        layoutId="active-pill"
+                        className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-indigo-500 rounded-r-full"
+                      />
+                    )}
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )
