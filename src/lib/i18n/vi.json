@@ -213,30 +213,25 @@
     ]
   },
   "goals": {
-    "goals_title": "Mục Tiêu Sự Nghiệp",
+    "goals_title": "Mục Tiêu",
     "goals_subtitle": "Định hướng phát triển và khát vọng vươn xa",
     "interests_title": "Sở Thích & Đam Mê",
     "interests_subtitle": "Những hoạt động nuôi dưỡng tinh thần và sáng tạo",
     "goals_items": [
       {
-        "icon": "🎯",
-        "title": "Làm Chủ Fullstack",
-        "description": "Làm chủ toàn bộ stack phát triển web từ frontend đến backend, cung cấp giải pháp end-to-end với kiến trúc sạch."
+        "icon": "👨‍💻",
+        "title": "Kỹ Sư Phần Mềm",
+        "description": "Phát triển tư duy logic và kỹ năng lập trình chuyên sâu để trở thành một kỹ sư phần mềm xuất chúng, tạo ra những sản phẩm có giá trị thực tiễn cao."
       },
       {
-        "icon": "🤖",
-        "title": "Sản Phẩm AI",
-        "description": "Tích hợp AI và Machine Learning vào ứng dụng thực tế, xây dựng hệ thống thông minh tạo ra sự khác biệt."
-      },
-      {
-        "icon": "🏗️",
-        "title": "Kiến Trúc Hệ Thống",
-        "description": "Thiết kế hệ thống có khả năng mở rộng và bảo trì sử dụng Microservices, Cloud-native và DevOps."
+        "icon": "🗣️",
+        "title": "Thành Thạo Ngoại Ngữ",
+        "description": "Làm chủ tiếng Anh và hướng tới các ngôn ngữ khác, phá bỏ rào cản giao tiếp để tự tin lĩnh hội tri thức công nghệ thế giới."
       },
       {
         "icon": "🌍",
-        "title": "Tầm Ảnh Hưởng Toàn Cầu",
-        "description": "Đóng góp cho open-source và xây dựng sản phẩm tiếp cận người dùng toàn cầu, tạo giá trị bền vững."
+        "title": "Môi Trường Toàn Cầu",
+        "description": "Mục tiêu làm việc trong môi trường đa quốc gia năng động, sẵn sàng hội nhập và cống hiến ở đẳng cấp chuyên nghiệp quốc tế."
       }
     ],
     "interests_items": [
@@ -292,7 +287,8 @@
     "form_send": "Gửi Tin Nhắn",
     "form_sending": "Đang gửi...",
     "form_success": "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi sớm nhất.",
-    "form_title": "Gửi tin nhắn cho tôi"
+    "form_title": "Gửi tin nhắn cho tôi",
+    "thank_you": "Cảm ơn bạn đã ghé thăm hồ sơ của tôi! Chúc bạn một ngày tốt lành."
   },
   "footer": {
     "made_with": "Được tạo với",

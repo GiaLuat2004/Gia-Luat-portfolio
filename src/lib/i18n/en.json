@@ -213,30 +213,25 @@
     ]
   },
   "goals": {
-    "goals_title": "Career Goals",
+    "goals_title": "Goals",
     "goals_subtitle": "My professional aspirations and vision",
     "interests_title": "Interests & Hobbies",
     "interests_subtitle": "Activities that spark my creativity and joy",
     "goals_items": [
       {
-        "icon": "🎯",
-        "title": "Fullstack Mastery",
-        "description": "Master the entire web development stack from frontend to backend, delivering end-to-end solutions with clean architecture."
+        "icon": "👨‍💻",
+        "title": "Software Engineer",
+        "description": "Develop deep logical thinking and programming skills to become an exceptional software engineer, creating products with high practical value."
       },
       {
-        "icon": "🤖",
-        "title": "AI-Powered Products",
-        "description": "Integrate AI and Machine Learning into real-world applications, building smart systems that make a difference."
-      },
-      {
-        "icon": "🏗️",
-        "title": "System Architecture",
-        "description": "Design scalable, maintainable systems using Microservices, Cloud-native tech, and DevOps best practices."
+        "icon": "🗣️",
+        "title": "Mastering Languages",
+        "description": "Master English and explore other languages to break down communication barriers and confidently embrace global technological knowledge."
       },
       {
         "icon": "🌍",
-        "title": "Global Impact",
-        "description": "Contribute to open-source projects and build products that reach users worldwide, creating sustainable value."
+        "title": "Global Environment",
+        "description": "Strive to work in a dynamic multinational environment, ready to integrate and contribute at an international professional level."
       }
     ],
     "interests_items": [
@@ -292,7 +287,8 @@
     "form_send": "Send Message",
     "form_sending": "Sending...",
     "form_success": "Message sent successfully! I'll get back to you soon.",
-    "form_title": "Send me a message"
+    "form_title": "Send me a message",
+    "thank_you": "Thank you for stopping by! Have a great day."
   },
   "footer": {
     "made_with": "Made with",

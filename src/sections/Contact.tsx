@@ -323,6 +323,41 @@ export default function Contact() {
             })}
           </motion.div>
         </motion.div>
+        {/* Lời cảm ơn chân thành ở cuối trang */}
+        <motion.div
+           initial={{ opacity: 0, scale: 0.95, y: 20 }}
+           whileInView={{ opacity: 1, scale: 1, y: 0 }}
+           viewport={{ once: true, margin: '-50px' }}
+           transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }}
+           className="mt-28 md:mt-32 flex flex-col items-center text-center px-4"
+        >
+           {/* Biểu tượng phân cách mềm mại */}
+           <div className="mb-6 flex items-center justify-center gap-4 opacity-70">
+             <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent to-indigo-500/50" />
+             <Sparkles className="w-5 h-5 text-indigo-400 animate-pulse" />
+             <div className="w-16 md:w-24 h-[1px] bg-gradient-to-l from-transparent to-indigo-500/50" />
+           </div>
+           
+           {/* Nội dung cảm ơn */}
+           <p 
+             className="text-xl md:text-2xl lg:text-3xl italic max-w-3xl leading-relaxed" 
+             style={{ 
+               color: 'var(--text)',
+               fontWeight: 500,
+               letterSpacing: '0.02em',
+               textShadow: '0 4px 20px rgba(99,102,241,0.1)'
+             }}
+           >
+             "{t.contact.thank_you}"
+           </p>
+           
+           {/* Chữ ký cách điệu */}
+           <p className="mt-8 text-sm md:text-base font-semibold tracking-[0.2em] uppercase flex items-center gap-3 opacity-60" style={{ color: 'var(--text-muted)' }}>
+             <span className="w-6 md:w-8 h-[1px] bg-current" />
+             {t.hero.name}
+             <span className="w-6 md:w-8 h-[1px] bg-current" />
+           </p>
+        </motion.div>
       </div>
     </section>
   )

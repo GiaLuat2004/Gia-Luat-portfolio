@@ -107,17 +107,18 @@ function SpotlightCard({ skill, accent }: { skill: any, accent: string }) {
       />
       
       {/* Card Content */}
-      <div className="relative z-10 flex gap-3.5">
+      <div className="relative z-10 flex gap-4 mt-2">
         {/* Icon Container */}
         <div 
-          className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
+          className="w-16 h-16 rounded-[1.25rem] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-[1.1] group-hover:-rotate-3"
           style={{
-            background: isHovered ? `${accent}20` : 'var(--bg)',
-            border: `1px solid ${isHovered ? `${accent}40` : 'var(--border)'}`,
-            color: isHovered ? accent : 'var(--text-muted)'
+            background: isHovered ? `linear-gradient(135deg, ${accent}25, ${accent}05)` : `${accent}15`,
+            border: `1px solid ${isHovered ? `${accent}50` : `${accent}20`}`,
+            color: isHovered ? accent : accent,
+            boxShadow: isHovered ? `0 8px 32px -8px ${accent}40` : 'none'
           }}
         >
-          {LogoComp ? <LogoComp className="w-5 h-5" /> : <Sparkles className="w-4 h-4" />}
+          {LogoComp ? <LogoComp className="w-8 h-8" /> : <Sparkles className="w-8 h-8" />}
         </div>
         
         {/* Text Details */}

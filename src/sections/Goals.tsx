@@ -1,69 +1,45 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Target, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Target } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 }
 
-const goalAccents = ['#6366f1', '#06b6d4', '#a78bfa', '#f59e0b']
+// Màu nhấn cho 3 thẻ mục tiêu: Indigo, Emerald, Violet
+const goalAccents = ['#6366f1', '#10b981', '#8b5cf6'] 
 
 export default function Goals() {
   const { t } = useLanguage()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [direction, setDirection] = useState(1)
-  const [isPaused, setIsPaused] = useState(false)
 
   const items = t.goals.goals_items
-  const maxIndex = items.length - 1
-
-  const next = useCallback(() => {
-    setDirection(1)
-    setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
-  }, [maxIndex])
-
-  const prev = useCallback(() => {
-    setDirection(-1)
-    setActiveIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
-  }, [maxIndex])
-
-  useEffect(() => {
-    if (isPaused) return
-    const timer = setInterval(next, 5000)
-    return () => clearInterval(timer)
-  }, [isPaused, next])
-
-  const activeItem = items[activeIndex]
-  const accent = goalAccents[activeIndex % goalAccents.length]
 
   return (
-    <section id="goals" className="section-padding relative">
-      {/* BG */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
-          style={{ background: 'radial-gradient(circle, #a78bfa 0%, transparent 70%)' }}
-        />
+    <section id="goals" className="section-padding relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.06)_0%,transparent_70%)] rotate-12" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.04)_0%,transparent_60%)]" />
       </div>
 
-      <div className="section-container" ref={ref}>
+      <div className="section-container relative z-10" ref={ref}>
         {/* Header */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <motion.div
             variants={itemVariants}
@@ -85,129 +61,83 @@ export default function Goals() {
           </motion.p>
         </motion.div>
 
-        {/* Main Block Slider */}
+        {/* 3 Columns Grid */}
         <motion.div
-          variants={itemVariants}
+          variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
         >
-          <div
-            className="glass-card rounded-3xl overflow-hidden relative"
-            style={{
-              background: `linear-gradient(135deg, ${accent}10, ${accent}05)`,
-              borderColor: `${accent}33`,
-              minHeight: 320,
-              transition: 'background 0.5s ease, border-color 0.5s ease',
-            }}
-          >
-            {/* Decorative glow */}
-            <div
-              className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
-              style={{
-                background: `radial-gradient(circle, ${accent}15, transparent 70%)`,
-                transform: 'translate(30%, -30%)',
-                transition: 'background 0.5s ease',
-              }}
-            />
-
-            <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-              {/* Left: Big Icon + Index */}
-              <div className="flex flex-col items-center gap-4">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ scale: 0.5, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.5, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: 'easeOut' }}
-                  className="w-36 h-36 rounded-3xl flex items-center justify-center"
-                  style={{ background: `${accent}18` }}
-                >
-                  <span className="text-7xl">{activeItem.icon}</span>
-                </motion.div>
-                <div className="flex gap-1">
-                  {items.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        setDirection(idx > activeIndex ? 1 : -1)
-                        setActiveIndex(idx)
-                      }}
-                      className="rounded-full transition-all duration-300"
-                      style={{
-                        width: activeIndex === idx ? 28 : 10,
-                        height: 10,
-                        background: activeIndex === idx ? accent : `${accent}33`,
-                      }}
+          {items.map((item: any, idx: number) => {
+             const accent = goalAccents[idx % goalAccents.length]
+             return (
+               <motion.div
+                 key={idx}
+                 variants={itemVariants}
+                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                 className="group relative h-full flex"
+               >
+                 {/* Decorative background blur on hover */}
+                 <div 
+                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl z-0"
+                   style={{ background: `linear-gradient(135deg, ${accent}30, transparent)` }}
+                 />
+                 
+                 <div 
+                   className="relative flex flex-col h-full w-full bg-surface-alt/60 backdrop-blur-xl rounded-3xl p-8 border shadow-xl overflow-hidden z-10 transition-all duration-500"
+                   style={{ 
+                     borderColor: 'var(--border)', 
+                     '--hover-border': `${accent}60`,
+                     boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)'
+                   } as React.CSSProperties}
+                   onMouseEnter={(e) => {
+                     e.currentTarget.style.borderColor = `var(--hover-border)`
+                   }}
+                   onMouseLeave={(e) => {
+                     e.currentTarget.style.borderColor = 'var(--border)'
+                   }}
+                 >
+                    {/* Top Right Glow inside card */}
+                    <div 
+                      className="absolute -top-16 -right-16 w-48 h-48 rounded-full blur-[50px] opacity-[0.15] transition-opacity duration-500 group-hover:opacity-[0.3]"
+                      style={{ background: accent }}
                     />
-                  ))}
-                </div>
-              </div>
 
-              {/* Right: Content */}
-              <div className="flex-1 text-center md:text-left">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeIndex}
-                    initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: direction > 0 ? -40 : 40 }}
-                    transition={{ duration: 0.4, ease: 'easeOut' }}
-                  >
-                    <span
-                      className="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full"
-                      style={{ background: `${accent}18`, color: accent }}
+                    {/* Icon Container */}
+                    <div 
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center text-4xl mb-8 border transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                      style={{ 
+                        background: `linear-gradient(135deg, ${accent}15, ${accent}05)`,
+                        borderColor: `${accent}30`,
+                        boxShadow: `0 8px 32px -8px ${accent}30`
+                      }}
                     >
-                      {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-                    </span>
-                    <h3
-                      className="text-3xl md:text-4xl font-bold font-heading mb-4"
+                      {item.icon}
+                    </div>
+
+                    {/* Content */}
+                    <h3 
+                      className="text-2xl font-bold font-heading mb-4 transition-colors duration-300"
                       style={{ color: 'var(--text)' }}
                     >
-                      {activeItem.title}
+                      {item.title}
                     </h3>
-                    <p
-                      className="text-lg md:text-xl leading-relaxed max-w-lg"
-                      style={{ color: 'var(--text-muted)' }}
-                    >
-                      {activeItem.description}
+                    
+                    <p className="text-muted-foreground leading-relaxed flex-1 text-[15px]">
+                      {item.description}
                     </p>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
 
-              {/* Nav Arrows */}
-              <div className="flex md:flex-col gap-3">
-                <motion.button
-                  onClick={prev}
-                  whileHover={{ scale: 1.15 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    background: `${accent}15`,
-                    border: `1px solid ${accent}33`,
-                    color: accent,
-                  }}
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </motion.button>
-                <motion.button
-                  onClick={next}
-                  whileHover={{ scale: 1.15 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    background: `${accent}15`,
-                    border: `1px solid ${accent}33`,
-                    color: accent,
-                  }}
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </motion.button>
-              </div>
-            </div>
-          </div>
+                    {/* Elegant Index Number Background */}
+                    <div 
+                       className="absolute -bottom-8 -right-6 text-[140px] font-black leading-none opacity-[0.02] pointer-events-none group-hover:opacity-[0.05] transition-all duration-700 group-hover:scale-105 group-hover:-translate-y-2" 
+                       style={{ color: accent }}
+                    >
+                      {idx + 1}
+                    </div>
+                 </div>
+               </motion.div>
+             )
+          })}
         </motion.div>
       </div>
     </section>

@@ -72,12 +72,12 @@ export default function Hero() {
             className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1"
           >
             {/* Main Heading */}
-            <motion.div variants={itemVariants} className="mb-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold font-heading uppercase tracking-tight leading-[1.1]">
-                <span className="block text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <motion.div variants={itemVariants} className="mb-4 lg:mb-6">
+              <h1 className="font-extrabold font-heading tracking-tight leading-[1.15] uppercase">
+                <span className="block text-gray-900 dark:text-white mb-2 transition-colors duration-300 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]">
                   {t.hero.greeting}
                 </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#8b5cf6]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem]">
                   {t.hero.name}
                 </span>
               </h1>
