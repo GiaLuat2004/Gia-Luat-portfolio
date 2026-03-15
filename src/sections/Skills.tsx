@@ -206,12 +206,11 @@ export default function Skills() {
         {/* ── Main Layout: Responsive Mobile Horizontal scroll to Desktop Equal Height Columns ── */}
         <div className="flex flex-col lg:grid lg:grid-cols-[260px_1fr] gap-5 lg:h-[500px] items-stretch">
 
-          {/* ════ TOP/LEFT COLUMN: Navigation Sidebar/Bar ════ */}
-          <motion.div
+            <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
-            className="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 rounded-3xl p-2.5 border shadow-sm relative z-10 hide-scrollbar"
+            className="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 rounded-3xl p-2.5 border shadow-sm relative z-10 hide-scrollbar w-max lg:w-full mx-auto lg:mx-0"
             style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
           >
             {t.skills.categories.map((category, idx) => {
@@ -224,7 +223,7 @@ export default function Skills() {
                   onClick={() => setActiveTab(idx)}
                   whileHover={{ x: isActive ? 0 : 4 }}
                   whileTap={{ scale: 0.97 }}
-                  className="relative flex items-center gap-3 px-3 py-3 lg:py-3.5 2xl:py-4 rounded-2xl text-sm font-semibold transition-colors duration-200 text-left w-full overflow-hidden group"
+                  className="relative flex items-center justify-center gap-3 px-3 py-3 lg:py-3.5 2xl:py-4 rounded-2xl text-sm font-semibold transition-colors duration-200 text-left flex-shrink-0 lg:w-full overflow-hidden group"
                   style={{
                     color: isActive ? accent : 'var(--text-muted)',
                   }}
@@ -245,12 +244,12 @@ export default function Skills() {
                   {isActive && (
                     <motion.div 
                       layoutId="activeTabIndicator"
-                      className="absolute left-0 top-[20%] bottom-[20%] w-1.5 rounded-r-md"
+                      className="absolute left-0 lg:left-0 top-auto bottom-0 lg:top-[20%] lg:bottom-[20%] h-1 w-full lg:h-auto lg:w-1.5 rounded-t-md lg:rounded-r-md lg:rounded-t-none"
                       style={{ background: accent, boxShadow: `0 0 10px ${accent}` }}
                     />
                   )}
 
-                  <span className="relative z-10 flex items-center justify-center gap-2 lg:gap-3 w-max lg:w-full lg:justified-start lg:pl-0.5">
+                  <span className="relative z-10 flex items-center justify-center gap-2 lg:gap-3 w-auto lg:w-full lg:justify-start lg:pl-0.5">
                     <span
                       className="w-10 h-10 lg:w-9 lg:h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
                       style={{
