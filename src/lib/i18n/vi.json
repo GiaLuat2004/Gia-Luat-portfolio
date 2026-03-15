@@ -24,7 +24,6 @@
     "title": "Về Tôi",
     "subtitle": "Lập trình viên đam mê xây dựng những trải nghiệm số có tác động",
     "bio": "Tôi là sinh viên năm cuối chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM, với nền tảng vững chắc về Cấu trúc dữ liệu, Giải thuật và tư duy lập trình hướng đối tượng. Tôi chuyên về hệ sinh thái React/Next.js và Node.js, và đam mê xây dựng các hệ thống phần mềm sạch, hiệu suất cao, dễ bảo trì.",
-    "bio2": "Hiện đang tìm kiếm vị trí Full-stack Intern để rèn luyện kỹ năng viết Clean Code, áp dụng best-practice vào thực tế và khám phá tích hợp AI vào sản phẩm. Mục tiêu dài hạn của tôi là trở thành Software Engineer chuyên nghiệp, mang lại giá trị bền vững cho doanh nghiệp.",
     "info": {
       "dob": "25/08/2004",
       "location": "Tân Bình, TP. Hồ Chí Minh",
@@ -51,49 +50,63 @@
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
-          { "name": "TypeScript", "icon": "⚡" },
-          { "name": "JavaScript ES6+", "icon": "🟨" },
-          { "name": "React.js", "icon": "⚛️" },
-          { "name": "Next.js", "icon": "▲" },
-          { "name": "TailwindCSS", "icon": "🌊" },
-          { "name": "Framer Motion", "icon": "🎭" },
-          { "name": "Redux", "icon": "🔮" },
-          { "name": "ShadcnUI", "icon": "🎨" }
+          { "name": "TypeScript", "icon": "SiTypescript", "desc": "JS có kiểu tĩnh — code an toàn và dễ mở rộng hơn" },
+          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "JS hiện đại với async/await, modules & destructuring" },
+          { "name": "React.js", "icon": "SiReact", "desc": "UI dạng component với hooks, context & hiệu suất cao" },
+          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "SSR/SSG, App Router, API routes & triển khai edge" },
+          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Styling tiện ích đầu tiên, thiết kế nhanh và nhất quán" },
+          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Animation khai báo và micro-interaction mượt mà" },
+          { "name": "Redux", "icon": "SiRedux", "desc": "Quản lý state có thể đoán trước cho app phức tạp" },
+          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "UI components dễ truy cập, có thể tùy chỉnh theme" }
         ]
       },
       {
         "name": "Backend",
         "icon": "Server",
         "skills": [
-          { "name": "Node.js", "icon": "🟢" },
-          { "name": "Express.js", "icon": "🚀" },
-          { "name": "FastAPI", "icon": "⚡" },
-          { "name": "RESTful API", "icon": "🔗" },
-          { "name": "WebSocket", "icon": "🔄" },
-          { "name": "JWT & RBAC", "icon": "🔐" },
-          { "name": "Microservices", "icon": "🏗️" }
+          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Runtime JS hướng sự kiện cho ứng dụng server mở rộng" },
+          { "name": "Express.js", "icon": "SiExpress", "desc": "Framework REST API tối giản và linh hoạt cho Node.js" },
+          { "name": "FastAPI", "icon": "SiFastapi", "desc": "Python API hiệu suất cao với validation & docs tự động" },
+          { "name": "RESTful API", "icon": "TbApi", "desc": "Thiết kế API HTTP chuẩn với các mẫu tài nguyên rõ ràng" },
+          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Giao tiếp 2 chiều thời gian thực cho tính năng live" },
+          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Xác thực bảo mật với token và kiểm soát quyền truy cập" },
+          { "name": "Microservices", "icon": "TbServerCog", "desc": "Service tách rời để dễ mở rộng và bảo trì" }
         ]
       },
       {
-        "name": "Database & Cloud",
+        "name": "Database",
         "icon": "Database",
         "skills": [
-          { "name": "PostgreSQL", "icon": "🐘" },
-          { "name": "MySQL", "icon": "🗄️" },
-          { "name": "Docker", "icon": "🐳" },
-          { "name": "Git / GitHub", "icon": "🐙" },
-          { "name": "Google Cloud", "icon": "☁️" },
-          { "name": "Vercel", "icon": "▲" }
+          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "DB quan hệ nâng cao với JSONB, chỉ mục & ACID" },
+          { "name": "MySQL", "icon": "SiMysql", "desc": "RDBMS đáng tin cậy cho dữ liệu quan hệ có cấu trúc" }
+        ]
+      },
+      {
+        "name": "DevOps & Cloud",
+        "icon": "Cloud",
+        "skills": [
+          { "name": "Docker", "icon": "SiDocker", "desc": "Triển khai dạng container cho môi trường nhất quán" },
+          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Quản lý phiên bản, nhánh, PR & luồng cộng tác" },
+          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Hạ tầng cloud — GCS, Cloud Run & Compute Engine" },
+          { "name": "Vercel", "icon": "SiVercel", "desc": "Deploy frontend zero-config với CI/CD & edge network" }
         ]
       },
       {
         "name": "AI & Thị Giác Máy Tính",
         "icon": "Cpu",
         "skills": [
-          { "name": "Python", "icon": "🐍" },
-          { "name": "OpenCV", "icon": "👁️" },
-          { "name": "YOLOv8", "icon": "🎯" },
-          { "name": "Computer Vision", "icon": "🤖" }
+          { "name": "Python", "icon": "SiPython", "desc": "Ngôn ngữ chính cho khoa học dữ liệu, AI & scripting" },
+          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Xử lý ảnh, trích xuất khung hình & phân tích trực quan" },
+          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Phát hiện đối tượng & pose thời gian thực độ chính xác cao" },
+          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Ứng dụng CV cho phát hiện bất thường & phân tích người" }
+        ]
+      },
+      {
+        "name": "Ngôn Ngữ",
+        "icon": "Languages",
+        "skills": [
+          { "name": "Tiếng Việt", "icon": "VN", "desc": "Tiếng mẹ đẻ • Giao tiếp thành thạo trong môi trường chuyên nghiệp" },
+          { "name": "Tiếng Anh", "icon": "US", "desc": "Trung cấp — Đang học • Chứng chỉ TOEIC 670/990" }
         ]
       }
     ]

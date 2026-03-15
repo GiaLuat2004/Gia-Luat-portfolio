@@ -83,7 +83,7 @@ export default function About() {
                 className="absolute -inset-1 rounded-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: 'linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan))' }}
               />
-              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-2xl overflow-hidden"
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden"
                 style={{ background: 'var(--surface-alt)' }}
               >
                 <Image
@@ -104,7 +104,7 @@ export default function About() {
             </div>
 
             {/* Available Badge */}
-            <div
+            {/* <div
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium"
               style={{
                 background: 'rgba(74,222,128,0.1)',
@@ -114,7 +114,7 @@ export default function About() {
             >
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               {t.about.available_badge}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Bio + Info Column */}
@@ -123,9 +123,6 @@ export default function About() {
             <motion.div variants={itemVariants} className="space-y-4">
               <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                 {t.about.bio}
-              </p>
-              <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                {t.about.bio2}
               </p>
             </motion.div>
 

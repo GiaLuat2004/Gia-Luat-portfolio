@@ -70,7 +70,7 @@ export default function Navbar() {
             <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
               GL
             </span>
-            <span className="gradient-text-2">Gia Luat</span>
+            <span className="gradient-text-2">Portfolio</span>
           </motion.button>
 
           {/* Desktop Nav */}

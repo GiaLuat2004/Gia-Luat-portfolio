@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Mail, Download, ChevronRight } from 'lucide-react'
+import { ArrowDown, Github, Mail, Download, Facebook } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
   },
 }
 
@@ -25,6 +25,7 @@ function useTypewriter(words: string[], speed = 80, pause = 1800) {
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
+    if (!words || words.length === 0) return;
     const current = words[wordIndex]
     const timeout = setTimeout(() => {
       if (!deleting) {
@@ -53,177 +54,121 @@ function useTypewriter(words: string[], speed = 80, pause = 1800) {
 
 export default function Hero() {
   const { t } = useLanguage()
-  const typedText = useTypewriter(t.hero.roles, 75)
-
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const typedText = useTypewriter(t.hero.roles || ['Web Developer', 'UI/UX Designer'], 75)
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300"
     >
-      {/* Animated Mesh Background */}
-      <div className="mesh-bg">
-        <div className="mesh-orb mesh-orb-1" />
-        <div className="mesh-orb mesh-orb-2" />
-        <div className="mesh-orb mesh-orb-3" />
-        {/* Grid Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
-
-      <div className="section-container relative z-10 pt-24 pb-16">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-center text-center lg:items-start lg:text-left max-w-4xl"
-        >
-          {/* Status Badge */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-              style={{
-                background: 'rgba(99,102,241,0.1)',
-                border: '1px solid rgba(99,102,241,0.3)',
-                color: 'var(--accent-indigo)',
-              }}
-            >
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              {t.about.available_badge}
-            </span>
-          </motion.div>
-
-          {/* Greeting */}
-          <motion.p
-            variants={itemVariants}
-            className="text-xl md:text-2xl mb-2 font-medium"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {t.hero.greeting}
-          </motion.p>
-
-          {/* Name */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-6xl md:text-7xl lg:text-8xl font-bold font-heading mb-4 leading-tight"
-          >
-            <span className="gradient-text">{t.hero.name}</span>
-          </motion.h1>
-
-          {/* Typewriter Role */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 pt-24 lg:pt-16 pb-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-20 lg:mt-0">
+        
+          {/* LEFT COLUMN: Content */}
           <motion.div
-            variants={itemVariants}
-            className="flex items-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 h-12"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1"
           >
-            <span style={{ color: 'var(--text-muted)' }}>&lt;</span>
-            <span className="gradient-text-2">{typedText}</span>
-            <span
-              className="w-0.5 h-8 animate-pulse rounded-full"
-              style={{ background: 'var(--accent-indigo)' }}
-            />
-            <span style={{ color: 'var(--text-muted)' }}>/&gt;</span>
-          </motion.div>
+            {/* Main Heading */}
+            <motion.div variants={itemVariants} className="mb-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold font-heading uppercase tracking-tight leading-[1.1]">
+                <span className="block text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                  {t.hero.greeting}
+                </span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#8b5cf6]">
+                  {t.hero.name}
+                </span>
+              </h1>
+            </motion.div>
 
-          {/* Tagline */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl max-w-2xl mb-12 leading-relaxed"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {t.hero.tagline}
-          </motion.p>
+            {/* Typewriter Role */}
+            <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-2 text-lg sm:text-xl md:text-2xl font-medium mb-6 h-8 text-gray-700 dark:text-gray-300 transition-colors duration-300">
+              <span className="text-indigo-500 dark:text-indigo-400">&lt;</span>
+              <span>{typedText}</span>
+              <span className="w-0.5 h-5 sm:h-6 animate-pulse bg-indigo-500 rounded-full" />
+              <span className="text-indigo-500 dark:text-indigo-400">/&gt;</span>
+            </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-12 justify-center lg:justify-start">
-            <motion.button
-              onClick={scrollToProjects}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="btn-primary"
+            {/* Description / Tagline */}
+            <motion.p
+              variants={itemVariants}
+              className="text-sm sm:text-base md:text-lg max-w-xl mb-10 leading-relaxed text-gray-600 dark:text-gray-400 transition-colors duration-300"
             >
-              {t.hero.cta_primary}
-              <ChevronRight className="w-5 h-5" />
-            </motion.button>
+              {t.hero.tagline || "I've earned the trust of over 250 clients and 40 brands, all of whom are very satisfied with my service!"}
+            </motion.p>
 
-            <motion.button
-              onClick={scrollToContact}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="btn-secondary"
-            >
-              <Mail className="w-5 h-5" />
-              {t.hero.cta_contact}
-            </motion.button>
-
+            {/* CTA & Socials Container */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start">
+              
             <motion.a
               href="CV-CAO-BAO-GIA-LUAT-WEB-INTERN.pdf"
               download
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="btn-secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center gap-2 bg-[#6366f1] hover:bg-[#5558e6] text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-2xl font-semibold transition-all shadow-lg shadow-indigo-500/30 w-fit text-sm sm:text-base"
             >
               <Download className="w-5 h-5" />
-              {t.hero.cta_secondary}
-            </motion.a>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div variants={itemVariants} className="flex items-center gap-4">
-            <motion.a
-              href="https://github.com/GiaLuat2004"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.08, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-base font-semibold transition-all duration-200"
-              style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-muted)',
-              }}
-            >
-              <Github className="w-5 h-5" />
-              GitHub
+              <span>DOWNLOAD CV</span>
             </motion.a>
 
-            <motion.a
-              href="mailto:gialuat2004vk@gmail.com"
-              whileHover={{ scale: 1.08, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-base font-semibold transition-all duration-200"
-              style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-muted)',
-              }}
-            >
-              <Mail className="w-5 h-5" />
-              Email
-            </motion.a>
+              <div className="flex items-center gap-3">
+                <motion.a
+                  href="https://github.com/GiaLuat2004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="p-3.5 bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-2xl hover:bg-gray-300 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <Github className="w-5 h-5" />
+                </motion.a>
+                <motion.a
+                  href="mailto:gialuat2004vk@gmail.com"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="p-3.5 bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-2xl hover:bg-gray-300 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <Mail className="w-5 h-5" />
+                </motion.a>
+                <motion.a
+                  href="https://www.facebook.com/luat.gia.7758/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="p-3.5 bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-2xl hover:bg-gray-300 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <Facebook className="w-5 h-5" />
+                </motion.a>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* RIGHT COLUMN: Horizontal Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+            className="order-1 lg:order-2 flex justify-center items-center w-full relative"
+          >
+            <div className="absolute w-[80%] h-[60%] bg-indigo-500/20 blur-[100px] rounded-full z-0 hidden dark:block" />
+            
+            <img
+              src="/images/me/portrait.png" 
+              alt="Profile Portrait"
+              className="relative z-10 w-auto h-auto max-w-full max-h-[500px] lg:max-h-[500px] rounded-2xl drop-shadow-2xl mx-auto"
+            />
+          </motion.div>
+
+        </div>
       </div>
 
-      {/* Scroll Hint */}
+      {/* Scroll Hint (Ẩn trên mobile vì mất không gian) */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ color: 'var(--text-subtle)' }}
+        transition={{ delay: 1.5 }}
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-gray-400 dark:text-gray-500 transition-colors duration-300"
       >
-        <span className="text-sm tracking-widest uppercase font-medium">{t.hero.scroll_hint}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}

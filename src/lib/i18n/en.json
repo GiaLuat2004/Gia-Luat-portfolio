@@ -24,7 +24,6 @@
     "title": "About Me",
     "subtitle": "A passionate developer crafting impactful digital experiences",
     "bio": "I'm a final-year Information Technology student at the University of Transport Ho Chi Minh City with a solid foundation in Data Structures, Algorithms, and Object-Oriented Programming. I specialize in the React/Next.js and Node.js ecosystems, and I'm passionate about building clean, high-performance, maintainable software systems.",
-    "bio2": "Currently seeking a Full-stack Intern position to sharpen my Clean Code skills, apply best practices in real-world scenarios, and explore AI integration into products. My long-term goal is to grow into a professional Software Engineer who delivers sustainable value to businesses.",
     "info": {
       "dob": "Aug 25, 2004",
       "location": "Tan Binh, Ho Chi Minh City",
@@ -51,49 +50,63 @@
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
-          { "name": "TypeScript", "icon": "⚡" },
-          { "name": "JavaScript ES6+", "icon": "🟨" },
-          { "name": "React.js", "icon": "⚛️" },
-          { "name": "Next.js", "icon": "▲" },
-          { "name": "TailwindCSS", "icon": "🌊" },
-          { "name": "Framer Motion", "icon": "🎭" },
-          { "name": "Redux", "icon": "🔮" },
-          { "name": "ShadcnUI", "icon": "🎨" }
+          { "name": "TypeScript", "icon": "SiTypescript", "desc": "Strongly typed JS — safer, more scalable codebases" },
+          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "Modern JS with async/await, modules & destructuring" },
+          { "name": "React.js", "icon": "SiReact", "desc": "Component-based UI with hooks, context & performance" },
+          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "SSR/SSG, App Router, API routes & edge deployment" },
+          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Utility-first styling with rapid, consistent design" },
+          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Declarative animations and smooth micro-interactions" },
+          { "name": "Redux", "icon": "SiRedux", "desc": "Predictable state management for complex apps" },
+          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "Accessible, themeable UI components built on Radix" }
         ]
       },
       {
         "name": "Backend",
         "icon": "Server",
         "skills": [
-          { "name": "Node.js", "icon": "🟢" },
-          { "name": "Express.js", "icon": "🚀" },
-          { "name": "FastAPI", "icon": "⚡" },
-          { "name": "RESTful API", "icon": "🔗" },
-          { "name": "WebSocket", "icon": "🔄" },
-          { "name": "JWT & RBAC", "icon": "🔐" },
-          { "name": "Microservices", "icon": "🏗️" }
+          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Event-driven JS runtime for scalable server-side apps" },
+          { "name": "Express.js", "icon": "SiExpress", "desc": "Minimal, flexible REST API framework for Node.js" },
+          { "name": "FastAPI", "icon": "SiFastapi", "desc": "High-performance Python API with auto validation & docs" },
+          { "name": "RESTful API", "icon": "TbApi", "desc": "Standard HTTP API design with clean resource patterns" },
+          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Real-time bidirectional communication for live features" },
+          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Secure auth with token-based identity & role control" },
+          { "name": "Microservices", "icon": "TbServerCog", "desc": "Decoupled services for scalability and maintainability" }
         ]
       },
       {
-        "name": "Database & Cloud",
+        "name": "Database",
         "icon": "Database",
         "skills": [
-          { "name": "PostgreSQL", "icon": "🐘" },
-          { "name": "MySQL", "icon": "🗄️" },
-          { "name": "Docker", "icon": "🐳" },
-          { "name": "Git / GitHub", "icon": "🐙" },
-          { "name": "Google Cloud", "icon": "☁️" },
-          { "name": "Vercel", "icon": "▲" }
+          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "Advanced relational DB with JSONB, indexes & ACID" },
+          { "name": "MySQL", "icon": "SiMysql", "desc": "Reliable RDBMS for structured relational data" }
+        ]
+      },
+      {
+        "name": "DevOps & Cloud",
+        "icon": "Cloud",
+        "skills": [
+          { "name": "Docker", "icon": "SiDocker", "desc": "Container-based deployment for consistent environments" },
+          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Version control, branching, PRs & collaborative workflow" },
+          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Cloud infra — GCS, Cloud Run & Compute Engine" },
+          { "name": "Vercel", "icon": "SiVercel", "desc": "Zero-config frontend deployment with CI/CD & edge" }
         ]
       },
       {
         "name": "AI & Computer Vision",
         "icon": "Cpu",
         "skills": [
-          { "name": "Python", "icon": "🐍" },
-          { "name": "OpenCV", "icon": "👁️" },
-          { "name": "YOLOv8", "icon": "🎯" },
-          { "name": "Computer Vision", "icon": "🤖" }
+          { "name": "Python", "icon": "SiPython", "desc": "Primary language for data science, AI & scripting" },
+          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Image processing, frame extraction & visual analysis" },
+          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Real-time object & pose detection with SOTA accuracy" },
+          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Applied CV for anomaly detection & human analysis" }
+        ]
+      },
+      {
+        "name": "Languages",
+        "icon": "Languages",
+        "skills": [
+          { "name": "Vietnamese", "icon": "VN", "desc": "Native • Mother tongue — fluent in all professional contexts" },
+          { "name": "English", "icon": "US", "desc": "Intermediate — Learning • TOEIC 670/990" }
         ]
       }
     ]
