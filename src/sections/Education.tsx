@@ -66,12 +66,14 @@ export default function Education() {
         >
           <motion.div
             variants={itemVariants}
-            className="glass-card rounded-3xl overflow-hidden relative"
+            whileHover={{ y: -4 }}
+            className="glass-card rounded-3xl overflow-hidden relative group backdrop-blur-xl transition-all duration-500"
             style={{
-              background: 'linear-gradient(135deg, rgba(6,182,212,0.07) 0%, rgba(99,102,241,0.05) 100%)',
+              background: 'linear-gradient(135deg, rgba(6,182,212,0.05) 0%, rgba(99,102,241,0.05) 100%)',
               border: '1px solid rgba(6,182,212,0.2)',
             }}
           >
+            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 dark:group-hover:bg-white/5 transition-colors duration-500 pointer-events-none" />
             {/* Decorative top-left accent */}
             <div
               className="absolute top-0 left-0 w-48 h-48 rounded-br-full opacity-[0.08] pointer-events-none"
@@ -131,7 +133,7 @@ export default function Education() {
                   {/* GPA highlight */}
                   <div className="flex items-center gap-4 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.07)', border: '1px solid rgba(99,102,241,0.15)' }}>
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500"
                       style={{ background: 'rgba(99,102,241,0.12)' }}
                     >
                       <BookOpen className="w-5 h-5" style={{ color: 'var(--accent-indigo)' }} />

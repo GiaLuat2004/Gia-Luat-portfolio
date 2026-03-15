@@ -131,8 +131,11 @@ export default function Contact() {
           {/* Left – Contact Form */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <div
-              className="glass-card rounded-2xl p-6 md:p-8 relative overflow-hidden"
-              style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(6,182,212,0.03))' }}
+              className="glass-card rounded-2xl p-6 md:p-8 relative overflow-hidden backdrop-blur-xl group hover:shadow-2xl transition-all duration-500"
+              style={{ 
+                background: 'linear-gradient(135deg, rgba(99,102,241,0.06) 0%, rgba(6,182,212,0.03) 100%)',
+                border: '1px solid var(--border-alt)'
+              }}
             >
               {/* Decorative */}
               <div

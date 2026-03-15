@@ -78,10 +78,10 @@ export default function Certifications() {
                 {certs.map((cert: any, idx: number) => (
                   <div 
                     key={idx} 
-                    className="relative aspect-[4/3] w-full shrink-0 snap-center rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-xl"
+                    className="relative aspect-[4/3] w-full shrink-0 snap-center rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-xl backdrop-blur-md"
                   >
                     <div className="relative w-full h-full p-4 flex items-center justify-center">
-                      <div className="w-full h-full rounded-xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5">
+                      <div className="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5">
                         <div className="text-8xl mb-4">{cert.icon}</div>
                         <div className="text-center px-6 z-10">
                            <h4 className="text-xl font-bold mb-3">{cert.name}</h4>
@@ -126,14 +126,14 @@ export default function Certifications() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIdx}
-                  initial={{ opacity: 0, filter: 'blur(10px)' }}
-                  animate={{ opacity: 1, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, filter: 'blur(10px)' }}
+                  initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }}
+                  animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+                  exit={{ opacity: 0, filter: 'blur(10px)', scale: 1.05 }}
                   transition={{ duration: 0.4 }}
                   className="relative w-full h-full p-4 flex items-center justify-center"
                 >
                   {/* Nếu bạn có ảnh thật, hãy dùng <Image />. Ở đây mình dùng Placeholder nghệ thuật */}
-                  <div className="w-full h-full rounded-xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5">
+                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5 shadow-inner">
                     <div className="text-8xl mb-4">{certs[activeIdx].icon}</div>
                     <div className="text-center px-8">
                        <h4 className="text-xl font-bold mb-2">{certs[activeIdx].name}</h4>
@@ -167,16 +167,16 @@ export default function Certifications() {
                     key={idx}
                     variants={itemVariants}
                     onClick={() => setActiveIdx(idx)}
-                    className={`group relative cursor-pointer p-5 rounded-2xl transition-all duration-300 border ${
+                    className={`group relative cursor-pointer p-5 rounded-2xl transition-all duration-300 border backdrop-blur-sm ${
                       isActive 
-                        ? 'bg-surface border-indigo-500/50 shadow-lg shadow-indigo-500/5' 
-                        : 'bg-transparent border-border hover:border-muted'
+                        ? 'bg-surface border-indigo-500/50 shadow-lg shadow-indigo-500/10 dark:bg-black/20' 
+                        : 'bg-transparent border-transparent hover:border-indigo-500/20 hover:bg-indigo-500/5'
                     }`}
                   >
                     <div className="flex items-center gap-5">
                       {/* Small Icon Indicator */}
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-colors ${
-                        isActive ? 'bg-indigo-500/20' : 'bg-surface-alt group-hover:bg-surface'
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all duration-300 ${
+                        isActive ? 'bg-indigo-500/20 scale-110 shadow-inner' : 'bg-surface-alt group-hover:bg-indigo-500/10 group-hover:scale-105'
                       }`}>
                         {cert.icon}
                       </div>

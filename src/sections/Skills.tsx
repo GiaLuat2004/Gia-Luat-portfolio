@@ -77,9 +77,9 @@ function SpotlightCard({ skill, accent }: { skill: any, accent: string }) {
       onMouseLeave={() => setIsHovered(false)}
       className="relative overflow-hidden rounded-2xl p-5 border cursor-default group"
       style={{
-        background: 'var(--surface-light)',
+        background: 'var(--surface-alt)',
         borderColor: isHovered ? 'transparent' : 'var(--border)',
-        boxShadow: isHovered ? `0 10px 40px -10px ${accent}40` : 'none',
+        boxShadow: isHovered ? `0 12px 40px -10px ${accent}50` : 'none',
       }}
       whileHover={{ scale: 1.02, y: -2 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
@@ -89,7 +89,7 @@ function SpotlightCard({ skill, accent }: { skill: any, accent: string }) {
         className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${accent}15, transparent 60%)`,
+          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${accent}25, transparent 60%)`,
         }}
       />
       
@@ -210,7 +210,7 @@ export default function Skills() {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
-            className="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 rounded-3xl p-2.5 border shadow-sm relative z-10 hide-scrollbar w-max lg:w-full mx-auto lg:mx-0"
+            className="flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 rounded-3xl p-2.5 border shadow-sm relative z-10 scrollbar-hide w-full max-w-full touch-pan-x"
             style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
           >
             {t.skills.categories.map((category, idx) => {
@@ -218,16 +218,16 @@ export default function Skills() {
               const isActive = activeTab === idx
               const accent = tabAccents[idx]
               return (
-                <motion.button
-                  key={category.name}
-                  onClick={() => setActiveTab(idx)}
-                  whileHover={{ x: isActive ? 0 : 4 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="relative flex items-center justify-center gap-3 px-3 py-3 lg:py-3.5 2xl:py-4 rounded-2xl text-sm font-semibold transition-colors duration-200 text-left flex-shrink-0 lg:w-full overflow-hidden group"
-                  style={{
-                    color: isActive ? accent : 'var(--text-muted)',
-                  }}
-                >
+                  <motion.button
+                    key={category.name}
+                    onClick={() => setActiveTab(idx)}
+                    whileHover={{ x: isActive ? 0 : 4 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="relative flex items-center justify-center gap-3 px-3 py-3 lg:py-3.5 2xl:py-4 rounded-2xl text-sm font-semibold transition-colors duration-200 text-left flex-shrink-0 min-w-[120px] lg:min-w-0 lg:w-full overflow-hidden group"
+                    style={{
+                      color: isActive ? accent : 'var(--text-muted)',
+                    }}
+                  >
                   {/* Active Background Fill */}
                   {isActive && (
                     <motion.div

@@ -78,9 +78,9 @@ export default function About() {
           {/* Photo Column */}
           <motion.div variants={itemVariants} className="lg:col-span-2 flex flex-col items-center lg:items-start gap-6">
             {/* Avatar */}
-            <div className="relative group">
+            <div className="relative group p-2">
               <div
-                className="absolute -inset-1 rounded-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 blur-[2px]"
                 style={{ background: 'linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan))' }}
               />
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden"
@@ -146,7 +146,8 @@ export default function About() {
                   <motion.div
                     key={key}
                     variants={itemVariants}
-                    className="glass-card rounded-xl p-4 flex items-start gap-3 group transition-all duration-200"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    className="glass-card rounded-xl p-4 flex items-start gap-3 group transition-all duration-300 hover:shadow-lg"
                   >
                     <div
                       className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"

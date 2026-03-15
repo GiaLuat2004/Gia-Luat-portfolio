@@ -152,11 +152,11 @@ export default function Projects() {
                   {/* Card */}
                   <div className={`timeline-card ${isLeft ? 'timeline-card-left' : 'timeline-card-right'}`}>
                     <motion.article
-                      whileHover={{ y: -4, transition: { duration: 0.25 } }}
-                      className="glass-card rounded-2xl overflow-hidden group flex flex-col"
-                      style={{ transition: 'box-shadow 0.3s ease, border-color 0.3s ease' }}
+                      whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                      className="glass-card rounded-2xl overflow-hidden group flex flex-col relative z-20 backdrop-blur-xl bg-white/40 dark:bg-[#0a0a0f]/60"
+                      style={{ transition: 'all 0.4s ease' }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 48px ${accent}33`
+                        (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 40px ${accent}25`
                         ;(e.currentTarget as HTMLElement).style.borderColor = `${accent}66`
                       }}
                       onMouseLeave={(e) => {
@@ -166,27 +166,27 @@ export default function Projects() {
                     >
                       {/* Thumbnail */}
                       <div
-                        className="relative h-52 overflow-hidden"
+                        className="relative h-56 md:h-64 overflow-hidden"
                         style={{ background: 'var(--surface-alt)' }}
                       >
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover group-hover:scale-110 blur-[1px] group-hover:blur-0 transition-all duration-700 ease-out"
                           unoptimized
                           onError={() => {}}
                         />
                         <div
-                          className="absolute inset-0 flex flex-col items-center justify-center"
-                          style={{ background: `linear-gradient(135deg, ${accent}22, ${accent}08)` }}
+                          className="absolute inset-0 flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-500"
+                          style={{ background: `linear-gradient(135deg, ${accent}33, ${accent}11)` }}
                         >
-                          <span className="text-5xl mb-2">{thumbnailFallbacks[idx]?.emoji}</span>
-                          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: accent }}>
-                            {thumbnailFallbacks[idx]?.label}
+                          <span className="text-6xl mb-3 drop-shadow-lg">{thumbnailFallbacks[idx % thumbnailFallbacks.length]?.emoji}</span>
+                          <span className="text-sm font-black tracking-[0.2em] uppercase drop-shadow-md" style={{ color: accent }}>
+                            {thumbnailFallbacks[idx % thumbnailFallbacks.length]?.label}
                           </span>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface)] via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface)] via-transparent to-transparent opacity-90" />
                       </div>
 
                       {/* Content */}
