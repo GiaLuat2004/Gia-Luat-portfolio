@@ -179,8 +179,10 @@
     ]
   },
   "education": {
-    "title": "Học Vấn & Chứng Chỉ",
-    "subtitle": "Nền tảng học thuật và bằng cấp chuyên môn",
+    "education_title": "Học Vấn",
+    "education_subtitle": "Hành trình học vấn và nền tảng kiến thức",
+    "certifications_title": "Chứng Chỉ",
+    "certifications_subtitle": "Các bằng cấp và chứng chỉ kỹ năng chuyên môn",
     "degree_label": "Chuyên ngành",
     "gpa_label": "GPA",
     "education": {
@@ -190,7 +192,6 @@
       "period": "2022 – 2026",
       "gpa": "3.49 / 4.0"
     },
-    "certifications_title": "Chứng Chỉ",
     "certifications": [
       {
         "name": "TOEIC Listening & Reading",
@@ -212,10 +213,10 @@
     ]
   },
   "goals": {
-    "title": "Mục Tiêu & Sở Thích",
-    "subtitle": "Hướng đi của tôi và những điều thúc đẩy tôi tiến về phía trước",
     "goals_title": "Mục Tiêu Sự Nghiệp",
+    "goals_subtitle": "Định hướng phát triển và khát vọng vươn xa",
     "interests_title": "Sở Thích & Đam Mê",
+    "interests_subtitle": "Những hoạt động nuôi dưỡng tinh thần và sáng tạo",
     "goals_items": [
       {
         "icon": "🎯",

@@ -75,13 +75,13 @@ export default function Goals() {
             }}
           >
             <Target className="w-3.5 h-3.5" />
-            {t.goals.goals_title}
+            {t.nav.goals}
           </motion.div>
           <motion.h2 variants={itemVariants} className="section-title mb-4">
-            {t.goals.title}
+            {t.goals.goals_title}
           </motion.h2>
           <motion.p variants={itemVariants} className="section-subtitle max-w-2xl mx-auto">
-            {t.goals.subtitle}
+            {t.goals.goals_subtitle}
           </motion.p>
         </motion.div>
 

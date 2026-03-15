@@ -179,8 +179,10 @@
     ]
   },
   "education": {
-    "title": "Education & Certifications",
-    "subtitle": "Academic background and professional credentials",
+    "education_title": "Education",
+    "education_subtitle": "My academic journey and foundation",
+    "certifications_title": "Certifications",
+    "certifications_subtitle": "Professional credentials and achievements",
     "degree_label": "Major",
     "gpa_label": "GPA",
     "education": {
@@ -190,7 +192,6 @@
       "period": "2022 – 2026",
       "gpa": "3.49 / 4.0"
     },
-    "certifications_title": "Certifications",
     "certifications": [
       {
         "name": "TOEIC Listening & Reading",
@@ -212,10 +213,10 @@
     ]
   },
   "goals": {
-    "title": "Goals & Interests",
-    "subtitle": "Where I'm heading and what drives me forward",
     "goals_title": "Career Goals",
+    "goals_subtitle": "My professional aspirations and vision",
     "interests_title": "Interests & Hobbies",
+    "interests_subtitle": "Activities that spark my creativity and joy",
     "goals_items": [
       {
         "icon": "🎯",

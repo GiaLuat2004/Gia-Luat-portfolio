@@ -30,15 +30,98 @@ export default function Certifications() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(129,140,248,0.03)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="section-container relative z-10" ref={ref}>
+        {/* Section Header */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-center mb-14"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 mb-4 text-sm font-medium px-4 py-2 rounded-full"
+            style={{
+              background: 'rgba(99,102,241,0.08)',
+              border: '1px solid rgba(99,102,241,0.2)',
+              color: 'var(--accent-indigo)',
+            }}
+          >
+            <Award className="w-3.5 h-3.5" />
+            {t.nav.certifications}
+          </motion.div>
+          <motion.h2 variants={itemVariants} className="section-title mb-4">
+            {t.education.certifications_title}
+          </motion.h2>
+          <motion.p variants={itemVariants} className="section-subtitle max-w-2xl mx-auto">
+            {t.education.certifications_subtitle}
+          </motion.p>
+        </motion.div>
+
         <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
           
           {/* LEFT COLUMN: Visual Preview */}
-          <div className="w-full md:w-1/2 sticky top-24">
+          <div className="w-full md:w-1/2 md:sticky md:top-24">
+            
+            {/* Mobile View: Slide Window (Carousel) */}
+            <div className="block md:hidden mb-8">
+              <div 
+                className="flex w-full overflow-x-auto snap-x snap-mandatory gap-4 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                onScroll={(e) => {
+                  const container = e.currentTarget;
+                  const scrollLeft = container.scrollLeft;
+                  const itemWidth = container.clientWidth;
+                  const gap = 16; // gap-4 equivalent in px
+                  const newIdx = Math.round(scrollLeft / (itemWidth + gap));
+                  if (newIdx !== activeIdx) setActiveIdx(newIdx);
+                }}
+              >
+                {certs.map((cert: any, idx: number) => (
+                  <div 
+                    key={idx} 
+                    className="relative aspect-[4/3] w-full shrink-0 snap-center rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-xl"
+                  >
+                    <div className="relative w-full h-full p-4 flex items-center justify-center">
+                      <div className="w-full h-full rounded-xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5">
+                        <div className="text-8xl mb-4">{cert.icon}</div>
+                        <div className="text-center px-6 z-10">
+                           <h4 className="text-xl font-bold mb-3">{cert.name}</h4>
+                           <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-muted font-medium">
+                             <span className="flex items-center gap-1.5 opacity-80">
+                               <Calendar className="w-4 h-4" />
+                               {cert.date}
+                             </span>
+                             <span className="w-1.5 h-1.5 rounded-full bg-border" />
+                             <span className="opacity-90">{cert.issuer}</span>
+                           </div>
+                        </div>
+                      </div>
+                      
+                      {/* Verified Watermark Overlay */}
+                      <div className="absolute bottom-6 right-6 rotate-12 opacity-20 pointer-events-none">
+                         <CheckCircle2 className="w-24 h-24 text-indigo-500" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Pagination Dots */}
+              <div className="flex justify-center gap-2 mt-4">
+                {certs.map((_: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className={`h-2 rounded-full transition-all duration-300 ${activeIdx === idx ? 'w-6 bg-indigo-500' : 'w-2 bg-border'}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop View: Single Interactive Preview */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8 }}
-              className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-2xl"
+              className="hidden md:block relative aspect-[4/3] rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-2xl"
             >
               <AnimatePresence mode="wait">
                 <motion.div
@@ -66,37 +149,16 @@ export default function Certifications() {
               </AnimatePresence>
             </motion.div>
 
-            {/* Stats Row under image */}
-            <div className="grid grid-cols-3 gap-4 mt-8">
-               <div className="p-4 rounded-2xl bg-surface/50 border border-border text-center">
-                  <p className="text-2xl font-bold">{certs.length}</p>
-                  <p className="text-[10px] uppercase tracking-wider text-muted">Total</p>
-               </div>
-               <div className="p-4 rounded-2xl bg-surface/50 border border-border text-center">
-                  <p className="text-2xl font-bold">3+</p>
-                  <p className="text-[10px] uppercase tracking-wider text-muted">Platforms</p>
-               </div>
-               <div className="p-4 rounded-2xl bg-surface/50 border border-border text-center">
-                  <p className="text-2xl font-bold">2025</p>
-                  <p className="text-[10px] uppercase tracking-wider text-muted">Latest</p>
-               </div>
-            </div>
           </div>
 
           {/* RIGHT COLUMN: List */}
-          <div className="w-full md:w-1/2">
+          <div className="hidden md:block w-full md:w-1/2">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               className="space-y-4"
             >
-              <div className="mb-10">
-                <h2 className="text-3xl font-bold mb-4 tracking-tight">
-                  {t.education.certifications_title}
-                </h2>
-                <div className="h-1 w-20 bg-indigo-500 rounded-full" />
-              </div>
 
               {certs.map((cert: any, idx: number) => {
                 const isActive = activeIdx === idx

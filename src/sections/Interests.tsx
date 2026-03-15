@@ -83,7 +83,7 @@ export default function Interests() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
           <motion.div
             variants={itemVariants}
@@ -95,11 +95,14 @@ export default function Interests() {
             }}
           >
             <Heart className="w-3.5 h-3.5" />
-            {t.goals.interests_title}
+            Sở Thích
           </motion.div>
           <motion.h2 variants={itemVariants} className="section-title mb-4">
             {t.goals.interests_title}
           </motion.h2>
+          <motion.p variants={itemVariants} className="section-subtitle max-w-2xl mx-auto">
+            {t.goals.interests_subtitle}
+          </motion.p>
         </motion.div>
 
         {/* Square Image Cards Grid */}

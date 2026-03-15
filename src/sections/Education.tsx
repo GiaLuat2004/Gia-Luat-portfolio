@@ -50,10 +50,10 @@ export default function Education() {
             {t.nav.education}
           </motion.div>
           <motion.h2 variants={itemVariants} className="section-title mb-4">
-            {t.education.title}
+            {t.education.education_title}
           </motion.h2>
           <motion.p variants={itemVariants} className="section-subtitle max-w-xl mx-auto">
-            {t.education.subtitle}
+            {t.education.education_subtitle}
           </motion.p>
         </motion.div>
 
