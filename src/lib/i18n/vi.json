@@ -12,112 +12,118 @@
   "hero": {
     "greeting": "Xin chào, tôi là",
     "name": "Cao Bảo Gia Luật",
-    "title": "Fullstack Developer Intern",
-    "roles": ["Fullstack Developer", "React / Next.js Engineer", "Backend API Builder", "Lập trình viên Clean Code"],
-    "tagline": "Biến những bài toán phức tạp thành phần mềm hiệu suất cao, thanh lịch.",
+    "title": "Fullstack Developer",
+    "roles": [
+      "Fullstack Developer",
+      "Phát triển giao diện với React/Next.js",
+      "Xây dựng Backend API",
+      "Khám phá DevOps, Cloud & AI"
+    ],
+    "tagline": "Biến ý tưởng thành các giải pháp phần mềm thực tế. Phát triển các hệ thống phần mềm mang lại giá trị cho người dùng và doanh nghiệp",
     "cta_primary": "Xem Dự Án",
     "cta_secondary": "Tải CV",
     "cta_contact": "Liên Hệ",
-    "scroll_hint": "Cuộn để khám phá"
+    "scroll_hint": "Khám phá thêm"
   },
   "about": {
     "title": "Về Tôi",
-    "subtitle": "Lập trình viên đam mê xây dựng những trải nghiệm số có tác động",
-    "bio": "Tôi là sinh viên năm cuối chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM, với nền tảng vững chắc về Cấu trúc dữ liệu, Giải thuật và tư duy lập trình hướng đối tượng. Tôi chuyên về hệ sinh thái React/Next.js và Node.js, và đam mê xây dựng các hệ thống phần mềm sạch, hiệu suất cao, dễ bảo trì.",
+    "subtitle": "WEB DEVELOPER",
+    "bio": "Tôi là sinh viên năm cuối chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH). Với nền tảng kiến thức tốt về lập trình web đã được trau dồi và tích lũy trong quá trình học tập, tôi tập trung phát triển kỹ năng xoay quanh hệ sinh thái React/Next.js và Node.js. Mục tiêu của tôi là không ngừng học hỏi và cải thiện bản thân để có thể tạo ra những sản phẩm tốt nhất cho người dùng và mang lại giá trị cho doanh nghiệp.",
     "info": {
       "dob": "25/08/2004",
       "location": "Tân Bình, TP. Hồ Chí Minh",
       "email": "gialuat2004vk@gmail.com",
       "github": "github.com/GiaLuat2004",
       "phone": "0325 428 387",
-      "status": "Sẵn sàng cho cơ hội thực tập"
+      "status": "Đang tìm kiếm cơ hội thực tập / làm việc"
     },
     "labels": {
       "dob": "Ngày sinh",
-      "location": "Địa chỉ",
+      "location": "Khu vực",
       "email": "Email",
       "github": "GitHub",
       "phone": "Điện thoại",
       "status": "Trạng thái"
     },
-    "available_badge": "Sẵn sàng nhận cơ hội"
+    "available_badge": "Sẵn sàng nhận việc"
   },
   "skills": {
     "title": "Kỹ Năng & Công Nghệ",
-    "subtitle": "Những công nghệ tôi sử dụng và không ngừng nâng cao",
+    "subtitle": "Các công cụ và bộ công nghệ tôi sử dụng để giải quyết bài toán thực tế.",
     "categories": [
       {
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
-          { "name": "TypeScript", "icon": "SiTypescript", "desc": "JS có kiểu tĩnh — code an toàn và dễ mở rộng hơn" },
-          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "JS hiện đại với async/await, modules & destructuring" },
-          { "name": "React.js", "icon": "SiReact", "desc": "UI dạng component với hooks, context & hiệu suất cao" },
-          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "SSR/SSG, App Router, API routes & triển khai edge" },
-          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Styling tiện ích đầu tiên, thiết kế nhanh và nhất quán" },
-          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Animation khai báo và micro-interaction mượt mà" },
-          { "name": "Redux", "icon": "SiRedux", "desc": "Quản lý state có thể đoán trước cho app phức tạp" },
-          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "UI components dễ truy cập, có thể tùy chỉnh theme" }
+          { "name": "TypeScript", "icon": "SiTypescript", "desc": "Bảo đảm an toàn kiểu dữ liệu và dễ dàng bảo trì dự án lớn." },
+          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "Thành thạo các tính năng hiện đại như async/await, modules." },
+          { "name": "React.js", "icon": "SiReact", "desc": "Xây dựng giao diện UI linh hoạt với Hooks và Context." },
+          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "Phát triển ứng dụng SSR/SSG, tối ưu SEO và hiệu suất." },
+          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Thiết kế giao diện nhanh chóng, có độ tùy biến cao." },
+          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Tạo các hiệu ứng chuyển động và tương tác mượt mà." },
+          { "name": "Redux", "icon": "SiRedux", "desc": "Quản lý state hiệu quả cho các ứng dụng quy mô lớn." },
+          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "Sử dụng và tinh chỉnh các UI components hiện đại." }
         ]
       },
       {
         "name": "Backend",
         "icon": "Server",
         "skills": [
-          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Runtime JS hướng sự kiện cho ứng dụng server mở rộng" },
-          { "name": "Express.js", "icon": "SiExpress", "desc": "Framework REST API tối giản và linh hoạt cho Node.js" },
-          { "name": "FastAPI", "icon": "SiFastapi", "desc": "Python API hiệu suất cao với validation & docs tự động" },
-          { "name": "RESTful API", "icon": "TbApi", "desc": "Thiết kế API HTTP chuẩn với các mẫu tài nguyên rõ ràng" },
-          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Giao tiếp 2 chiều thời gian thực cho tính năng live" },
-          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Xác thực bảo mật với token và kiểm soát quyền truy cập" },
-          { "name": "Microservices", "icon": "TbServerCog", "desc": "Service tách rời để dễ mở rộng và bảo trì" }
+          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Xây dựng nền tảng server-side mạnh mẽ, mở rộng tốt." },
+          { "name": "Express.js", "icon": "SiExpress", "desc": "Thiết kế và phát triển RESTful API linh hoạt." },
+          { "name": "FastAPI", "icon": "SiFastapi", "desc": "Xây dựng API Python hiệu suất cao, tự động hóa tài liệu." },
+          { "name": "RESTful API", "icon": "TbApi", "desc": "Thiết kế cấu trúc API chuẩn mực, dữ liệu rõ ràng." },
+          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Tích hợp giao tiếp thời gian thực (real-time) cho ứng dụng." },
+          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Triển khai xác thực và phân quyền người dùng bảo mật." },
+          { "name": "Microservices", "icon": "TbServerCog", "desc": "Hiểu kiến trúc dịch vụ phân tán để dễ bảo trì và mở rộng." }
         ]
       },
       {
         "name": "Database",
         "icon": "Database",
         "skills": [
-          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "DB quan hệ nâng cao với JSONB, chỉ mục & ACID" },
-          { "name": "MySQL", "icon": "SiMysql", "desc": "RDBMS đáng tin cậy cho dữ liệu quan hệ có cấu trúc" }
+          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "Quản trị CSDL quan hệ nâng cao, tối ưu index & ACID." },
+          { "name": "MySQL", "icon": "SiMysql", "desc": "Thiết kế và vận hành cơ sở dữ liệu có cấu trúc ổn định." },
+          { "name": "MongoDB", "icon": "SiMongodb", "desc": "Thiết kế và vận hành cơ sở dữ liệu NoSQL có cấu trúc linh hoạt." }
         ]
       },
       {
-        "name": "DevOps & Cloud",
+        "name": "DevOps & Cloud", 
         "icon": "Cloud",
         "skills": [
-          { "name": "Docker", "icon": "SiDocker", "desc": "Triển khai dạng container cho môi trường nhất quán" },
-          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Quản lý phiên bản, nhánh, PR & luồng cộng tác" },
-          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Hạ tầng cloud — GCS, Cloud Run & Compute Engine" },
-          { "name": "Vercel", "icon": "SiVercel", "desc": "Deploy frontend zero-config với CI/CD & edge network" }
+          { "name": "Docker", "icon": "SiDocker", "desc": "Đóng gói ứng dụng (containerization) để đồng nhất môi trường." },
+          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Quản lý mã nguồn, xử lý conflict và làm việc nhóm (PR)." },
+          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Triển khai dịch vụ với GCS, Cloud Run & Compute Engine." },
+          { "name": "Vercel", "icon": "SiVercel", "desc": "Triển khai Frontend nhanh chóng tích hợp CI/CD tự động." }
         ]
       },
       {
         "name": "AI & Thị Giác Máy Tính",
         "icon": "Cpu",
         "skills": [
-          { "name": "Python", "icon": "SiPython", "desc": "Ngôn ngữ chính cho khoa học dữ liệu, AI & scripting" },
-          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Xử lý ảnh, trích xuất khung hình & phân tích trực quan" },
-          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Phát hiện đối tượng & pose thời gian thực độ chính xác cao" },
-          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Ứng dụng CV cho phát hiện bất thường & phân tích người" }
+          { "name": "Python", "icon": "SiPython", "desc": "Ngôn ngữ cốt lõi ứng dụng trong xử lý dữ liệu và AI." },
+          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Xử lý hình ảnh, trích xuất dữ liệu từ luồng video." },
+          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Triển khai mô hình phát hiện đối tượng thời gian thực." },
+          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Tích hợp AI phân tích hành vi và phát hiện bất thường." }
         ]
       },
       {
-        "name": "Ngôn Ngữ",
+        "name": "Ngoại ngữ",
         "icon": "Languages",
         "skills": [
-          { "name": "Tiếng Việt", "icon": "VN", "desc": "Tiếng mẹ đẻ • Giao tiếp thành thạo trong môi trường chuyên nghiệp" },
-          { "name": "Tiếng Anh", "icon": "US", "desc": "Trung cấp — Đang học • Chứng chỉ TOEIC 670/990" }
+          { "name": "Tiếng Việt", "icon": "VN", "desc": "Tiếng mẹ đẻ • Giao tiếp rõ ràng, đọc hiểu tài liệu chuyên ngành." },
+          { "name": "Tiếng Anh", "icon": "US", "desc": "Trung cấp • Chứng chỉ TOEIC 670/990 • Tự tin đọc docs và research." }
         ]
       }
     ]
   },
   "projects": {
     "title": "Dự Án Nổi Bật",
-    "subtitle": "Hành trình qua các dự án tôi đã xây dựng — từ gần đây nhất đến xa nhất",
-    "view_github": "Xem trên GitHub",
+    "subtitle": "Những sản phẩm thực tế tôi đã tham gia thiết kế và phát triển.",
+    "view_github": "Mã nguồn (GitHub)",
     "live_demo": "Xem Demo",
-    "show_more": "Xem Chi Tiết",
-    "show_less": "Ẩn Chi Tiết",
+    "show_more": "Xem chi tiết",
+    "show_less": "Ẩn chi tiết",
     "items": [
       {
         "id": "anomaly",
@@ -127,16 +133,16 @@
         "period": "12/2025 – 02/2026",
         "date_start": "2025-12",
         "date_end": "2026-02",
-        "description": "Hệ thống AI giám sát thời gian thực ứng dụng Computer Vision để phát hiện hành vi bất thường (té ngã), hỗ trợ bảo vệ an toàn cho người già và trẻ em. Đạt độ chính xác 90%.",
+        "description": "Hệ thống AI giám sát thời gian thực ứng dụng Computer Vision để phát hiện hành vi bất thường (té ngã), hỗ trợ bảo vệ an toàn cho người già và trẻ em. Đạt độ chính xác lên đến 90%.",
         "highlights": [
-          "Thuật toán 4-path hybrid detection (tỷ lệ Bounding Box, góc độ và vận tốc)",
-          "Cơ chế Border Integrity Check loại bỏ nhiễu viền camera",
-          "Truyền phát video thời gian thực qua WebSocket với FastAPI",
-          "Đóng gói mô hình YOLOv8s-pose với bất đồng bộ RESTful APIs"
+          "Xây dựng thuật toán 4-path hybrid detection (đánh giá tỷ lệ Bounding Box, góc độ và vận tốc).",
+          "Phát triển cơ chế Border Integrity Check để loại bỏ nhiễu từ viền camera.",
+          "Thiết lập truyền phát video thời gian thực mượt mà qua WebSocket với FastAPI.",
+          "Đóng gói và cung cấp mô hình YOLOv8s-pose dưới dạng RESTful APIs bất đồng bộ."
         ],
         "tech": ["ReactJS", "Python", "FastAPI", "OpenCV", "YOLOv8s-pose", "WebSocket"],
         "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
-        "image": "/images/projects/anomaly.jpg"
+        "image": "/images/projects/fall-detection.png"
       },
       {
         "id": "jewelry",
@@ -146,47 +152,47 @@
         "period": "07/2025 – 09/2025",
         "date_start": "2025-07",
         "date_end": "2025-09",
-        "description": "Hệ thống tiếp nhận và quản lý thẩm định kim cương (chuẩn 4C GIA) dựa trên kiến trúc Microservices, đảm bảo khả năng mở rộng và bảo trì.",
+        "description": "Hệ thống tiếp nhận và quản lý quy trình thẩm định kim cương (theo chuẩn 4C GIA) ứng dụng kiến trúc Microservices, đảm bảo hệ thống vận hành trơn tru và dễ mở rộng.",
         "highlights": [
-          "Giao diện tra cứu định giá và Dashboard thống kê với Next.js",
-          "Appraisal Service độc lập với kiến trúc Microservice Express.js",
-          "Thiết kế schema PostgreSQL đảm bảo tính toàn vẹn dữ liệu",
-          "Container hóa toàn bộ service bằng Docker"
+          "Phát triển giao diện tra cứu định giá và Dashboard thống kê trực quan với Next.js.",
+          "Xây dựng Appraisal Service hoạt động độc lập bằng Express.js.",
+          "Thiết kế schema PostgreSQL tối ưu, đảm bảo tính toàn vẹn và tốc độ truy vấn dữ liệu.",
+          "Dockerize toàn bộ các services để thống nhất môi trường triển khai."
         ],
         "tech": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "RESTful API"],
         "github": "https://github.com/Jewelry-Sales-System",
-        "image": "/images/projects/jewelry.jpg"
+        "image": "/images/projects/jewelry.png"
       },
       {
         "id": "sevina",
-        "title": "SEVINA",
+        "title": "SEVINA - Nền tảng thuê xe",
         "role": "Frontend Developer",
         "team": "Nhóm: 4 người",
         "period": "03/2025 – 05/2025",
         "date_start": "2025-03",
         "date_end": "2025-05",
-        "description": "Nền tảng web hỗ trợ thuê xe tự lái, tích hợp định vị GPS, vehicle tracking và hỗ trợ tìm kiếm trạm xe gần nhất (trong bán kính 10-20km) dựa trên vị trí người dùng.",
+        "description": "Nền tảng web hỗ trợ thuê xe tự lái. Tích hợp bản đồ định vị, theo dõi xe và đề xuất các trạm xe gần nhất (bán kính 10-20km) dựa theo tọa độ người dùng.",
         "highlights": [
-          "UI/UX tương tác cao với ReactJS, Tailwind CSS và Framer Motion",
-          "Tích hợp sâu Goong Map API cho GPS và tìm kiếm trạm xe",
-          "Quản lý state phức tạp tập trung với Redux",
-          "Deploy trên Vercel với CI/CD pipeline tự động"
+          "Xây dựng UI/UX hiện đại, độ tương tác cao sử dụng ReactJS, Tailwind CSS và Framer Motion.",
+          "Tích hợp API Goong Map xử lý logic định vị và tính toán khoảng cách trạm xe.",
+          "Quản lý state hệ thống chặt chẽ với Redux.",
+          "Thiết lập CI/CD pipeline và deploy tự động lên Vercel."
         ],
         "tech": ["ReactJS", "TailwindCSS", "Framer Motion", "Redux", "ShadcnUI", "Goong Map API"],
         "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
-        "image": "/images/projects/sevina.jpg"
+        "image": "/images/projects/sevina.png"
       }
     ]
   },
   "education": {
     "education_title": "Học Vấn",
-    "education_subtitle": "Hành trình học vấn và nền tảng kiến thức",
+    "education_subtitle": "Nền tảng đào tạo và kiến thức chuyên môn.",
     "certifications_title": "Chứng Chỉ",
-    "certifications_subtitle": "Các bằng cấp và chứng chỉ kỹ năng chuyên môn",
+    "certifications_subtitle": "Các bằng cấp và chứng chỉ kỹ năng tôi đã đạt được.",
     "degree_label": "Chuyên ngành",
     "gpa_label": "GPA",
     "education": {
-      "school": "Đại học Giao thông Vận tải TP. Hồ Chí Minh",
+      "school": "Đại học Giao thông Vận tải TP. Hồ Chí Minh (UTH)",
       "degree": "Cử nhân Công nghệ Thông tin",
       "major": "Công Nghệ Thông Tin",
       "period": "2022 – 2026",
@@ -206,7 +212,7 @@
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
-        "issuer": "UDEMY",
+        "issuer": "Udemy",
         "date": "05/2025",
         "icon": "🟢"
       }
@@ -214,90 +220,80 @@
   },
   "goals": {
     "goals_title": "Mục Tiêu",
-    "goals_subtitle": "Định hướng phát triển và khát vọng vươn xa",
-    "interests_title": "Sở Thích & Đam Mê",
-    "interests_subtitle": "Những hoạt động nuôi dưỡng tinh thần và sáng tạo",
+    "goals_subtitle": "Định hướng phát triển bản thân trong sự nghiệp.",
+    "interests_title": "Sở Thích",
+    "interests_subtitle": "Cách tôi tái tạo năng lượng ngoài giờ làm việc.",
     "goals_items": [
       {
         "icon": "👨‍💻",
-        "title": "Kỹ Sư Phần Mềm",
-        "description": "Phát triển tư duy logic và kỹ năng lập trình chuyên sâu để trở thành một kỹ sư phần mềm xuất chúng, tạo ra những sản phẩm có giá trị thực tiễn cao."
+        "title": "Trở thành Software Engineer",
+        "description": "Không ngừng mài giũa tư duy logic và kỹ năng code để tạo ra những sản phẩm phần mềm chất lượng, giải quyết đúng nhu cầu thực tế."
       },
       {
         "icon": "🗣️",
-        "title": "Thành Thạo Ngoại Ngữ",
-        "description": "Làm chủ tiếng Anh và hướng tới các ngôn ngữ khác, phá bỏ rào cản giao tiếp để tự tin lĩnh hội tri thức công nghệ thế giới."
+        "title": "Nâng cấp Ngoại ngữ",
+        "description": "Trau dồi tiếng Anh giao tiếp chuyên ngành để tự tin làm việc, đọc tài liệu gốc và cập nhật công nghệ nhanh chóng từ thế giới."
       },
       {
         "icon": "🌍",
-        "title": "Môi Trường Toàn Cầu",
-        "description": "Mục tiêu làm việc trong môi trường đa quốc gia năng động, sẵn sàng hội nhập và cống hiến ở đẳng cấp chuyên nghiệp quốc tế."
+        "title": "Môi trường chuyên nghiệp",
+        "description": "Khát vọng gia nhập các tổ chức công nghệ năng động, nơi tôi có thể làm việc cùng những người giỏi và đóng góp giá trị của bản thân."
       }
     ],
     "interests_items": [
       {
         "icon": "💻",
-        "title": "Open Source",
-        "description": "Đóng góp và học hỏi từ cộng đồng mã nguồn mở. Chia sẻ kiến thức qua code."
-      },
-      {
-        "icon": "📚",
-        "title": "Học Hỏi Liên Tục",
-        "description": "Luôn khám phá công nghệ mới, đọc blog công nghệ và tham gia khóa học trực tuyến."
+        "title": "Cộng đồng IT",
+        "description": "Thích đọc blog công nghệ, theo dõi xu hướng mới và học hỏi mã nguồn mở từ các lập trình viên khác."
       },
       {
         "icon": "🎮",
-        "title": "Gaming & E-sports",
-        "description": "Yêu thích gaming cạnh tranh như cách rèn luyện tư duy chiến lược và kỹ năng teamwork."
+        "title": "E-sports",
+        "description": "Chơi các tựa game chiến thuật để giải trí cũng như rèn luyện kỹ năng ra quyết định và làm việc nhóm."
       },
       {
         "icon": "🏃",
-        "title": "Thể Dục & Sức Khỏe",
-        "description": "Duy trì lối sống cân bằng với tập luyện đều đặn, tin rằng cơ thể khỏe mạnh tạo nên tư duy hiệu quả."
+        "title": "Thể thao",
+        "description": "Duy trì tập luyện thể thao thường xuyên. Tôi tin rằng một cơ thể bền bỉ sẽ tạo ra một bộ não minh mẫn."
       },
       {
         "icon": "🎵",
-        "title": "Âm Nhạc",
-        "description": "Nghe đa dạng thể loại nhạc khi code. Âm nhạc nuôi dưỡng sáng tạo và giúp duy trì sự tập trung."
-      },
-      {
-        "icon": "✈️",
-        "title": "Du Lịch & Văn Hóa",
-        "description": "Khám phá những vùng đất và văn hóa mới, lấy cảm hứng và mở rộng tầm nhìn sáng tạo."
+        "title": "Âm nhạc",
+        "description": "Một playlist nhạc phù hợp luôn là chất xúc tác tuyệt vời giúp tôi giữ sự tập trung cao độ khi code."
       }
     ]
   },
   "contact": {
     "title": "Kết Nối Với Tôi",
-    "subtitle": "Sẵn sàng cho các cơ hội thực tập, hợp tác và cùng nhau tạo ra những điều tuyệt vời.",
-    "open_to": "Sẵn Sàng Nhận Cơ Hội",
+    "subtitle": "Tôi luôn cởi mở với các cơ hội thực tập, công việc mới và những dự án thú vị. Đừng ngần ngại để lại lời nhắn!",
+    "open_to": "Sẵn Sàng Nhận Việc",
     "email_label": "Email",
     "github_label": "GitHub",
     "phone_label": "Điện thoại",
-    "location_label": "Địa chỉ",
+    "location_label": "Khu vực",
     "email": "gialuat2004vk@gmail.com",
     "github": "https://github.com/GiaLuat2004",
     "phone": "0325 428 387",
     "location": "TP. Hồ Chí Minh, Việt Nam",
-    "message": "Hãy liên hệ nếu bạn muốn cùng xây dựng những điều thú vị!",
-    "form_name": "Họ và Tên",
+    "message": "Nếu bạn có một dự án cần người đồng hành, hãy trò chuyện cùng tôi nhé!",
+    "form_name": "Tên của bạn",
     "form_email": "Email của bạn",
     "form_subject": "Chủ đề",
     "form_message": "Nội dung tin nhắn",
     "form_send": "Gửi Tin Nhắn",
     "form_sending": "Đang gửi...",
-    "form_success": "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi sớm nhất.",
-    "form_title": "Gửi tin nhắn cho tôi",
-    "thank_you": "Cảm ơn bạn đã ghé thăm hồ sơ của tôi! Chúc bạn một ngày tốt lành."
+    "form_success": "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi bạn trong thời gian sớm nhất.",
+    "form_title": "Gửi tin nhắn trực tiếp",
+    "thank_you": "Cảm ơn bạn đã xem hồ sơ của tôi. Chúc bạn một ngày làm việc năng suất!"
   },
   "footer": {
-    "made_with": "Được tạo với",
+    "made_with": "Phát triển với",
     "by": "bởi",
-    "rights": "Tất cả quyền được bảo lưu."
+    "rights": "Bản quyền thuộc về Cao Bảo Gia Luật."
   },
   "theme": {
-    "toggle_dark": "Chuyển sang Chế độ Tối",
-    "toggle_light": "Chuyển sang Chế độ Sáng"
+    "toggle_dark": "Giao diện Tối",
+    "toggle_light": "Giao diện Sáng"
   },
   "lang": {
     "switch_to_vi": "Tiếng Việt",

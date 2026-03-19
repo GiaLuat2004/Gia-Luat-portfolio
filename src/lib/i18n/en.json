@@ -5,16 +5,21 @@
     "skills": "Skills",
     "projects": "Projects",
     "education": "Education",
-    "certifications": "Certs",
+    "certifications": "Certifications",
     "goals": "Goals",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Cao Bao Gia Luat",
-    "title": "Fullstack Developer Intern",
-    "roles": ["Fullstack Developer", "React / Next.js Engineer", "Backend API Builder", "Clean Code Enthusiast"],
-    "tagline": "Turning complex problems into elegant, high-performance software.",
+    "title": "Fullstack Developer",
+    "roles": [
+      "Fullstack Developer",
+      "Frontend Development with React/Next.js",
+      "Building Backend APIs",
+      "Exploring DevOps, Cloud & AI"
+    ],
+    "tagline": "Turning ideas into practical software solutions. Developing software systems that deliver value to users and businesses.",
     "cta_primary": "View Projects",
     "cta_secondary": "Download CV",
     "cta_contact": "Contact Me",
@@ -22,15 +27,15 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "A passionate developer crafting impactful digital experiences",
-    "bio": "I'm a final-year Information Technology student at the University of Transport Ho Chi Minh City with a solid foundation in Data Structures, Algorithms, and Object-Oriented Programming. I specialize in the React/Next.js and Node.js ecosystems, and I'm passionate about building clean, high-performance, maintainable software systems.",
+    "subtitle": "WEB DEVELOPER",
+    "bio": "I am a final-year Information Technology student at the University of Transport Ho Chi Minh City (UTH). With a solid foundation in web programming cultivated and accumulated throughout my studies, I focus on developing skills around the React/Next.js and Node.js ecosystems. My goal is to continuously learn and improve myself to create the best products for users and bring value to businesses.",
     "info": {
       "dob": "Aug 25, 2004",
       "location": "Tan Binh, Ho Chi Minh City",
       "email": "gialuat2004vk@gmail.com",
       "github": "github.com/GiaLuat2004",
       "phone": "0325 428 387",
-      "status": "Open to Internship Opportunities"
+      "status": "Looking for internship / job opportunities"
     },
     "labels": {
       "dob": "Date of Birth",
@@ -40,81 +45,82 @@
       "phone": "Phone",
       "status": "Status"
     },
-    "available_badge": "Available for Opportunities"
+    "available_badge": "Available for Work"
   },
   "skills": {
     "title": "Skills & Technologies",
-    "subtitle": "Technologies I work with and continue to master",
+    "subtitle": "The tools and tech stacks I use to solve real-world problems.",
     "categories": [
       {
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
-          { "name": "TypeScript", "icon": "SiTypescript", "desc": "Strongly typed JS — safer, more scalable codebases" },
-          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "Modern JS with async/await, modules & destructuring" },
-          { "name": "React.js", "icon": "SiReact", "desc": "Component-based UI with hooks, context & performance" },
-          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "SSR/SSG, App Router, API routes & edge deployment" },
-          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Utility-first styling with rapid, consistent design" },
-          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Declarative animations and smooth micro-interactions" },
-          { "name": "Redux", "icon": "SiRedux", "desc": "Predictable state management for complex apps" },
-          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "Accessible, themeable UI components built on Radix" }
+          { "name": "TypeScript", "icon": "SiTypescript", "desc": "Ensure type safety and easily maintain large projects." },
+          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "Proficient in modern features like async/await and modules." },
+          { "name": "React.js", "icon": "SiReact", "desc": "Build flexible UIs with Hooks and Context." },
+          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "Develop SSR/SSG apps, optimizing SEO and performance." },
+          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Design interfaces quickly with high customizability." },
+          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Create smooth animations and interactive transitions." },
+          { "name": "Redux", "icon": "SiRedux", "desc": "Effective state management for large-scale applications." },
+          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "Utilize and customize modern UI components." }
         ]
       },
       {
         "name": "Backend",
         "icon": "Server",
         "skills": [
-          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Event-driven JS runtime for scalable server-side apps" },
-          { "name": "Express.js", "icon": "SiExpress", "desc": "Minimal, flexible REST API framework for Node.js" },
-          { "name": "FastAPI", "icon": "SiFastapi", "desc": "High-performance Python API with auto validation & docs" },
-          { "name": "RESTful API", "icon": "TbApi", "desc": "Standard HTTP API design with clean resource patterns" },
-          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Real-time bidirectional communication for live features" },
-          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Secure auth with token-based identity & role control" },
-          { "name": "Microservices", "icon": "TbServerCog", "desc": "Decoupled services for scalability and maintainability" }
+          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Build highly scalable, robust server-side platforms." },
+          { "name": "Express.js", "icon": "SiExpress", "desc": "Design and develop flexible RESTful APIs." },
+          { "name": "FastAPI", "icon": "SiFastapi", "desc": "Build high-performance Python APIs with automatic docs." },
+          { "name": "RESTful API", "icon": "TbApi", "desc": "Design standard API architecture with clear data structure." },
+          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Integrate real-time bidirectional communication for apps." },
+          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Implement secure user authentication and authorization." },
+          { "name": "Microservices", "icon": "TbServerCog", "desc": "Understand distributed service architecture for easy maintenance and scaling." }
         ]
       },
       {
         "name": "Database",
         "icon": "Database",
         "skills": [
-          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "Advanced relational DB with JSONB, indexes & ACID" },
-          { "name": "MySQL", "icon": "SiMysql", "desc": "Reliable RDBMS for structured relational data" }
+          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "Advanced RDBMS administration, optimizing indexes & ACID." },
+          { "name": "MySQL", "icon": "SiMysql", "desc": "Design and operate stable structured databases." },
+          { "name": "MongoDB", "icon": "SiMongodb", "desc": "Design and operate flexible NoSQL databases." }
         ]
       },
       {
-        "name": "DevOps & Cloud",
+        "name": "DevOps & Cloud", 
         "icon": "Cloud",
         "skills": [
-          { "name": "Docker", "icon": "SiDocker", "desc": "Container-based deployment for consistent environments" },
-          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Version control, branching, PRs & collaborative workflow" },
-          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Cloud infra — GCS, Cloud Run & Compute Engine" },
-          { "name": "Vercel", "icon": "SiVercel", "desc": "Zero-config frontend deployment with CI/CD & edge" }
+          { "name": "Docker", "icon": "SiDocker", "desc": "Application containerization for environment consistency." },
+          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Source code management, conflict resolution, and teamwork (PR)." },
+          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Deploy services with GCS, Cloud Run & Compute Engine." },
+          { "name": "Vercel", "icon": "SiVercel", "desc": "Rapid frontend deployment integrated with automated CI/CD." }
         ]
       },
       {
         "name": "AI & Computer Vision",
         "icon": "Cpu",
         "skills": [
-          { "name": "Python", "icon": "SiPython", "desc": "Primary language for data science, AI & scripting" },
-          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Image processing, frame extraction & visual analysis" },
-          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Real-time object & pose detection with SOTA accuracy" },
-          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Applied CV for anomaly detection & human analysis" }
+          { "name": "Python", "icon": "SiPython", "desc": "Core language applied in data processing and AI." },
+          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Image processing, extracting data from video streams." },
+          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Deploying real-time object detection models." },
+          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Integrate AI to analyze behavior and detect anomalies." }
         ]
       },
       {
         "name": "Languages",
         "icon": "Languages",
         "skills": [
-          { "name": "Vietnamese", "icon": "VN", "desc": "Native • Mother tongue — fluent in all professional contexts" },
-          { "name": "English", "icon": "US", "desc": "Intermediate — Learning • TOEIC 670/990" }
+          { "name": "Vietnamese", "icon": "VN", "desc": "Native • Clear communication, reading specialized materials." },
+          { "name": "English", "icon": "US", "desc": "Intermediate • TOEIC 670/990 • Confident in reading docs and research." }
         ]
       }
     ]
   },
   "projects": {
     "title": "Featured Projects",
-    "subtitle": "A journey through the projects I've built — from most recent to earliest",
-    "view_github": "View on GitHub",
+    "subtitle": "Real-world products I have participated in designing and developing.",
+    "view_github": "Source Code (GitHub)",
     "live_demo": "Live Demo",
     "show_more": "Show Details",
     "show_less": "Hide Details",
@@ -123,70 +129,70 @@
         "id": "anomaly",
         "title": "Human Anomaly Localization",
         "role": "Backend Developer",
-        "team": "Team of 3",
-        "period": "Dec 2025 – Feb 2026",
+        "team": "Team: 3 members",
+        "period": "12/2025 – 02/2026",
         "date_start": "2025-12",
         "date_end": "2026-02",
-        "description": "A real-time AI surveillance system utilizing Computer Vision to detect abnormal behaviors (falling), helping to ensure the safety of the elderly and children. Achieved 90% accuracy.",
+        "description": "A real-time AI surveillance system applying Computer Vision to detect abnormal behaviors (falls), helping to ensure the safety of the elderly and children. Achieved up to 90% accuracy.",
         "highlights": [
-          "4-path hybrid detection algorithm (Bounding Box ratio, angle, and velocity)",
-          "Border Integrity Check mechanism to eliminate camera edge noise",
-          "Real-time WebSocket video streaming with FastAPI",
-          "YOLOv8s-pose model serving with async RESTful APIs"
+          "Built a 4-path hybrid detection algorithm (evaluating Bounding Box ratio, angle, and velocity).",
+          "Developed a Border Integrity Check mechanism to eliminate camera edge noise.",
+          "Established smooth real-time video streaming via WebSocket with FastAPI.",
+          "Packaged and served the YOLOv8s-pose model as asynchronous RESTful APIs."
         ],
         "tech": ["ReactJS", "Python", "FastAPI", "OpenCV", "YOLOv8s-pose", "WebSocket"],
         "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
-        "image": "/images/projects/anomaly.jpg"
+        "image": "/images/projects/fall-detection.png"
       },
       {
         "id": "jewelry",
         "title": "Jewelry Sales System",
         "role": "Fullstack Developer",
-        "team": "Team of 5",
-        "period": "Jul 2025 – Sep 2025",
+        "team": "Team: 5 members",
+        "period": "07/2025 – 09/2025",
         "date_start": "2025-07",
         "date_end": "2025-09",
-        "description": "A diamond appraisal and management system following GIA 4C standards, built on Microservices architecture for scalability and maintainability.",
+        "description": "A reception and management system for the diamond appraisal process (following GIA 4C standards) applying Microservices architecture, ensuring smooth operation and easy scalability.",
         "highlights": [
-          "Next.js online appraisal lookup interface with statistical Dashboard",
-          "Independent Appraisal Service with Express.js Microservice",
-          "PostgreSQL schema design with data integrity guarantees",
-          "Full Docker containerization for consistent deployment"
+          "Developed a valuation lookup interface and an intuitive statistical Dashboard with Next.js.",
+          "Built an independent Appraisal Service using Express.js.",
+          "Designed an optimized PostgreSQL schema, ensuring data integrity and query speed.",
+          "Dockerized all services to unify the deployment environment."
         ],
         "tech": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "RESTful API"],
         "github": "https://github.com/Jewelry-Sales-System",
-        "image": "/images/projects/jewelry.jpg"
+        "image": "/images/projects/jewelry.png"
       },
       {
         "id": "sevina",
-        "title": "SEVINA",
+        "title": "SEVINA - Car Rental Platform",
         "role": "Frontend Developer",
-        "team": "Team of 4",
-        "period": "Mar 2025 – May 2025",
+        "team": "Team: 4 members",
+        "period": "03/2025 – 05/2025",
         "date_start": "2025-03",
         "date_end": "2025-05",
-        "description": "A self-driving car rental web platform integrating GPS positioning, real-time vehicle tracking, and nearest station search algorithm (10–20km radius) based on user location.",
+        "description": "A web platform for self-driving car rentals. Integrates maps for positioning, vehicle tracking, and suggests the nearest car stations (10-20km radius) based on user coordinates.",
         "highlights": [
-          "Interactive UI with ReactJS, Tailwind CSS, and Framer Motion animations",
-          "Goong Map API integration for GPS routing and station search",
-          "Redux for complex global state management",
-          "Deployed on Vercel with CI/CD pipelines"
+          "Built a modern, highly interactive UI/UX using ReactJS, Tailwind CSS, and Framer Motion.",
+          "Integrated Goong Map API for location logic and station distance calculation.",
+          "Strictly managed system state with Redux.",
+          "Established CI/CD pipeline and automated deployment on Vercel."
         ],
         "tech": ["ReactJS", "TailwindCSS", "Framer Motion", "Redux", "ShadcnUI", "Goong Map API"],
         "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
-        "image": "/images/projects/sevina.jpg"
+        "image": "/images/projects/sevina.png"
       }
     ]
   },
   "education": {
     "education_title": "Education",
-    "education_subtitle": "My academic journey and foundation",
+    "education_subtitle": "My academic training and professional knowledge foundation.",
     "certifications_title": "Certifications",
-    "certifications_subtitle": "Professional credentials and achievements",
+    "certifications_subtitle": "Certifications and degrees I have achieved.",
     "degree_label": "Major",
     "gpa_label": "GPA",
     "education": {
-      "school": "University of Transport Ho Chi Minh City",
+      "school": "University of Transport Ho Chi Minh City (UTH)",
       "degree": "Bachelor of Information Technology",
       "major": "Information Technology",
       "period": "2022 – 2026",
@@ -196,81 +202,71 @@
       {
         "name": "TOEIC Listening & Reading",
         "score": "670 / 990",
-        "date": "Oct 2025",
+        "date": "10/2025",
         "icon": "🌐"
       },
       {
         "name": "Google Cloud Computing Foundations",
-        "date": "Jul 2025",
+        "date": "07/2025",
         "icon": "☁️"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
-        "issuer": "UDEMY",
-        "date": "May 2025",
+        "issuer": "Udemy",
+        "date": "05/2025",
         "icon": "🟢"
       }
     ]
   },
   "goals": {
     "goals_title": "Goals",
-    "goals_subtitle": "My professional aspirations and vision",
-    "interests_title": "Interests & Hobbies",
-    "interests_subtitle": "Activities that spark my creativity and joy",
+    "goals_subtitle": "My direction for personal and career development.",
+    "interests_title": "Interests",
+    "interests_subtitle": "How I recharge outside of working hours.",
     "goals_items": [
       {
         "icon": "👨‍💻",
-        "title": "Software Engineer",
-        "description": "Develop deep logical thinking and programming skills to become an exceptional software engineer, creating products with high practical value."
+        "title": "Become a Software Engineer",
+        "description": "Continuously sharpen logical thinking and coding skills to create high-quality software products, solving real-world needs."
       },
       {
         "icon": "🗣️",
-        "title": "Mastering Languages",
-        "description": "Master English and explore other languages to break down communication barriers and confidently embrace global technological knowledge."
+        "title": "Upgrade Foreign Languages",
+        "description": "Enhance specialized English communication to work confidently, read original documents, and keep up with global tech trends."
       },
       {
         "icon": "🌍",
-        "title": "Global Environment",
-        "description": "Strive to work in a dynamic multinational environment, ready to integrate and contribute at an international professional level."
+        "title": "Professional Environment",
+        "description": "Desire to join dynamic tech organizations where I can work alongside top talents and contribute my best value."
       }
     ],
     "interests_items": [
       {
         "icon": "💻",
-        "title": "Open Source",
-        "description": "Contributing to and learning from the open-source community. Sharing knowledge through code."
-      },
-      {
-        "icon": "📚",
-        "title": "Continuous Learning",
-        "description": "Always exploring new technologies, reading tech blogs, and taking online courses to stay updated."
+        "title": "IT Community",
+        "description": "Enjoy reading tech blogs, following new trends, and learning open-source patterns from other developers."
       },
       {
         "icon": "🎮",
-        "title": "Gaming & E-sports",
-        "description": "Enjoying competitive gaming as a way to sharpen strategic thinking and teamwork skills."
+        "title": "E-sports",
+        "description": "Playing tactical games for entertainment as well as sharpening decision-making and teamwork skills."
       },
       {
         "icon": "🏃",
-        "title": "Fitness & Health",
-        "description": "Maintaining a balanced lifestyle with regular exercise, believing in a healthy body for a productive mind."
+        "title": "Sports",
+        "description": "Maintain regular physical workouts. I believe a resilient body fosters a clear, focused mind."
       },
       {
         "icon": "🎵",
         "title": "Music",
-        "description": "Listening to diverse genres while coding. Music fuels creativity and helps maintain focus during deep work."
-      },
-      {
-        "icon": "✈️",
-        "title": "Travel & Culture",
-        "description": "Exploring new places and cultures, gaining inspiration and broadening perspectives for creative problem-solving."
+        "description": "A suitable playlist is always a great catalyst to help me stay highly concentrated while coding."
       }
     ]
   },
   "contact": {
     "title": "Let's Connect",
-    "subtitle": "Open to internship opportunities, collaborations, and building great things together.",
-    "open_to": "Open to Opportunities",
+    "subtitle": "I am always open to internship opportunities, new jobs, and exciting projects. Don't hesitate to drop a message!",
+    "open_to": "Available for Work",
     "email_label": "Email",
     "github_label": "GitHub",
     "phone_label": "Phone",
@@ -279,25 +275,25 @@
     "github": "https://github.com/GiaLuat2004",
     "phone": "0325 428 387",
     "location": "Ho Chi Minh City, Vietnam",
-    "message": "Feel free to reach out if you want to build something amazing together!",
+    "message": "If you have a project and need a companion, let's chat!",
     "form_name": "Your Name",
     "form_email": "Your Email",
     "form_subject": "Subject",
-    "form_message": "Your Message",
+    "form_message": "Message Content",
     "form_send": "Send Message",
     "form_sending": "Sending...",
-    "form_success": "Message sent successfully! I'll get back to you soon.",
-    "form_title": "Send me a message",
-    "thank_you": "Thank you for stopping by! Have a great day."
+    "form_success": "Message sent successfully! I will respond to you as soon as possible.",
+    "form_title": "Send me a direct message",
+    "thank_you": "Thank you for viewing my profile. Have a productive workday!"
   },
   "footer": {
-    "made_with": "Made with",
+    "made_with": "Built with",
     "by": "by",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved by Cao Bao Gia Luat."
   },
   "theme": {
-    "toggle_dark": "Switch to Dark Mode",
-    "toggle_light": "Switch to Light Mode"
+    "toggle_dark": "Dark Theme",
+    "toggle_light": "Light Theme"
   },
   "lang": {
     "switch_to_vi": "Tiếng Việt",
