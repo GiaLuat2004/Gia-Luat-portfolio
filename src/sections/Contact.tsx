@@ -127,7 +127,7 @@ export default function Contact() {
           {/* Left – Contact Form */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <div
-              className="glass-card rounded-2xl p-6 md:p-8 relative overflow-hidden backdrop-blur-xl group hover:shadow-2xl transition-all duration-500"
+              className="glass-card rounded-2xl p-5 md:p-7 relative overflow-hidden backdrop-blur-xl group hover:shadow-2xl transition-all duration-500"
               style={{ 
                 background: 'linear-gradient(135deg, rgba(99,102,241,0.06) 0%, rgba(6,182,212,0.03) 100%)',
                 border: '1px solid var(--border-alt)'
@@ -289,8 +289,8 @@ export default function Contact() {
                   variants={itemVariants}
                   whileHover={{ y: -3, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="glass-card rounded-xl p-4 flex items-center gap-3 group cursor-pointer block"
-                  style={{ transition: 'all 0.25s ease' }}
+                  className="glass-card rounded-xl p-5 flex items-center gap-4 group cursor-pointer block"
+                  style={{ transition: 'all 0.25s ease' }} 
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.boxShadow = `0 4px 20px ${item.color}22`
                     ;(e.currentTarget as HTMLElement).style.borderColor = `${item.color}44`

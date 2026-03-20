@@ -204,13 +204,14 @@
         "name": "TOEIC Listening & Reading",
         "score": "670 / 990",
         "date": "10/2025",
-        "icon": "🌐"
+        "icon": "🌐",
+        "image": "/images/certifications/toeic.jpg"
       },
       {
         "name": "Google Cloud Computing Foundations",
         "date": "07/2025",
         "icon": "☁️",
-        "image": "/images/certifications/image.png"
+        "image": "/images/certifications/ggcloud.png"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
