@@ -167,7 +167,7 @@ export default function Hero() {
                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               <img
-                src="/images/me/portrait.png" 
+                src="/Gia-Luat-portfolio/images/me/portrait.png" 
                 alt="Profile Portrait"
                 className="w-auto h-auto max-w-full max-h-[500px] lg:max-h-[500px] rounded-xl drop-shadow-2xl mx-auto"
               />
