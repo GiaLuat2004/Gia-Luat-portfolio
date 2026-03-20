@@ -108,7 +108,7 @@ export default function About() {
               />
               <div className="relative w-auto h-auto max-w-full max-h-full flex items-center justify-center transition-all duration-500 group-hover:scale-[1.02] p-2 border-[2px] border-dashed border-accent-cyan/20 rounded-full group-hover:border-accent-cyan/60 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]">
                 <Image
-                  src="/Gia-Luat-portfolio/images/me/portrait.png"
+                  src="/images/me/portrait.png"
                   alt="Cao Bao Gia Luat"
                   width={384}
                   height={384}

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Mail, Download, Facebook } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -180,9 +181,11 @@ export default function Hero() {
               whileHover={{ y: -10, rotate: 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              <img
-                src="/Gia-Luat-portfolio/images/me/portrait.png"
+              <Image
+                src="/images/me/portrait.png"
                 alt="Profile Portrait"
+                width={500}
+                height={500}
                 className="w-auto h-auto max-w-full max-h-[500px] lg:max-h-[500px] rounded-xl drop-shadow-2xl mx-auto"
               />
             </motion.div>

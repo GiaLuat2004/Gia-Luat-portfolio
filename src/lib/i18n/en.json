@@ -262,7 +262,7 @@
           "WebSocket"
         ],
         "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
-        "image": "/Gia-Luat-portfolio/images/projects/fall-detection.png"
+        "image": "/images/projects/fall-detection.png"
       },
       {
         "id": "jewelry",
@@ -288,7 +288,7 @@
           "RESTful API"
         ],
         "github": "https://github.com/Jewelry-Sales-System",
-        "image": "/Gia-Luat-portfolio/images/projects/jewelry.png"
+        "image": "/images/projects/jewelry.png"
       },
       {
         "id": "sevina",
@@ -314,7 +314,7 @@
           "Goong Map API"
         ],
         "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
-        "image": "/Gia-Luat-portfolio/images/projects/sevina.png"
+        "image": "/images/projects/sevina.png"
       }
     ]
   },
@@ -338,20 +338,20 @@
         "score": "670 / 990",
         "date": "10/2025",
         "icon": "🌐",
-        "image": "/Gia-Luat-portfolio/images/certifications/toeic.jpg"
+        "image": "/images/certifications/toeic.jpg"
       },
       {
         "name": "Google Cloud Computing Foundations",
         "date": "07/2025",
         "icon": "☁️",
-        "image": "/Gia-Luat-portfolio/images/certifications/ggcloud.png"
+        "image": "/images/certifications/ggcloud.png"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
         "issuer": "Udemy",
         "date": "05/2025",
         "icon": "🟢",
-        "image": "/Gia-Luat-portfolio/images/certifications/udemy.png"
+        "image": "/images/certifications/udemy.png"
       }
     ]
   },
