@@ -13,9 +13,9 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Cao Bao Gia Luat",
-    "title": "Fullstack Developer",
+    "title": "Software Engineer",
     "roles": [
-      "Fullstack Developer",
+      "Software Engineer",
       "Frontend Development with React/Next.js",
       "Building Backend APIs",
       "Exploring DevOps, Cloud & AI"
@@ -28,7 +28,7 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "WEB DEVELOPER",
+    "subtitle": "SOFTWARE ENGINEER",
     "bio": "I am a final-year Information Technology student at the University of Transport Ho Chi Minh City (UTH). With a solid foundation in web programming cultivated and accumulated throughout my studies, I focus on developing skills around the React/Next.js and Node.js ecosystems. My goal is to continuously learn and improve myself to create the best products for users and bring value to businesses.",
     "info": {
       "dob": "Aug 25, 2004",
@@ -56,64 +56,176 @@
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
-          { "name": "TypeScript", "icon": "SiTypescript", "desc": "Ensure type safety and easily maintain large projects." },
-          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "Proficient in modern features like async/await and modules." },
-          { "name": "React.js", "icon": "SiReact", "desc": "Build flexible UIs with Hooks and Context." },
-          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "Develop SSR/SSG apps, optimizing SEO and performance." },
-          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Design interfaces quickly with high customizability." },
-          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Create smooth animations and interactive transitions." },
-          { "name": "Redux", "icon": "SiRedux", "desc": "Effective state management for large-scale applications." },
-          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "Utilize and customize modern UI components." }
+          {
+            "name": "TypeScript",
+            "icon": "SiTypescript",
+            "desc": "Ensure type safety and easily maintain large projects."
+          },
+          {
+            "name": "JavaScript ES6+",
+            "icon": "SiJavascript",
+            "desc": "Proficient in modern features like async/await and modules."
+          },
+          {
+            "name": "React.js",
+            "icon": "SiReact",
+            "desc": "Build flexible UIs with Hooks and Context."
+          },
+          {
+            "name": "Next.js",
+            "icon": "SiNextdotjs",
+            "desc": "Develop SSR/SSG apps, optimizing SEO and performance."
+          },
+          {
+            "name": "TailwindCSS",
+            "icon": "SiTailwindcss",
+            "desc": "Design interfaces quickly with high customizability."
+          },
+          {
+            "name": "Framer Motion",
+            "icon": "SiFramer",
+            "desc": "Create smooth animations and interactive transitions."
+          },
+          {
+            "name": "Redux",
+            "icon": "SiRedux",
+            "desc": "Effective state management for large-scale applications."
+          },
+          {
+            "name": "ShadcnUI",
+            "icon": "TbLayersLinked",
+            "desc": "Utilize and customize modern UI components."
+          }
         ]
       },
       {
         "name": "Backend",
         "icon": "Server",
         "skills": [
-          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Build highly scalable, robust server-side platforms." },
-          { "name": "Express.js", "icon": "SiExpress", "desc": "Design and develop flexible RESTful APIs." },
-          { "name": "FastAPI", "icon": "SiFastapi", "desc": "Build high-performance Python APIs with automatic docs." },
-          { "name": "RESTful API", "icon": "TbApi", "desc": "Design standard API architecture with clear data structure." },
-          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Integrate real-time bidirectional communication for apps." },
-          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Implement secure user authentication and authorization." },
-          { "name": "Microservices", "icon": "TbServerCog", "desc": "Understand distributed service architecture for easy maintenance and scaling." }
+          {
+            "name": "Node.js",
+            "icon": "SiNodedotjs",
+            "desc": "Build highly scalable, robust server-side platforms."
+          },
+          {
+            "name": "Express.js",
+            "icon": "SiExpress",
+            "desc": "Design and develop flexible RESTful APIs."
+          },
+          {
+            "name": "FastAPI",
+            "icon": "SiFastapi",
+            "desc": "Build high-performance Python APIs with automatic docs."
+          },
+          {
+            "name": "RESTful API",
+            "icon": "TbApi",
+            "desc": "Design standard API architecture with clear data structure."
+          },
+          {
+            "name": "WebSocket",
+            "icon": "TbPlugConnected",
+            "desc": "Integrate real-time bidirectional communication for apps."
+          },
+          {
+            "name": "JWT & RBAC",
+            "icon": "TbLock",
+            "desc": "Implement secure user authentication and authorization."
+          },
+          {
+            "name": "Microservices",
+            "icon": "TbServerCog",
+            "desc": "Understand distributed service architecture for easy maintenance and scaling."
+          }
         ]
       },
       {
         "name": "Database",
         "icon": "Database",
         "skills": [
-          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "Advanced RDBMS administration, optimizing indexes & ACID." },
-          { "name": "MySQL", "icon": "SiMysql", "desc": "Design and operate stable structured databases." },
-          { "name": "MongoDB", "icon": "SiMongodb", "desc": "Design and operate flexible NoSQL databases." }
+          {
+            "name": "PostgreSQL",
+            "icon": "SiPostgresql",
+            "desc": "Advanced RDBMS administration, optimizing indexes & ACID."
+          },
+          {
+            "name": "MySQL",
+            "icon": "SiMysql",
+            "desc": "Design and operate stable structured databases."
+          },
+          {
+            "name": "MongoDB",
+            "icon": "SiMongodb",
+            "desc": "Design and operate flexible NoSQL databases."
+          }
         ]
       },
       {
-        "name": "DevOps & Cloud", 
+        "name": "DevOps & Cloud",
         "icon": "Cloud",
         "skills": [
-          { "name": "Docker", "icon": "SiDocker", "desc": "Application containerization for environment consistency." },
-          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Source code management, conflict resolution, and teamwork (PR)." },
-          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Deploy services with GCS, Cloud Run & Compute Engine." },
-          { "name": "Vercel", "icon": "SiVercel", "desc": "Rapid frontend deployment integrated with automated CI/CD." }
+          {
+            "name": "Docker",
+            "icon": "SiDocker",
+            "desc": "Application containerization for environment consistency."
+          },
+          {
+            "name": "Git / GitHub",
+            "icon": "SiGithub",
+            "desc": "Source code management, conflict resolution, and teamwork (PR)."
+          },
+          {
+            "name": "Google Cloud",
+            "icon": "SiGooglecloud",
+            "desc": "Deploy services with GCS, Cloud Run & Compute Engine."
+          },
+          {
+            "name": "Vercel",
+            "icon": "SiVercel",
+            "desc": "Rapid frontend deployment integrated with automated CI/CD."
+          }
         ]
       },
       {
         "name": "AI & Computer Vision",
         "icon": "Cpu",
         "skills": [
-          { "name": "Python", "icon": "SiPython", "desc": "Core language applied in data processing and AI." },
-          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Image processing, extracting data from video streams." },
-          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Deploying real-time object detection models." },
-          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Integrate AI to analyze behavior and detect anomalies." }
+          {
+            "name": "Python",
+            "icon": "SiPython",
+            "desc": "Core language applied in data processing and AI."
+          },
+          {
+            "name": "OpenCV",
+            "icon": "SiOpencv",
+            "desc": "Image processing, extracting data from video streams."
+          },
+          {
+            "name": "YOLOv8",
+            "icon": "TbTarget",
+            "desc": "Deploying real-time object detection models."
+          },
+          {
+            "name": "Computer Vision",
+            "icon": "TbEyeScan",
+            "desc": "Integrate AI to analyze behavior and detect anomalies."
+          }
         ]
       },
       {
         "name": "Languages",
         "icon": "Languages",
         "skills": [
-          { "name": "Vietnamese", "icon": "VN", "desc": "Native • Clear communication, reading specialized materials." },
-          { "name": "English", "icon": "US", "desc": "Intermediate • TOEIC 670/990 • Confident in reading docs and research." }
+          {
+            "name": "Vietnamese",
+            "icon": "VN",
+            "desc": "Native • Clear communication, reading specialized materials."
+          },
+          {
+            "name": "English",
+            "icon": "US",
+            "desc": "Intermediate • TOEIC 670/990 • Confident in reading docs and research."
+          }
         ]
       }
     ]
@@ -141,9 +253,16 @@
           "Established smooth real-time video streaming via WebSocket with FastAPI.",
           "Packaged and served the YOLOv8s-pose model as asynchronous RESTful APIs."
         ],
-        "tech": ["ReactJS", "Python", "FastAPI", "OpenCV", "YOLOv8s-pose", "WebSocket"],
+        "tech": [
+          "ReactJS",
+          "Python",
+          "FastAPI",
+          "OpenCV",
+          "YOLOv8s-pose",
+          "WebSocket"
+        ],
         "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
-        "image": "/images/projects/fall-detection.png"
+        "image": "Gia-Luat-portfolio/images/projects/fall-detection.png"
       },
       {
         "id": "jewelry",
@@ -160,9 +279,16 @@
           "Designed an optimized PostgreSQL schema, ensuring data integrity and query speed.",
           "Dockerized all services to unify the deployment environment."
         ],
-        "tech": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "RESTful API"],
+        "tech": [
+          "Next.js",
+          "Node.js",
+          "Express.js",
+          "PostgreSQL",
+          "Docker",
+          "RESTful API"
+        ],
         "github": "https://github.com/Jewelry-Sales-System",
-        "image": "/images/projects/jewelry.png"
+        "image": "Gia-Luat-portfolio/images/projects/jewelry.png"
       },
       {
         "id": "sevina",
@@ -179,9 +305,16 @@
           "Strictly managed system state with Redux.",
           "Established CI/CD pipeline and automated deployment on Vercel."
         ],
-        "tech": ["ReactJS", "TailwindCSS", "Framer Motion", "Redux", "ShadcnUI", "Goong Map API"],
+        "tech": [
+          "ReactJS",
+          "TailwindCSS",
+          "Framer Motion",
+          "Redux",
+          "ShadcnUI",
+          "Goong Map API"
+        ],
         "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
-        "image": "/images/projects/sevina.png"
+        "image": "Gia-Luat-portfolio/images/projects/sevina.png"
       }
     ]
   },
@@ -205,20 +338,20 @@
         "score": "670 / 990",
         "date": "10/2025",
         "icon": "🌐",
-        "image": "/images/certifications/toeic.jpg"
+        "image": "Gia-Luat-portfolio/images/certifications/toeic.jpg"
       },
       {
         "name": "Google Cloud Computing Foundations",
         "date": "07/2025",
         "icon": "☁️",
-        "image": "/images/certifications/ggcloud.png"
+        "image": "Gia-Luat-portfolio/images/certifications/ggcloud.png"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
         "issuer": "Udemy",
         "date": "05/2025",
         "icon": "🟢",
-        "image": "/images/certifications/udemy.png"
+        "image": "Gia-Luat-portfolio/images/certifications/udemy.png"
       }
     ]
   },

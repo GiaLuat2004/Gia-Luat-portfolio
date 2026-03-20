@@ -13,9 +13,9 @@
   "hero": {
     "greeting": "Xin chào, tôi là",
     "name": "Cao Bảo Gia Luật",
-    "title": "Fullstack Developer",
+    "title": "Software Engineer",
     "roles": [
-      "Fullstack Developer",
+      "Software Engineer",
       "Phát triển giao diện với React/Next.js",
       "Xây dựng Backend API",
       "Khám phá DevOps, Cloud & AI"
@@ -28,7 +28,7 @@
   },
   "about": {
     "title": "Về Tôi",
-    "subtitle": "WEB DEVELOPER",
+    "subtitle": "SOFTWARE ENGINEER",
     "bio": "Tôi là sinh viên năm cuối chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH). Với nền tảng kiến thức tốt về lập trình web đã được trau dồi và tích lũy trong quá trình học tập, tôi tập trung phát triển kỹ năng xoay quanh hệ sinh thái React/Next.js và Node.js. Mục tiêu của tôi là không ngừng học hỏi và cải thiện bản thân để có thể tạo ra những sản phẩm tốt nhất cho người dùng và mang lại giá trị cho doanh nghiệp.",
     "info": {
       "dob": "25/08/2004",
@@ -49,71 +49,183 @@
     "available_badge": "Sẵn sàng nhận việc"
   },
   "skills": {
-    "title": "Kỹ Năng & Công Nghệ",
+    "title": "Kỹ Năng Chuyên Môn",
     "subtitle": "Các công cụ và bộ công nghệ tôi sử dụng để giải quyết bài toán thực tế.",
     "categories": [
       {
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
-          { "name": "TypeScript", "icon": "SiTypescript", "desc": "Bảo đảm an toàn kiểu dữ liệu và dễ dàng bảo trì dự án lớn." },
-          { "name": "JavaScript ES6+", "icon": "SiJavascript", "desc": "Thành thạo các tính năng hiện đại như async/await, modules." },
-          { "name": "React.js", "icon": "SiReact", "desc": "Xây dựng giao diện UI linh hoạt với Hooks và Context." },
-          { "name": "Next.js", "icon": "SiNextdotjs", "desc": "Phát triển ứng dụng SSR/SSG, tối ưu SEO và hiệu suất." },
-          { "name": "TailwindCSS", "icon": "SiTailwindcss", "desc": "Thiết kế giao diện nhanh chóng, có độ tùy biến cao." },
-          { "name": "Framer Motion", "icon": "SiFramer", "desc": "Tạo các hiệu ứng chuyển động và tương tác mượt mà." },
-          { "name": "Redux", "icon": "SiRedux", "desc": "Quản lý state hiệu quả cho các ứng dụng quy mô lớn." },
-          { "name": "ShadcnUI", "icon": "TbLayersLinked", "desc": "Sử dụng và tinh chỉnh các UI components hiện đại." }
+          {
+            "name": "TypeScript",
+            "icon": "SiTypescript",
+            "desc": "Bảo đảm an toàn kiểu dữ liệu và dễ dàng bảo trì dự án lớn."
+          },
+          {
+            "name": "JavaScript ES6+",
+            "icon": "SiJavascript",
+            "desc": "Thành thạo các tính năng hiện đại như async/await, modules."
+          },
+          {
+            "name": "React.js",
+            "icon": "SiReact",
+            "desc": "Xây dựng giao diện UI linh hoạt với Hooks và Context."
+          },
+          {
+            "name": "Next.js",
+            "icon": "SiNextdotjs",
+            "desc": "Phát triển ứng dụng SSR/SSG, tối ưu SEO và hiệu suất."
+          },
+          {
+            "name": "TailwindCSS",
+            "icon": "SiTailwindcss",
+            "desc": "Thiết kế giao diện nhanh chóng, có độ tùy biến cao."
+          },
+          {
+            "name": "Framer Motion",
+            "icon": "SiFramer",
+            "desc": "Tạo các hiệu ứng chuyển động và tương tác mượt mà."
+          },
+          {
+            "name": "Redux",
+            "icon": "SiRedux",
+            "desc": "Quản lý state hiệu quả cho các ứng dụng quy mô lớn."
+          },
+          {
+            "name": "ShadcnUI",
+            "icon": "TbLayersLinked",
+            "desc": "Sử dụng và tinh chỉnh các UI components hiện đại."
+          }
         ]
       },
       {
         "name": "Backend",
         "icon": "Server",
         "skills": [
-          { "name": "Node.js", "icon": "SiNodedotjs", "desc": "Xây dựng nền tảng server-side mạnh mẽ, mở rộng tốt." },
-          { "name": "Express.js", "icon": "SiExpress", "desc": "Thiết kế và phát triển RESTful API linh hoạt." },
-          { "name": "FastAPI", "icon": "SiFastapi", "desc": "Xây dựng API Python hiệu suất cao, tự động hóa tài liệu." },
-          { "name": "RESTful API", "icon": "TbApi", "desc": "Thiết kế cấu trúc API chuẩn mực, dữ liệu rõ ràng." },
-          { "name": "WebSocket", "icon": "TbPlugConnected", "desc": "Tích hợp giao tiếp thời gian thực (real-time) cho ứng dụng." },
-          { "name": "JWT & RBAC", "icon": "TbLock", "desc": "Triển khai xác thực và phân quyền người dùng bảo mật." },
-          { "name": "Microservices", "icon": "TbServerCog", "desc": "Hiểu kiến trúc dịch vụ phân tán để dễ bảo trì và mở rộng." }
+          {
+            "name": "Node.js",
+            "icon": "SiNodedotjs",
+            "desc": "Xây dựng nền tảng server-side mạnh mẽ, mở rộng tốt."
+          },
+          {
+            "name": "Express.js",
+            "icon": "SiExpress",
+            "desc": "Thiết kế và phát triển RESTful API linh hoạt."
+          },
+          {
+            "name": "FastAPI",
+            "icon": "SiFastapi",
+            "desc": "Xây dựng API Python hiệu suất cao, tự động hóa tài liệu."
+          },
+          {
+            "name": "RESTful API",
+            "icon": "TbApi",
+            "desc": "Thiết kế cấu trúc API chuẩn mực, dữ liệu rõ ràng."
+          },
+          {
+            "name": "WebSocket",
+            "icon": "TbPlugConnected",
+            "desc": "Tích hợp giao tiếp thời gian thực (real-time) cho ứng dụng."
+          },
+          {
+            "name": "JWT & RBAC",
+            "icon": "TbLock",
+            "desc": "Triển khai xác thực và phân quyền người dùng bảo mật."
+          },
+          {
+            "name": "Microservices",
+            "icon": "TbServerCog",
+            "desc": "Hiểu kiến trúc dịch vụ phân tán để dễ bảo trì và mở rộng."
+          }
         ]
       },
       {
         "name": "Database",
         "icon": "Database",
         "skills": [
-          { "name": "PostgreSQL", "icon": "SiPostgresql", "desc": "Quản trị CSDL quan hệ nâng cao, tối ưu index & ACID." },
-          { "name": "MySQL", "icon": "SiMysql", "desc": "Thiết kế và vận hành cơ sở dữ liệu có cấu trúc ổn định." },
-          { "name": "MongoDB", "icon": "SiMongodb", "desc": "Thiết kế và vận hành cơ sở dữ liệu NoSQL có cấu trúc linh hoạt." }
+          {
+            "name": "PostgreSQL",
+            "icon": "SiPostgresql",
+            "desc": "Quản trị CSDL quan hệ nâng cao, tối ưu index & ACID."
+          },
+          {
+            "name": "MySQL",
+            "icon": "SiMysql",
+            "desc": "Thiết kế và vận hành cơ sở dữ liệu có cấu trúc ổn định."
+          },
+          {
+            "name": "MongoDB",
+            "icon": "SiMongodb",
+            "desc": "Thiết kế và vận hành cơ sở dữ liệu NoSQL có cấu trúc linh hoạt."
+          }
         ]
       },
       {
-        "name": "DevOps & Cloud", 
+        "name": "DevOps & Cloud",
         "icon": "Cloud",
         "skills": [
-          { "name": "Docker", "icon": "SiDocker", "desc": "Đóng gói ứng dụng (containerization) để đồng nhất môi trường." },
-          { "name": "Git / GitHub", "icon": "SiGithub", "desc": "Quản lý mã nguồn, xử lý conflict và làm việc nhóm (PR)." },
-          { "name": "Google Cloud", "icon": "SiGooglecloud", "desc": "Triển khai dịch vụ với GCS, Cloud Run & Compute Engine." },
-          { "name": "Vercel", "icon": "SiVercel", "desc": "Triển khai Frontend nhanh chóng tích hợp CI/CD tự động." }
+          {
+            "name": "Docker",
+            "icon": "SiDocker",
+            "desc": "Đóng gói ứng dụng (containerization) để đồng nhất môi trường."
+          },
+          {
+            "name": "Git / GitHub",
+            "icon": "SiGithub",
+            "desc": "Quản lý mã nguồn, xử lý conflict và làm việc nhóm (PR)."
+          },
+          {
+            "name": "Google Cloud",
+            "icon": "SiGooglecloud",
+            "desc": "Triển khai dịch vụ với GCS, Cloud Run & Compute Engine."
+          },
+          {
+            "name": "Vercel",
+            "icon": "SiVercel",
+            "desc": "Triển khai Frontend nhanh chóng tích hợp CI/CD tự động."
+          }
         ]
       },
       {
         "name": "AI & Thị Giác Máy Tính",
         "icon": "Cpu",
         "skills": [
-          { "name": "Python", "icon": "SiPython", "desc": "Ngôn ngữ cốt lõi ứng dụng trong xử lý dữ liệu và AI." },
-          { "name": "OpenCV", "icon": "SiOpencv", "desc": "Xử lý hình ảnh, trích xuất dữ liệu từ luồng video." },
-          { "name": "YOLOv8", "icon": "TbTarget", "desc": "Triển khai mô hình phát hiện đối tượng thời gian thực." },
-          { "name": "Computer Vision", "icon": "TbEyeScan", "desc": "Tích hợp AI phân tích hành vi và phát hiện bất thường." }
+          {
+            "name": "Python",
+            "icon": "SiPython",
+            "desc": "Ngôn ngữ cốt lõi ứng dụng trong xử lý dữ liệu và AI."
+          },
+          {
+            "name": "OpenCV",
+            "icon": "SiOpencv",
+            "desc": "Xử lý hình ảnh, trích xuất dữ liệu từ luồng video."
+          },
+          {
+            "name": "YOLOv8",
+            "icon": "TbTarget",
+            "desc": "Triển khai mô hình phát hiện đối tượng thời gian thực."
+          },
+          {
+            "name": "Computer Vision",
+            "icon": "TbEyeScan",
+            "desc": "Tích hợp AI phân tích hành vi và phát hiện bất thường."
+          }
         ]
       },
       {
         "name": "Ngoại ngữ",
         "icon": "Languages",
         "skills": [
-          { "name": "Tiếng Việt", "icon": "VN", "desc": "Tiếng mẹ đẻ • Giao tiếp rõ ràng, đọc hiểu tài liệu chuyên ngành." },
-          { "name": "Tiếng Anh", "icon": "US", "desc": "Trung cấp • Chứng chỉ TOEIC 670/990 • Tự tin đọc docs và research." }
+          {
+            "name": "Tiếng Việt",
+            "icon": "VN",
+            "desc": "Tiếng mẹ đẻ • Giao tiếp rõ ràng, đọc hiểu tài liệu chuyên ngành."
+          },
+          {
+            "name": "Tiếng Anh",
+            "icon": "US",
+            "desc": "Trung cấp • Chứng chỉ TOEIC 670/990 • Tự tin đọc docs và research."
+          }
         ]
       }
     ]
@@ -141,9 +253,16 @@
           "Thiết lập truyền phát video thời gian thực mượt mà qua WebSocket với FastAPI.",
           "Đóng gói và cung cấp mô hình YOLOv8s-pose dưới dạng RESTful APIs bất đồng bộ."
         ],
-        "tech": ["ReactJS", "Python", "FastAPI", "OpenCV", "YOLOv8s-pose", "WebSocket"],
+        "tech": [
+          "ReactJS",
+          "Python",
+          "FastAPI",
+          "OpenCV",
+          "YOLOv8s-pose",
+          "WebSocket"
+        ],
         "github": "https://github.com/GiaLuat2004/Human-anomaly-localization",
-        "image": "/images/projects/fall-detection.png"
+        "image": "Gia-Luat-portfolio/images/projects/fall-detection.png"
       },
       {
         "id": "jewelry",
@@ -160,9 +279,16 @@
           "Thiết kế schema PostgreSQL tối ưu, đảm bảo tính toàn vẹn và tốc độ truy vấn dữ liệu.",
           "Dockerize toàn bộ các services để thống nhất môi trường triển khai."
         ],
-        "tech": ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Docker", "RESTful API"],
+        "tech": [
+          "Next.js",
+          "Node.js",
+          "Express.js",
+          "PostgreSQL",
+          "Docker",
+          "RESTful API"
+        ],
         "github": "https://github.com/Jewelry-Sales-System",
-        "image": "/images/projects/jewelry.png"
+        "image": "Gia-Luat-portfolio/images/projects/jewelry.png"
       },
       {
         "id": "sevina",
@@ -179,9 +305,16 @@
           "Quản lý state hệ thống chặt chẽ với Redux.",
           "Thiết lập CI/CD pipeline và deploy tự động lên Vercel."
         ],
-        "tech": ["ReactJS", "TailwindCSS", "Framer Motion", "Redux", "ShadcnUI", "Goong Map API"],
+        "tech": [
+          "ReactJS",
+          "TailwindCSS",
+          "Framer Motion",
+          "Redux",
+          "ShadcnUI",
+          "Goong Map API"
+        ],
         "github": "https://github.com/DevLoopsX/Sevina-frontend-reactjs",
-        "image": "/images/projects/sevina.png"
+        "image": "Gia-Luat-portfolio/images/projects/sevina.png"
       }
     ]
   },
@@ -210,14 +343,14 @@
         "name": "Google Cloud Computing Foundations",
         "date": "07/2025",
         "icon": "☁️",
-        "image": "/images/certifications/image.png"
+        "image": "Gia-Luat-portfolio/images/certifications/image.png"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
         "issuer": "Udemy",
         "date": "05/2025",
         "icon": "🟢",
-        "image": "/images/certifications/udemy.png"
+        "image": "Gia-Luat-portfolio/images/certifications/udemy.png"
       }
     ]
   },
@@ -230,7 +363,7 @@
       {
         "icon": "👨‍💻",
         "title": "Trở thành Software Engineer",
-        "description": "Không ngừng mài giũa tư duy logic và kỹ năng code để tạo ra những sản phẩm phần mềm chất lượng, giải quyết đúng nhu cầu thực tế."
+        "description": "Không ngừng mài dũa tư duy logic và kỹ năng code để tạo ra những sản phẩm phần mềm chất lượng, giải quyết đúng nhu cầu thực tế."
       },
       {
         "icon": "🗣️",

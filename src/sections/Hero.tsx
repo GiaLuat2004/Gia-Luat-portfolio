@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { ArrowDown, Github, Mail, Download, Facebook } from 'lucide-react'
-import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowDown, Github, Mail, Download, Facebook } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -11,50 +11,56 @@ const containerVariants = {
     opacity: 1,
     transition: { staggerChildren: 0.15, delayChildren: 0.2 },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-}
+};
 
 function useTypewriter(words: string[], speed = 80, pause = 1800) {
-  const [display, setDisplay] = useState('')
-  const [wordIndex, setWordIndex] = useState(0)
-  const [charIndex, setCharIndex] = useState(0)
-  const [deleting, setDeleting] = useState(false)
+  const [display, setDisplay] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     if (!words || words.length === 0) return;
-    const current = words[wordIndex]
-    const timeout = setTimeout(() => {
-      if (!deleting) {
-        setDisplay(current.slice(0, charIndex + 1))
-        if (charIndex + 1 === current.length) {
-          setTimeout(() => setDeleting(true), pause)
+    const current = words[wordIndex];
+    const timeout = setTimeout(
+      () => {
+        if (!deleting) {
+          setDisplay(current.slice(0, charIndex + 1));
+          if (charIndex + 1 === current.length) {
+            setTimeout(() => setDeleting(true), pause);
+          } else {
+            setCharIndex((c) => c + 1);
+          }
         } else {
-          setCharIndex((c) => c + 1)
+          setDisplay(current.slice(0, charIndex - 1));
+          if (charIndex - 1 === 0) {
+            setDeleting(false);
+            setWordIndex((w) => (w + 1) % words.length);
+            setCharIndex(0);
+          } else {
+            setCharIndex((c) => c - 1);
+          }
         }
-      } else {
-        setDisplay(current.slice(0, charIndex - 1))
-        if (charIndex - 1 === 0) {
-          setDeleting(false)
-          setWordIndex((w) => (w + 1) % words.length)
-          setCharIndex(0)
-        } else {
-          setCharIndex((c) => c - 1)
-        }
-      }
-    }, deleting ? speed / 2 : speed)
-    return () => clearTimeout(timeout)
-  }, [charIndex, deleting, wordIndex, words, speed, pause])
+      },
+      deleting ? speed / 2 : speed,
+    );
+    return () => clearTimeout(timeout);
+  }, [charIndex, deleting, wordIndex, words, speed, pause]);
 
-  return display
+  return display;
 }
 
 export default function Hero() {
-  const { t } = useLanguage()
-  const typedText = useTypewriter(t.hero.roles || ['Web Developer', 'UI/UX Designer'], 75)
+  const { t } = useLanguage();
+  const typedText = useTypewriter(
+    t.hero.roles || ['Web Developer', 'UI/UX Designer'],
+    75,
+  );
 
   return (
     <section
@@ -63,7 +69,6 @@ export default function Hero() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 pt-24 lg:pt-16 pb-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-20 lg:mt-0">
-        
           {/* LEFT COLUMN: Content */}
           <motion.div
             variants={containerVariants}
@@ -73,7 +78,7 @@ export default function Hero() {
           >
             {/* Main Heading */}
             <motion.div variants={itemVariants} className="mb-4 lg:mb-6">
-              <h1 className="font-extrabold font-heading tracking-tight leading-[1.15] uppercase">
+              <h1 className="font-extrabold font-heading tracking-tight leading-[1.15]">
                 <span className="block text-[var(--text)] mb-2 transition-colors duration-300 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]">
                   {t.hero.greeting}
                 </span>
@@ -84,7 +89,10 @@ export default function Hero() {
             </motion.div>
 
             {/* Typewriter Role */}
-            <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-2 text-lg sm:text-xl md:text-2xl font-medium mb-6 h-8 text-[var(--text-muted)] transition-colors duration-300">
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center justify-center lg:justify-start gap-2 text-lg sm:text-xl md:text-2xl font-medium mb-6 h-8 text-[var(--text-muted)] transition-colors duration-300"
+            >
               <span className="text-[var(--accent-indigo)]">&lt;</span>
               <span className="font-mono tracking-tight">{typedText}</span>
               <span className="w-0.5 h-5 sm:h-6 animate-pulse bg-[var(--accent-indigo)] rounded-full" />
@@ -96,26 +104,29 @@ export default function Hero() {
               variants={itemVariants}
               className="text-sm sm:text-base md:text-lg max-w-xl mb-10 leading-relaxed text-[var(--text-muted)] transition-colors duration-300"
             >
-              {t.hero.tagline || "I've earned the trust of over 250 clients and 40 brands, all of whom are very satisfied with my service!"}
+              {t.hero.tagline ||
+                "I've earned the trust of over 250 clients and 40 brands, all of whom are very satisfied with my service!"}
             </motion.p>
 
             {/* CTA & Socials Container */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start">
-              
-            <motion.a
-              href="CV-CAO-BAO-GIA-LUAT-WEB-INTERN.pdf"
-              download
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="relative flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-2xl font-semibold transition-all w-fit text-sm sm:text-base group overflow-hidden"
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 opacity-90 group-hover:opacity-100 bg-[length:200%_auto] animate-gradient transition-all duration-300" />
-              <div className="absolute inset-0 rounded-2xl border border-white/20 group-hover:border-white/40 transition-colors duration-300 z-10" />
-              <div className="relative z-20 flex items-center gap-2 text-white">
-                <Download className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                <span>{t.hero.cta_secondary}</span>
-              </div>
-            </motion.a>
+              <motion.a
+                href="CV-CAO-BAO-GIA-LUAT-WEB-INTERN.pdf"
+                download
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="relative flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-2xl font-semibold transition-all w-fit text-sm sm:text-base group overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 opacity-90 group-hover:opacity-100 bg-[length:200%_auto] animate-gradient transition-all duration-300" />
+                <div className="absolute inset-0 rounded-2xl border border-white/20 group-hover:border-white/40 transition-colors duration-300 z-10" />
+                <div className="relative z-20 flex items-center gap-2 text-white">
+                  <Download className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  <span>{t.hero.cta_secondary}</span>
+                </div>
+              </motion.a>
 
               <div className="flex items-center gap-3">
                 <motion.a
@@ -159,21 +170,23 @@ export default function Hero() {
           >
             {/* Dynamic Orbital Glows */}
             <div className="absolute w-[120%] h-[80%] bg-[var(--accent-indigo)] blur-[120px] rounded-full z-0 hidden dark:block animate-float opacity-20" />
-            <div className="absolute w-[80%] h-[100%] bg-[var(--accent-cyan)] blur-[100px] rounded-full z-0 hidden dark:block animate-float opacity-10" style={{ animationDelay: '2s' }} />
-            
-            <motion.div 
-               className="relative z-10 p-2 rounded-2xl bg-gradient-to-tr from-indigo-500/20 to-cyan-500/20 backdrop-blur-md border border-white/10 shadow-2xl"
-               whileHover={{ y: -10, rotate: 1 }}
-               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            <div
+              className="absolute w-[80%] h-[100%] bg-[var(--accent-cyan)] blur-[100px] rounded-full z-0 hidden dark:block animate-float opacity-10"
+              style={{ animationDelay: '2s' }}
+            />
+
+            <motion.div
+              className="relative z-10 p-2 rounded-2xl bg-gradient-to-tr from-indigo-500/20 to-cyan-500/20 backdrop-blur-md border border-white/10 shadow-2xl"
+              whileHover={{ y: -10, rotate: 1 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               <img
-                src="/Gia-Luat-portfolio/images/me/portrait.png" 
+                src="/Gia-Luat-portfolio/images/me/portrait.png"
                 alt="Profile Portrait"
                 className="w-auto h-auto max-w-full max-h-[500px] lg:max-h-[500px] rounded-xl drop-shadow-2xl mx-auto"
               />
             </motion.div>
           </motion.div>
-
         </div>
       </div>
 
@@ -192,5 +205,5 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }
