@@ -6,8 +6,8 @@ const nextConfig = {
     unoptimized: true,
   },
   // For GitHub Pages: set basePath to your repo name
-  // basePath: '/Gia-Luat-portfolio',
-  // assetPrefix: '/Gia-Luat-portfolio/',
+  basePath: '/Gia-Luat-portfolio',
+  assetPrefix: '/Gia-Luat-portfolio/',
 }
 
 module.exports = nextConfig
