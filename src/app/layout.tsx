@@ -17,13 +17,13 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: 'Cao Bao Gia Luat | Fullstack Developer Portfolio',
+  title: 'Portfolio | Gia Luat',
   description:
     'Portfolio of Cao Bao Gia Luat – Fullstack Developer Intern specializing in React, Next.js, Node.js, and AI-powered systems.',
   keywords: ['portfolio', 'fullstack developer', 'react', 'next.js', 'nodejs', 'typescript', 'web developer vietnam'],
   authors: [{ name: 'Cao Bao Gia Luat', url: 'https://github.com/GiaLuat2004' }],
   openGraph: {
-    title: 'Cao Bao Gia Luat | Fullstack Developer Portfolio',
+    title: 'Portfolio | Gia Luat',
     description: 'Fullstack Developer Intern – React, Next.js, Node.js',
     type: 'website',
   },

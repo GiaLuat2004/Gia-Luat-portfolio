@@ -33,7 +33,7 @@ export default function About() {
   const infoItems = Object.keys(t.about.labels) as (keyof typeof t.about.labels)[]
 
   return (
-    <section id="about" className="section-padding relative">
+    <section id="about" className="pt-20 relative">
       {/* Subtle bg accent */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -48,7 +48,7 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="text-center mb-16"
+          className="text-center"
         >
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-4 text-sm font-medium px-4 py-2 rounded-full"
             style={{
@@ -73,52 +73,32 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-stretch" 
         >
           {/* Photo Column */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 flex flex-col items-center lg:items-start gap-6">
-            {/* Avatar */}
-            <div className="relative group p-2">
+          <motion.div variants={itemVariants} className="lg:col-span-2 hidden lg:flex justify-center lg:justify-start">
+            <div className="relative w-full max-w-md lg:max-w-none h-full min-h-[400px] lg:min-h-0 group flex items-center justify-center">
               <div
-                className="absolute inset-0 rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 blur-[2px]"
+                className="absolute inset-x-10 bottom-10 top-20 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-3xl pointer-events-none"
                 style={{ background: 'linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan))' }}
               />
-              <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden"
-                style={{ background: 'var(--surface-alt)' }}
-              >
+              <div className="relative w-auto h-auto max-w-full max-h-full flex items-center justify-center transition-all duration-500 group-hover:scale-[1.02] p-2 border-[2px] border-dashed border-accent-cyan/20 rounded-full group-hover:border-accent-cyan/60 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]">
                 <Image
-                  src="/images/avatar.jpg"
+                  src="/images/me/portrait.png"
                   alt="Cao Bao Gia Luat"
-                  fill
-                  className="object-cover"
+                  width={384} 
+                  height={384} 
+                  className="object-contain drop-shadow-2xl rounded-full"
                   onError={() => {}}
                   unoptimized
+                  priority
                 />
-                {/* Fallback placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center"
-                  style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.2))' }}
-                >
-                  <span className="text-8xl font-bold font-heading gradient-text-2 opacity-40">GL</span>
-                </div>
               </div>
             </div>
-
-            {/* Available Badge */}
-            {/* <div
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium"
-              style={{
-                background: 'rgba(74,222,128,0.1)',
-                border: '1px solid rgba(74,222,128,0.3)',
-                color: '#4ade80',
-              }}
-            >
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              {t.about.available_badge}
-            </div> */}
           </motion.div>
 
           {/* Bio + Info Column */}
-          <motion.div variants={containerVariants} className="lg:col-span-3 space-y-8">
+          <motion.div variants={containerVariants} className="lg:col-span-3 space-y-8 flex flex-col justify-center">
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-4">
               <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'var(--text-muted)' }}>
@@ -135,6 +115,7 @@ export default function About() {
                 const IconComp = infoIcons[key] || Sparkles
                 const value = t.about.info[key]
                 const isLink = key === 'email' || key === 'github'
+                const isStatus = key === 'status' // Kiểm tra xem có phải thẻ status không
                 const href =
                   key === 'email'
                     ? `mailto:${value}`
@@ -147,18 +128,45 @@ export default function About() {
                     key={key}
                     variants={itemVariants}
                     whileHover={{ y: -4, scale: 1.02 }}
-                    className="glass-card rounded-xl p-4 flex items-start gap-3 group transition-all duration-300 hover:shadow-lg"
+                    // Cập nhật className: Thẻ status sẽ có viền xanh mờ, các thẻ khác giữ nguyên glass-card
+                    className={`rounded-xl p-4 flex items-start gap-3 group transition-all duration-300 hover:shadow-lg relative overflow-hidden ${
+                      isStatus ? 'border border-emerald-500/30' : 'glass-card'
+                    }`}
+                    // Cập nhật style: Đổ màu nền xanh cho toàn bộ thẻ status
+                    style={isStatus ? {
+                      backgroundColor: 'rgba(16, 185, 129, 0.08)', // Nền xanh ngọc nhạt
+                      boxShadow: '0 4px 20px -2px rgba(16, 185, 129, 0.15)' // Đổ bóng xanh nhẹ
+                    } : {}}
                   >
+                    {/* Hiệu ứng Glow nền mờ bên trong góc phải của riêng thẻ Status */}
+                    {isStatus && (
+                      <div className="absolute -top-10 -right-10 w-24 h-24 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none" />
+                    )}
+
+                    {/* Khung Icon */}
                     <div
-                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ background: 'rgba(99,102,241,0.1)' }}
+                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 relative z-10"
+                      // Màu icon cũng đổi sang tone xanh ngọc nếu là status
+                      style={isStatus ? {
+                        background: 'rgba(16, 185, 129, 0.2)',
+                      } : { 
+                        background: 'rgba(99,102,241,0.1)' 
+                      }}
                     >
-                      <IconComp className="w-4.5 h-4.5" style={{ color: 'var(--accent-indigo)' }} />
+                      <IconComp 
+                        className="w-4.5 h-4.5" 
+                        style={{ color: isStatus ? 'rgb(16, 185, 129)' : 'var(--accent-indigo)' }} 
+                      />
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium mb-0.5" style={{ color: 'var(--text-subtle)' }}>
+
+                    <div className="min-w-0 relative z-10">
+                      <p 
+                        className="text-sm font-medium mb-0.5" 
+                        style={{ color: isStatus ? 'rgba(16, 185, 129, 0.9)' : 'var(--text-subtle)' }}
+                      >
                         {t.about.labels[key]}
                       </p>
+                      
                       {isLink && href ? (
                         <a
                           href={href}
@@ -169,7 +177,21 @@ export default function About() {
                         >
                           {value}
                         </a>
-                      ) : (
+                      ) : isStatus ? (
+                          <div className="flex items-center gap-3 mt-1.5 w-fit">
+                            <div className="relative flex items-center justify-center w-3 h-3">
+                              <span className="absolute w-full h-full rounded-full bg-emerald-500/40 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+                              
+                              <span className="absolute w-4 h-4 rounded-full bg-emerald-400/30 blur-[3px]"></span>
+                              
+                              <span className="relative w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] border border-emerald-300/50"></span>
+                            </div>
+                            
+                            <p className="text-[15px] font-semibold tracking-wide text-emerald-700 dark:text-emerald-400 truncate">
+                              {value}
+                            </p>
+                          </div>
+                        ): (
                         <p className="text-base font-semibold truncate" style={{ color: 'var(--text)' }}>
                           {value}
                         </p>

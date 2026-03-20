@@ -44,7 +44,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="section-padding relative">
+    <section id="projects" className="pt-20 relative">
       {/* Subtle BG */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div

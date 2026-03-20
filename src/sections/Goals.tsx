@@ -26,12 +26,7 @@ export default function Goals() {
   const items = t.goals.goals_items
 
   return (
-    <section id="goals" className="section-padding relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.06)_0%,transparent_70%)] rotate-12" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.04)_0%,transparent_60%)]" />
-      </div>
+    <section id="goals" className="pt-20 relative overflow-hidden">
 
       <div className="section-container relative z-10" ref={ref}>
         {/* Header */}

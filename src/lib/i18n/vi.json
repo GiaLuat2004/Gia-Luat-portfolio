@@ -7,6 +7,7 @@
     "education": "Học vấn",
     "certifications": "Chứng chỉ",
     "goals": "Mục tiêu",
+    "interests": "Sở thích",
     "contact": "Liên hệ"
   },
   "hero": {
@@ -21,7 +22,7 @@
     ],
     "tagline": "Biến ý tưởng thành các giải pháp phần mềm thực tế. Phát triển các hệ thống phần mềm mang lại giá trị cho người dùng và doanh nghiệp",
     "cta_primary": "Xem Dự Án",
-    "cta_secondary": "Tải CV",
+    "cta_secondary": "Tải xuống CV",
     "cta_contact": "Liên Hệ",
     "scroll_hint": "Khám phá thêm"
   },
@@ -35,7 +36,7 @@
       "email": "gialuat2004vk@gmail.com",
       "github": "github.com/GiaLuat2004",
       "phone": "0325 428 387",
-      "status": "Đang tìm kiếm cơ hội thực tập / làm việc"
+      "status": "Sẵn sàng"
     },
     "labels": {
       "dob": "Ngày sinh",
@@ -192,8 +193,8 @@
     "degree_label": "Chuyên ngành",
     "gpa_label": "GPA",
     "education": {
-      "school": "Đại học Giao thông Vận tải TP. Hồ Chí Minh (UTH)",
-      "degree": "Cử nhân Công nghệ Thông tin",
+      "school": "Đại Học Giao Thông Vận Tải TP. Hồ Chí Minh",
+      "degree": "Cử Nhân Công Nghệ Thông Tin",
       "major": "Công Nghệ Thông Tin",
       "period": "2022 – 2026",
       "gpa": "3.49 / 4.0"
@@ -208,13 +209,15 @@
       {
         "name": "Google Cloud Computing Foundations",
         "date": "07/2025",
-        "icon": "☁️"
+        "icon": "☁️",
+        "image": "/images/certifications/image.png"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
         "issuer": "Udemy",
         "date": "05/2025",
-        "icon": "🟢"
+        "icon": "🟢",
+        "image": "/images/certifications/udemy.png"
       }
     ]
   },

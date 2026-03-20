@@ -55,9 +55,6 @@ const itemVariants = {
   exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Spotlight Card Component for interactive mouse glow
-// ─────────────────────────────────────────────────────────────────────────────
 function SpotlightCard({ skill, accent }: { skill: any, accent: string }) {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isHovered, setIsHovered] = useState(false)
@@ -145,10 +142,6 @@ function SpotlightCard({ skill, accent }: { skill: any, accent: string }) {
     </motion.div>
   )
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Main Skills Component
-// ─────────────────────────────────────────────────────────────────────────────
 export default function Skills() {
   const { t } = useLanguage()
   const ref = useRef(null)
@@ -158,7 +151,7 @@ export default function Skills() {
   const activeAccent = tabAccents[activeTab]
 
   return (
-    <section id="skills" className="section-padding relative overflow-hidden">
+    <section id="skills" className="pt-20 relative overflow-hidden">
       {/* ── Background Elements ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -203,7 +196,6 @@ export default function Skills() {
           </motion.p>
         </motion.div>
 
-        {/* ── Main Layout: Responsive Mobile Horizontal scroll to Desktop Equal Height Columns ── */}
         <div className="flex flex-col lg:grid lg:grid-cols-[260px_1fr] gap-5 lg:h-[500px] items-stretch">
 
             <motion.div
@@ -275,7 +267,6 @@ export default function Skills() {
             })}
           </motion.div>
 
-          {/* ════ BOTTOM/RIGHT COLUMN: Skill Cards Display ════ */}
           <div 
             className="relative h-[450px] lg:h-full rounded-3xl border shadow-sm overflow-hidden flex flex-col"
             style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}

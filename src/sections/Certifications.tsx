@@ -25,10 +25,7 @@ export default function Certifications() {
   const certs = t.education.certifications
 
   return (
-    <section id="certifications" className="section-padding relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(129,140,248,0.03)_0%,transparent_70%)] pointer-events-none" />
-
+    <section id="certifications" className="pt-20 relative overflow-hidden">
       <div className="section-container relative z-10" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -78,10 +75,20 @@ export default function Certifications() {
                 {certs.map((cert: any, idx: number) => (
                   <div 
                     key={idx} 
-                    className="relative aspect-[4/3] w-full shrink-0 snap-center rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-xl backdrop-blur-md"
+                    className="relative aspect-[4/3] w-full shrink-0 snap-center flex items-center justify-center py-4"
                   >
-                    <div className="relative w-full h-full p-4 flex items-center justify-center">
-                      <div className="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5">
+                    {cert.image ? (
+                      <div className="relative w-full h-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5 dark:border-white/10 group">
+                        <Image
+                          src={cert.image}
+                          alt={cert.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-contain scale-[0.98] group-hover:scale-100 transition-transform duration-500 pointer-events-none"
+                        />
+                      </div>
+                    ) : (
+                      <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-indigo-500/20 shadow-lg overflow-hidden">
                         <div className="text-8xl mb-4">{cert.icon}</div>
                         <div className="text-center px-6 z-10">
                            <h4 className="text-xl font-bold mb-3">{cert.name}</h4>
@@ -94,13 +101,12 @@ export default function Certifications() {
                              <span className="opacity-90">{cert.issuer}</span>
                            </div>
                         </div>
+                        {/* Verified Watermark Overlay */}
+                        <div className="absolute bottom-6 right-6 rotate-12 opacity-20 pointer-events-none">
+                           <CheckCircle2 className="w-24 h-24 text-indigo-500" />
+                        </div>
                       </div>
-                      
-                      {/* Verified Watermark Overlay */}
-                      <div className="absolute bottom-6 right-6 rotate-12 opacity-20 pointer-events-none">
-                         <CheckCircle2 className="w-24 h-24 text-indigo-500" />
-                      </div>
-                    </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -117,37 +123,43 @@ export default function Certifications() {
             </div>
 
             {/* Desktop View: Single Interactive Preview */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8 }}
-              className="hidden md:block relative aspect-[4/3] rounded-3xl overflow-hidden bg-surface-alt border border-border shadow-2xl"
-            >
+            <div className="hidden md:block relative aspect-[4/3] w-full">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIdx}
-                  initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }}
-                  animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-                  exit={{ opacity: 0, filter: 'blur(10px)', scale: 1.05 }}
+                  initial={{ opacity: 0, y: 15, filter: 'blur(8px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -15, filter: 'blur(8px)' }}
                   transition={{ duration: 0.4 }}
-                  className="relative w-full h-full p-4 flex items-center justify-center"
+                  className="absolute inset-0 w-full h-full flex items-center justify-center"
                 >
-                  {/* Nếu bạn có ảnh thật, hãy dùng <Image />. Ở đây mình dùng Placeholder nghệ thuật */}
-                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-white/5 shadow-inner">
-                    <div className="text-8xl mb-4">{certs[activeIdx].icon}</div>
-                    <div className="text-center px-8">
-                       <h4 className="text-xl font-bold mb-2">{certs[activeIdx].name}</h4>
-                       <p className="text-sm text-muted opacity-70">{certs[activeIdx].issuer}</p>
+                  {certs[activeIdx].image ? (
+                    <div className="relative w-full h-full overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_rgb(0,0,0,0.15)] border border-black/5 dark:border-white/10 group">
+                      <Image
+                        src={certs[activeIdx].image}
+                        alt={certs[activeIdx].name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-contain scale-[0.98] group-hover:scale-100 transition-transform duration-700 pointer-events-none"
+                      />
                     </div>
-                  </div>
-                  
-                  {/* Verified Watermark Overlay */}
-                  <div className="absolute bottom-6 right-6 rotate-12 opacity-20">
-                     <CheckCircle2 className="w-24 h-24 text-indigo-500" />
-                  </div>
+                  ) : (
+                    <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 flex flex-col items-center justify-center border border-indigo-500/20 shadow-2xl overflow-hidden">
+                      <div className="text-8xl mb-4">{certs[activeIdx].icon}</div>
+                      <div className="text-center px-8 z-10">
+                         <h4 className="text-xl font-bold mb-2">{certs[activeIdx].name}</h4>
+                         <p className="text-sm text-muted opacity-70">{certs[activeIdx].issuer}</p>
+                      </div>
+                      
+                      {/* Verified Watermark Overlay */}
+                      <div className="absolute bottom-6 right-6 rotate-12 opacity-20 pointer-events-none">
+                         <CheckCircle2 className="w-24 h-24 text-indigo-500" />
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
-            </motion.div>
+            </div>
 
           </div>
 
@@ -167,26 +179,27 @@ export default function Certifications() {
                     key={idx}
                     variants={itemVariants}
                     onClick={() => setActiveIdx(idx)}
-                    className={`group relative cursor-pointer p-5 rounded-2xl transition-all duration-300 border backdrop-blur-sm ${
+                    
+                    className={`group relative cursor-pointer p-5 rounded-2xl transition-all duration-300 border backdrop-blur-sm overflow-hidden ${
                       isActive 
-                        ? 'bg-surface border-indigo-500/50 shadow-lg shadow-indigo-500/10 dark:bg-black/20' 
-                        : 'bg-transparent border-transparent hover:border-indigo-500/20 hover:bg-indigo-500/5'
+                        ? 'bg-indigo-50/50 border-indigo-500/40 shadow-md shadow-indigo-500/10 dark:bg-indigo-900/20 dark:border-indigo-500/50' 
+                        : 'bg-surface border-border hover:border-indigo-500/30 hover:bg-surface-alt hover:shadow-sm dark:bg-black/10 dark:border-white/10'
                     }`}
                   >
-                    <div className="flex items-center gap-5">
+                    <div className="flex items-center gap-5 relative z-10">
                       {/* Small Icon Indicator */}
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-all duration-300 ${
-                        isActive ? 'bg-indigo-500/20 scale-110 shadow-inner' : 'bg-surface-alt group-hover:bg-indigo-500/10 group-hover:scale-105'
+                        isActive ? 'bg-indigo-500/20 scale-110 shadow-inner' : 'bg-surface-alt group-hover:bg-indigo-500/10 group-hover:scale-105 dark:bg-white/5'
                       }`}>
                         {cert.icon}
                       </div>
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className={`font-bold truncate transition-colors ${isActive ? 'text-indigo-400' : 'text-text'}`}>
+                          <h3 className={`font-bold truncate transition-colors ${isActive ? 'text-indigo-600 dark:text-indigo-400' : 'text-text group-hover:text-indigo-500 dark:group-hover:text-indigo-400'}`}>
                             {cert.name}
                           </h3>
-                          {isActive && <ExternalLink className="w-3 h-3 text-indigo-400" />}
+                          {isActive && <ExternalLink className="w-3 h-3 text-indigo-500 dark:text-indigo-400" />}
                         </div>
                         
                         <div className="flex items-center gap-3 text-xs text-muted-foreground">
@@ -200,15 +213,16 @@ export default function Certifications() {
                       </div>
 
                       <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
-                        isActive ? 'rotate-90 text-indigo-500' : 'text-muted opacity-0 group-hover:opacity-100'
+                        isActive ? 'text-indigo-500' : 'text-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
                       }`} />
                     </div>
 
-                    {/* Active Progress Line */}
+                    {/* Active Progress Line (Viền dọc bên trái khi được chọn) */}
                     {isActive && (
                       <motion.div 
                         layoutId="active-pill"
-                        className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-indigo-500 rounded-r-full"
+                        className="absolute left-0 top-0 bottom-0 w-1.5 bg-indigo-500"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
                   </motion.div>

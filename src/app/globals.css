@@ -20,6 +20,10 @@
     --accent-purple: #7c3aed;
     --glow-indigo: rgba(79, 70, 229, 0.18);
     --glow-cyan: rgba(8, 145, 178, 0.18);
+    --bg-grad-1: #ffffff;
+    --bg-grad-2: #f1f5f9;
+    --bg-grad-3: #e0e7ff;
+    --bg-grad-4: #ecfeff;
   }
 
   .dark {
@@ -37,6 +41,10 @@
     --accent-purple: #a78bfa;
     --glow-indigo: rgba(129, 140, 248, 0.25);
     --glow-cyan: rgba(34, 211, 238, 0.25);
+    --bg-grad-1: #020204;
+    --bg-grad-2: #050812;
+    --bg-grad-3: #080a1c;
+    --bg-grad-4: #020b12;
   }
 
   * {
@@ -48,15 +56,20 @@
   }
 
   body {
-    background-color: var(--bg);
+    background: linear-gradient(-45deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3), var(--bg-grad-4));
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
     color: var(--text);
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 17px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
+    position: relative;
+    min-height: 100vh;
   }
+
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', system-ui, sans-serif;
@@ -106,13 +119,13 @@
     .section-container { padding-left: 3rem; padding-right: 3rem; }
   }
 
-  .section-padding {
+  .pt-20 {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
 
   @media (min-width: 1024px) {
-    .section-padding { padding-top: 8rem; padding-bottom: 8rem; }
+    .pt-20 { padding-top: 8rem; padding-bottom: 8rem; }
   }
 
   /* ============================
@@ -379,6 +392,8 @@
     animation-delay: 5s;
   }
 
+  
+
   /* ============================
      TIMELINE
      ============================ */
@@ -564,3 +579,4 @@
   0%, 100% { transform: scale(1); opacity: 0.45; }
   50% { transform: scale(1.6); opacity: 0; }
 }
+

@@ -1,103 +1,213 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, useMemo } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Heart, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Heart, Sparkles } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+
+/* ── colour themes per interest ── */
+const interestThemes = [
+  {
+    accent: '#818cf8',
+    accentRgb: '129,140,248',
+    gradient: 'linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #4f46e5 100%)',
+    orb1: '#818cf8',
+    orb2: '#6366f1',
+    bgImage:
+      'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=900&h=600&fit=crop',
+  },
+  {
+    accent: '#f472b6',
+    accentRgb: '244,114,182',
+    gradient: 'linear-gradient(135deg, #f472b6 0%, #ec4899 50%, #db2777 100%)',
+    orb1: '#f472b6',
+    orb2: '#ec4899',
+    bgImage:
+      'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900&h=600&fit=crop',
+  },
+  {
+    accent: '#34d399',
+    accentRgb: '52,211,153',
+    gradient: 'linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%)',
+    orb1: '#34d399',
+    orb2: '#10b981',
+    bgImage:
+      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&h=600&fit=crop',
+  },
+  {
+    accent: '#fbbf24',
+    accentRgb: '251,191,36',
+    gradient: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)',
+    orb1: '#fbbf24',
+    orb2: '#f59e0b',
+    bgImage:
+      'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=900&h=600&fit=crop',
+  },
+]
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
 }
-
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
 
-const interestImages: Record<string, string> = {
-  'Open Source': 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=400&h=300&fit=crop',
-  'Continuous Learning': 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop',
-  'Gaming & E-sports': 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop',
-  'Fitness & Health': 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop',
-  'Music': 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop',
-  'Travel & Culture': 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
-  // Vietnamese
-  'Học Hỏi Liên Tục': 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop',
-  'Thể Dục & Sức Khỏe': 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop',
-  'Âm Nhạc': 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=300&fit=crop',
-  'Du Lịch & Văn Hóa': 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
+function FloatingParticles({ color }: { color: string }) {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 18 }).map((_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: 2 + Math.random() * 4,
+        duration: 4 + Math.random() * 6,
+        delay: Math.random() * 4,
+      })),
+    [],
+  )
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+      {particles.map((p) => (
+        <motion.div
+          key={p.id}
+          className="absolute rounded-full"
+          style={{
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            width: p.size,
+            height: p.size,
+            background: color,
+            opacity: 0,
+          }}
+          animate={{
+            opacity: [0, 0.6, 0],
+            y: [0, -40, -80],
+            scale: [0.5, 1.2, 0.5],
+          }}
+          transition={{
+            duration: p.duration,
+            repeat: Infinity,
+            delay: p.delay,
+            ease: 'easeInOut',
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
+/* ── Progress ring around the active icon ── */
+function ProgressRing({
+  progress,
+  color,
+  size = 120,
+  stroke = 3,
+}: {
+  progress: number
+  color: string
+  size?: number
+  stroke?: number
+}) {
+  const r = (size - stroke) / 2
+  const circ = 2 * Math.PI * r
+  return (
+    <svg
+      width={size}
+      height={size}
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 pointer-events-none"
+    >
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        stroke={color}
+        strokeOpacity={0.15}
+        strokeWidth={stroke}
+      />
+      <motion.circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        stroke={color}
+        strokeWidth={stroke}
+        strokeDasharray={circ}
+        strokeDashoffset={circ * (1 - progress)}
+        strokeLinecap="round"
+        transition={{ duration: 0.1 }}
+      />
+    </svg>
+  )
 }
 
 export default function Interests() {
   const { t } = useLanguage()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const [activeCard, setActiveCard] = useState<number | null>(null)
-  const [page, setPage] = useState(0)
-  const [itemsPerPage, setItemsPerPage] = useState(3)
 
   const items = t.goals.interests_items
+  const total = items.length
 
+  const [active, setActive] = useState(0)
+  const [progress, setProgress] = useState(0)
+  const INTERVAL_MS = 5000
+
+  /* auto-advance with progress */
   useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1)
-    }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    const tick = 50
+    let elapsed = 0
+    const id = setInterval(() => {
+      elapsed += tick
+      setProgress(elapsed / INTERVAL_MS)
+      if (elapsed >= INTERVAL_MS) {
+        setActive((prev) => (prev + 1) % total)
+        elapsed = 0
+        setProgress(0)
+      }
+    }, tick)
+    return () => clearInterval(id)
+  }, [total, active])
 
-  const maxPage = Math.max(0, Math.ceil(items.length / itemsPerPage) - 1)
+  const goTo = useCallback(
+    (i: number) => {
+      setActive(i)
+      setProgress(0)
+    },
+    [],
+  )
 
-  const nextPage = useCallback(() => {
-    setPage((p) => (p >= maxPage ? 0 : p + 1))
-  }, [maxPage])
-
-  const prevPage = useCallback(() => {
-    setPage((p) => (p <= 0 ? maxPage : p - 1))
-  }, [maxPage])
-
-  // Auto-advance
-  useEffect(() => {
-    const timer = setInterval(nextPage, 4500)
-    return () => clearInterval(timer)
-  }, [nextPage])
-
-  const startIdx = page * itemsPerPage
-  const visibleItems = items.slice(startIdx, startIdx + itemsPerPage)
+  const theme = interestThemes[active % interestThemes.length]
+  const item = items[active]
 
   return (
-    <section className="section-padding relative pb-12 md:pb-20">
-      {/* BG */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-5"
-          style={{ background: 'radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%)' }}
-        />
-      </div>
-
+    <section id="interests" className="pt-20 relative overflow-hidden pb-12 md:pb-20">
       <div className="section-container" ref={ref}>
-        {/* Header */}
+        {/* ── Header ── */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="text-center mb-14"
+          className="text-center mb-10 md:mb-12"
         >
           <motion.div
             variants={itemVariants}
             className="inline-flex items-center gap-2 mb-4 text-sm font-medium px-4 py-2 rounded-full"
             style={{
-              background: 'rgba(6,182,212,0.08)',
-              border: '1px solid rgba(6,182,212,0.2)',
-              color: 'var(--accent-cyan)',
+              background: `rgba(${theme.accentRgb},0.08)`,
+              border: `1px solid rgba(${theme.accentRgb},0.25)`,
+              color: theme.accent,
+              transition: 'all 0.6s ease',
             }}
           >
             <Heart className="w-3.5 h-3.5" />
-            Sở Thích
+            {t.goals.interests_title}
           </motion.div>
-          <motion.h2 variants={itemVariants} className="section-title mb-4">
+          <motion.h2 variants={itemVariants} className="section-title mb-3">
             {t.goals.interests_title}
           </motion.h2>
           <motion.p variants={itemVariants} className="section-subtitle max-w-2xl mx-auto">
@@ -105,146 +215,171 @@ export default function Interests() {
           </motion.p>
         </motion.div>
 
-        {/* Square Image Cards Grid */}
+        {/* ── Showcase ── */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={page}
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -60 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          <motion.div
+            variants={itemVariants}
+            className="relative mx-auto"
+            style={{ maxWidth: 960 }}
+          >
+            {/* ─ Main card ─ */}
+            <div
+              className="relative rounded-3xl overflow-hidden"
+              style={{
+                border: '1.5px solid var(--border)',
+                transition: 'border-color 0.6s ease',
+              }}
             >
-              {visibleItems.map((item, idx) => {
-                const globalIdx = startIdx + idx
-                const isActive = activeCard === globalIdx
-                const imageUrl = interestImages[item.title]
-
-                return (
-                  <motion.div
-                    key={`${item.title}-${page}`}
-                    whileHover={{ y: -6, scale: 1.02 }}
-                    onClick={() => setActiveCard(isActive ? null : globalIdx)}
-                    className="relative cursor-pointer group overflow-hidden rounded-2xl"
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`bg-${active}`}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.7, ease: 'easeInOut' }}
+                  className="absolute inset-0"
+                >
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${theme.bgImage})` }}
+                  />
+                  {/* overlay for readability */}
+                  <div
+                    className="absolute inset-0"
                     style={{
-                      aspectRatio: '1 / 1',
-                      border: '1px solid var(--border)',
-                      transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(6,182,212,0.5)'
-                      ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(6,182,212,0.2)'
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.borderColor = ''
-                      ;(e.currentTarget as HTMLElement).style.boxShadow = ''
-                    }}
-                  >
-                    {/* Background Image */}
-                    {imageUrl ? (
-                      <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                        style={{ backgroundImage: `url(${imageUrl})` }}
-                      />
-                    ) : (
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          background: `linear-gradient(135deg, rgba(6,182,212,0.15), rgba(99,102,241,0.1))`,
-                        }}
-                      />
-                    )}
-
-                    {/* Dark Overlay */}
-                    <div
-                      className="absolute inset-0 transition-opacity duration-300"
-                      style={{
-                        background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.15) 100%)',
-                        opacity: isActive ? 0.95 : 0.7,
-                      }}
-                    />
-
-                    {/* Content */}
-                    <div className="relative z-10 h-full p-5 flex flex-col justify-end">
-                      <span className="text-4xl mb-3">{item.icon}</span>
-                      <h4 className="text-xl font-bold font-heading text-white mb-1.5">
-                        {item.title}
-                      </h4>
-
-                      <AnimatePresence>
-                        {isActive && (
-                          <motion.p
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="text-base leading-relaxed text-gray-200 overflow-hidden"
-                          >
-                            {item.description}
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
-
-                      {!isActive && (
-                        <p className="text-sm font-medium text-gray-300 mt-1">Click to read more</p>
-                      )}
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Pagination */}
-          {maxPage > 0 && (
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <motion.button
-                onClick={prevPage}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-11 h-11 rounded-full flex items-center justify-center"
-                style={{
-                  background: 'rgba(6,182,212,0.12)',
-                  border: '1px solid rgba(6,182,212,0.3)',
-                  color: 'var(--accent-cyan)',
-                }}
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </motion.button>
-              <div className="flex gap-1.5">
-                {Array.from({ length: maxPage + 1 }).map((_, dotIdx) => (
-                  <button
-                    key={dotIdx}
-                    onClick={() => setPage(dotIdx)}
-                    className="rounded-full transition-all duration-300"
-                    style={{
-                      width: page === dotIdx ? 24 : 8,
-                      height: 8,
-                      background: page === dotIdx ? 'var(--accent-cyan)' : 'rgba(6,182,212,0.3)',
+                      background: `linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 50%, rgba(255,255,255,0.05) 100%)`,
                     }}
                   />
-                ))}
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Content layer */}
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-14 px-8 py-12 md:px-14 md:py-16 lg:px-20 lg:py-20">
+                {/* ─ Icon circle with progress ring ─ */}
+                <div className="relative flex-shrink-0">
+                  <ProgressRing
+                    progress={progress}
+                    color={theme.accent}
+                    size={140}
+                    stroke={3}
+                  />
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`icon-${active}`}
+                      initial={{ opacity: 0, scale: 0.3, rotate: -30 }}
+                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                      exit={{ opacity: 0, scale: 0.3, rotate: 30 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      className="w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-full flex items-center justify-center"
+                      style={{
+                        background: `rgba(${theme.accentRgb},0.12)`,
+                        backdropFilter: 'blur(12px)',
+                        boxShadow: `0 0 60px rgba(${theme.accentRgb},0.25)`,
+                      }}
+                    >
+                      <span className="text-5xl md:text-6xl select-none">{item.icon}</span>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                {/* ─ Text ─ */}
+                <div className="flex-1 text-center md:text-left">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`text-${active}`}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5, ease: 'easeOut' }}
+                    >
+                      <h3
+                        className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-white mb-4 leading-tight"
+                        style={{ textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-lg">
+                        {item.description}
+                      </p>
+
+                      {/* Decorative line */}
+                      <motion.div
+                        className="mt-6 h-1 rounded-full origin-left"
+                        style={{ background: theme.gradient, maxWidth: 120 }}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
-              <motion.button
-                onClick={nextPage}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-11 h-11 rounded-full flex items-center justify-center"
-                style={{
-                  background: 'rgba(6,182,212,0.12)',
-                  border: '1px solid rgba(6,182,212,0.3)',
-                  color: 'var(--accent-cyan)',
-                }}
-              >
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
             </div>
-          )}
+
+            {/* ── Navigation pills ── */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {items.map((it: { icon: string; title: string }, idx: number) => {
+                const isActive = idx === active
+                const pillTheme = interestThemes[idx % interestThemes.length]
+                return (
+                  <motion.button
+                    key={idx}
+                    onClick={() => goTo(idx)}
+                    whileHover={{ scale: 1.06 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm transition-all duration-400 cursor-pointer"
+                    style={{
+                      background: isActive ? 'var(--surface-alt)' : 'var(--surface)',
+                      border: `1.5px solid var(--border)`,
+                      color: isActive ? pillTheme.accent : 'var(--text-muted)',
+                      boxShadow: isActive
+                        ? '0 4px 24px rgba(0,0,0,0.1)'
+                        : '0 2px 8px rgba(0,0,0,0.04)',
+                    }}
+                  >
+                    <span className="text-xl select-none">{it.icon}</span>
+                    <span className="hidden sm:inline">{it.title}</span>
+
+                    {/* Active glow dot */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="active-dot"
+                        className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full"
+                        style={{
+                          background: pillTheme.accent,
+                          boxShadow: `0 0 8px ${pillTheme.accent}`,
+                        }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                      />
+                    )}
+                  </motion.button>
+                )
+              })}
+            </div>
+
+            {/* ── Bottom progress bar ── */}
+            <div
+              className="mt-6 mx-auto rounded-full overflow-hidden"
+              style={{
+                maxWidth: 280,
+                height: 3,
+                background: 'var(--border)',
+              }}
+            >
+              <motion.div
+                className="h-full rounded-full"
+                style={{
+                  background: theme.gradient,
+                  width: `${progress * 100}%`,
+                  transition: 'width 0.05s linear',
+                }}
+              />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -86,12 +86,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding relative">
-      {/* Hero-like gradient bg */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="mesh-orb mesh-orb-1" style={{ opacity: 0.08 }} />
-        <div className="mesh-orb mesh-orb-2" style={{ opacity: 0.08 }} />
-      </div>
+    <section id="contact" className="pt-20 relative">
+      
 
       <div className="section-container" ref={ref}>
         {/* Header */}

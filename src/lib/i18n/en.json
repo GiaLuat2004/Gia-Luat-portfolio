@@ -7,6 +7,7 @@
     "education": "Education",
     "certifications": "Certifications",
     "goals": "Goals",
+    "interests": "Interests",
     "contact": "Contact"
   },
   "hero": {
@@ -35,7 +36,7 @@
       "email": "gialuat2004vk@gmail.com",
       "github": "github.com/GiaLuat2004",
       "phone": "0325 428 387",
-      "status": "Looking for internship / job opportunities"
+      "status": "I'm ready"
     },
     "labels": {
       "dob": "Date of Birth",
@@ -192,7 +193,7 @@
     "degree_label": "Major",
     "gpa_label": "GPA",
     "education": {
-      "school": "University of Transport Ho Chi Minh City (UTH)",
+      "school": "University of Transport Ho Chi Minh City",
       "degree": "Bachelor of Information Technology",
       "major": "Information Technology",
       "period": "2022 – 2026",
@@ -208,13 +209,15 @@
       {
         "name": "Google Cloud Computing Foundations",
         "date": "07/2025",
-        "icon": "☁️"
+        "icon": "☁️",
+        "image": "/images/certifications/image.png"
       },
       {
         "name": "Node.js, Express, MongoDB & More: The Complete Bootcamp",
         "issuer": "Udemy",
         "date": "05/2025",
-        "icon": "🟢"
+        "icon": "🟢",
+        "image": "/images/certifications/udemy.png"
       }
     ]
   },

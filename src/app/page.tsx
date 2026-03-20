@@ -2,6 +2,8 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import BackToTop from '@/components/ui/BackToTop'
+import AnimatedBackground from '@/components/ui/AnimatedBackground' 
+
 import Hero from '@/sections/Hero'
 import About from '@/sections/About'
 import Skills from '@/sections/Skills'
@@ -17,6 +19,7 @@ export default function Home() {
     <>
       <ScrollProgress />
       <Navbar />
+      
       <main>
         <Hero />
         <About />
@@ -28,6 +31,7 @@ export default function Home() {
         <Interests />
         <Contact />
       </main>
+      
       <Footer />
       <BackToTop />
     </>

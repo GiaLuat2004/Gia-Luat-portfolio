@@ -113,7 +113,7 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-2xl border border-white/20 group-hover:border-white/40 transition-colors duration-300 z-10" />
               <div className="relative z-20 flex items-center gap-2 text-white">
                 <Download className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                <span>DOWNLOAD CV</span>
+                <span>{t.hero.cta_secondary}</span>
               </div>
             </motion.a>
 
