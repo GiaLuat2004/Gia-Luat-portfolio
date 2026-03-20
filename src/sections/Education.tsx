@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { GraduationCap, BookOpen, MapPin, Calendar } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { assetPath } from '@/lib/utils';
+import { getImagePath } from '@/lib/utils';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -169,7 +169,7 @@ export default function Education() {
                 </div>
 
                 <img
-                  src={assetPath("/images/edu/uth.jpg")}
+                  src={getImagePath('/images/edu/uth.jpg')}
                   alt="Ho Chi Minh City University of Transport"
                   className="relative lg:col-span-4 flex-shrink-0 mt-1 lg:mt-0 w-full h-80% min-h-[80%] sm:min-h-[80%] lg:min-h-[80%] rounded-[1.25rem] overflow-hidden shadow-md group-hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] transition-all duration-500"
                   loading="lazy"

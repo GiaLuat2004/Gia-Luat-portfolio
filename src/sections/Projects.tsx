@@ -5,7 +5,7 @@ import { motion, useInView, useScroll, useTransform, AnimatePresence } from 'fra
 import { Github, Layers, Calendar, Users, ChevronDown, ChevronUp } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import Image from 'next/image'
-import { assetPath } from '@/lib/utils'
+import { getImagePath } from '@/lib/utils'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -171,7 +171,7 @@ export default function Projects() {
                         style={{ background: 'var(--surface-alt)' }}
                       >
                         <Image
-                          src={assetPath(project.image)}
+                          src={getImagePath(project.image)}
                           alt={project.title}
                           fill
                           className="object-cover group-hover:scale-110 blur-[1px] group-hover:blur-0 transition-all duration-700 ease-out"

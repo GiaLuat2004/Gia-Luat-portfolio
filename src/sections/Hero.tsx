@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Github, Mail, Download, Facebook } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 import Image from 'next/image';
-import { assetPath } from '@/lib/utils';
+import { getImagePath } from '@/lib/utils';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -116,7 +116,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start"
             >
               <motion.a
-                href={assetPath("/CV-CAO-BAO-GIA-LUAT-WEB-INTERN.pdf")}
+                href="CV-CAO-BAO-GIA-LUAT-WEB-INTERN.pdf"
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
@@ -183,7 +183,7 @@ export default function Hero() {
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               <Image
-                src={assetPath("/images/me/portrait.png")}
+                src={getImagePath('/images/me/portrait.png')}
                 alt="Profile Portrait"
                 width={500}
                 height={500}

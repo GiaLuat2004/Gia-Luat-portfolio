@@ -5,10 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function assetPath(path: string) {
-  const basePath = '/Gia-Luat-portfolio';
+export const getImagePath = (path: string) => {
   if (!path) return '';
-  if (path.startsWith('http')) return path; // Don't prefix external links
-  if (path.startsWith(basePath)) return path; // Already prefixed
+  if (path.startsWith('http')) return path; // Skip absolute urls
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return `${basePath}${path.startsWith('/') ? '' : '/'}${path}`;
-}
+};
