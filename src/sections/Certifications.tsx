@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 import Image from 'next/image';
+import { assetPath } from '@/lib/utils';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -88,7 +89,7 @@ export default function Certifications() {
                     {cert.image ? (
                       <div className="relative w-full h-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5 dark:border-white/10 group">
                         <Image
-                          src={cert.image}
+                          src={assetPath(cert.image)}
                           alt={cert.name}
                           fill
                           sizes="(max-width: 768px) 100vw, 50vw"
@@ -146,7 +147,7 @@ export default function Certifications() {
                   {certs[activeIdx].image ? (
                     <div className="relative w-full h-full overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_rgb(0,0,0,0.15)] border border-black/5 dark:border-white/10 group">
                       <Image
-                        src={certs[activeIdx].image}
+                        src={assetPath(certs[activeIdx].image)}
                         alt={certs[activeIdx].name}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
