@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
+import { getImagePath } from '@/lib/utils'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,8 +20,8 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'Portfolio | Gia Luat',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
+    icon: getImagePath('/images/logo.png'),
+    shortcut: getImagePath('/images/logo.png'),
   },
   description:
     'Portfolio of Cao Bao Gia Luat – Fullstack Developer Intern specializing in React, Next.js, Node.js, and AI-powered systems.',

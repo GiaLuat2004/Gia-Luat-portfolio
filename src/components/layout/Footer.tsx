@@ -3,6 +3,7 @@
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { Github, Mail, Heart } from 'lucide-react'
 import Image from 'next/image'
+import { getImagePath } from '@/lib/utils'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -30,7 +31,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-center gap-2 font-heading font-bold shrink-0">
             <span className="w-7 h-7 md:w-8 md:h-8 rounded-lg relative flex items-center justify-center overflow-hidden">
-              <Image src="/logo.png" alt="Logo" fill className="object-cover" />
+              <Image src={getImagePath("/images/logo.png")} alt="Logo" fill className="object-cover" />
             </span>
             <span className="gradient-text-2 text-sm md:text-base">
               Cao Bao Gia Luat
