@@ -18,6 +18,10 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: 'Portfolio | Gia Luat',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+  },
   description:
     'Portfolio of Cao Bao Gia Luat – Fullstack Developer Intern specializing in React, Next.js, Node.js, and AI-powered systems.',
   keywords: ['portfolio', 'fullstack developer', 'react', 'next.js', 'nodejs', 'typescript', 'web developer vietnam'],

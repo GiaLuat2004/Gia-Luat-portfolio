@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes'
 import { Sun, Moon, Menu, X, Globe } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 const navItems = ['about', 'skills', 'projects', 'education', 'certifications', 'goals', 'interests','contact'] as const
 
@@ -67,8 +68,8 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2 font-heading font-bold text-xl select-none"
           >
-            <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
-              GL
+            <span className="w-9 h-9 relative flex items-center justify-center overflow-hidden rounded-lg">
+              <Image src="/logo.png" alt="Logo" fill className="object-cover" />
             </span>
             <span className="gradient-text-2">Portfolio</span>
           </motion.button>
