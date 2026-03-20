@@ -347,7 +347,7 @@ export default function Contact() {
                textShadow: '0 4px 20px rgba(99,102,241,0.1)'
              }}
            >
-             "{t.contact.thank_you}"
+             &quot;{t.contact.thank_you}&quot;
            </p>
            
            {/* Chữ ký cách điệu */}
