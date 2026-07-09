@@ -3,6 +3,7 @@
     "home": "Trang chủ",
     "about": "Về tôi",
     "skills": "Kỹ năng",
+    "experience": "Kinh nghiệm",
     "projects": "Dự án",
     "education": "Học vấn",
     "certifications": "Chứng chỉ",
@@ -28,8 +29,9 @@
   },
   "about": {
     "title": "Về Tôi",
-    "subtitle": "SOFTWARE ENGINEER",
-    "bio": "Tôi là sinh viên năm cuối chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH). Với nền tảng kiến thức tốt về lập trình web đã được trau dồi và tích lũy trong quá trình học tập, tôi tập trung phát triển kỹ năng xoay quanh hệ sinh thái React/Next.js và Node.js. Mục tiêu của tôi là không ngừng học hỏi và cải thiện bản thân để có thể tạo ra những sản phẩm tốt nhất cho người dùng và mang lại giá trị cho doanh nghiệp.",
+    "subtitle": "FULLSTACK DEVELOPER",
+    "objective_label": "Mục Tiêu Nghề Nghiệp",
+    "bio": "Fullstack Developer với kinh nghiệm thực tế về ReactJS, Node.js và FastAPI, đóng góp vào việc phát triển các ứng dụng web có khả năng mở rộng và giải pháp AI doanh nghiệp. Có kinh nghiệm tích hợp LLMs, LangChain và RAG vào các sản phẩm thực tế để tự động hóa quy trình nghiệp vụ và nâng cao năng suất người dùng. Đam mê xây dựng phần mềm chất lượng cao, không ngừng học hỏi công nghệ mới và mang đến những giải pháp thực tiễn tạo ra giá trị cho doanh nghiệp.",
     "info": {
       "dob": "25/08/2004",
       "location": "Tân Bình, TP. Hồ Chí Minh",
@@ -48,6 +50,55 @@
     },
     "available_badge": "Sẵn sàng nhận việc"
   },
+  "experience": {
+    "title": "Kinh Nghiệm Làm Việc",
+    "subtitle": "Nơi tôi đang áp dụng các kỹ năng để giải quyết bài toán kinh doanh thực tế.",
+    "present": "Hiện tại",
+    "show_more": "Xem tất cả",
+    "show_less": "Thu gọn",
+    "company_label": "Công ty",
+    "role_label": "Vị trí",
+    "period_label": "Thời gian",
+    "team_label": "Nhóm",
+    "location_label": "Địa điểm",
+    "responsibilities": "Trách Nhiệm Chính",
+    "tech_stack": "Công Nghệ Sử Dụng",
+    "items": [
+      {
+        "id": "ai-power",
+        "company": "AI Power Co., Ltd, Việt Nam",
+        "company_short": "AI Power",
+        "logo": "/images/companies/aipower.png",
+        "brand_color": "#0891b2",
+        "role": "Fullstack Developer Intern",
+        "team": "Quy mô nhóm: 9 người",
+        "location": "Tân Bình, TP.HCM",
+        "period": "04/2026 – Hiện tại",
+        "date_start": "2026-04",
+        "date_end": "present",
+        "tech": [
+          "ReactJS",
+          "FastAPI",
+          "LangChain",
+          "RAG",
+          "PostgreSQL",
+          "ClickHouse",
+          "Redis",
+          "Celery/arq",
+          "Docker",
+          "MinIO"
+        ],
+        "responsibilities": [
+          "**Thiết kế và triển khai giải pháp Single Sign-On (SSO)** dựa trên **Keycloak**, tích hợp **Redis** để quản lý phiên đăng nhập, **tập trung hóa xác thực và quyền truy cập** người dùng trong toàn bộ hệ sinh thái doanh nghiệp.",
+          "**Đóng gói và triển khai dịch vụ SSO bằng Docker**, cấu hình **môi trường production-ready** và tích hợp với nhiều ứng dụng để **đảm bảo dịch vụ xác thực hoạt động ổn định**.",
+          "**Phát triển ứng dụng Document Intelligence tích hợp LLM** sử dụng **LangChain**, **FastAPI** và **RAG**, hỗ trợ **phân tích hợp đồng và tài liệu doanh nghiệp** cho việc **đánh giá rủi ro pháp lý**, phát hiện điều khoản bất lợi và đề xuất chỉnh sửa theo ngữ cảnh.",
+          "**Triển khai so sánh tài liệu ngữ nghĩa và hệ thống Hỏi-Đáp (QA)** dựa trên **RAG**, cho phép **truy xuất tài liệu bằng ngôn ngữ tự nhiên**, trả lời theo ngữ cảnh và **chỉnh sửa trực tiếp các đề xuất do AI tạo ra** ngay trong bản xem trước tài liệu.",
+          "**Xây dựng quy trình xuất tài liệu bất đồng bộ với Celery/ARQ**, tạo **báo cáo PDF có cấu trúc** và **tài liệu DOCX Track Changes** để hỗ trợ **quá trình review và chỉnh sửa tài liệu cộng tác**.",
+          "**Phát triển giao diện Helpdesk và các API backend** bằng **ReactJS** và **FastAPI**, tích hợp **MinIO** để lưu trữ tệp và hình ảnh, đồng thời **hỗ trợ nền tảng chuyển đổi sang kiến trúc dạng plugin**."
+        ]
+      }
+    ]
+  },
   "skills": {
     "title": "Kỹ Năng Chuyên Môn",
     "subtitle": "Các công cụ và bộ công nghệ tôi sử dụng để giải quyết bài toán thực tế.",
@@ -57,19 +108,9 @@
         "icon": "Monitor",
         "skills": [
           {
-            "name": "TypeScript",
-            "icon": "SiTypescript",
-            "desc": "Bảo đảm an toàn kiểu dữ liệu và dễ dàng bảo trì dự án lớn."
-          },
-          {
-            "name": "JavaScript ES6+",
-            "icon": "SiJavascript",
-            "desc": "Thành thạo các tính năng hiện đại như async/await, modules."
-          },
-          {
-            "name": "React.js",
+            "name": "ReactJS",
             "icon": "SiReact",
-            "desc": "Xây dựng giao diện UI linh hoạt với Hooks và Context."
+            "desc": "Xây dựng UI linh hoạt theo component với Hooks và Context."
           },
           {
             "name": "Next.js",
@@ -77,24 +118,24 @@
             "desc": "Phát triển ứng dụng SSR/SSG, tối ưu SEO và hiệu suất."
           },
           {
+            "name": "TypeScript",
+            "icon": "SiTypescript",
+            "desc": "Đảm bảo an toàn kiểu dữ liệu và dễ bảo trì dự án lớn."
+          },
+          {
+            "name": "JavaScript ES6+",
+            "icon": "SiJavascript",
+            "desc": "Thành thạo các tính năng hiện đại như async/await, modules."
+          },
+          {
             "name": "TailwindCSS",
             "icon": "SiTailwindcss",
-            "desc": "Thiết kế giao diện nhanh chóng, có độ tùy biến cao."
+            "desc": "Thiết kế giao diện responsive nhanh chóng, có độ tùy biến cao."
           },
           {
             "name": "Framer Motion",
             "icon": "SiFramer",
             "desc": "Tạo các hiệu ứng chuyển động và tương tác mượt mà."
-          },
-          {
-            "name": "Redux",
-            "icon": "SiRedux",
-            "desc": "Quản lý state hiệu quả cho các ứng dụng quy mô lớn."
-          },
-          {
-            "name": "ShadcnUI",
-            "icon": "TbLayersLinked",
-            "desc": "Sử dụng và tinh chỉnh các UI components hiện đại."
           }
         ]
       },
@@ -115,7 +156,12 @@
           {
             "name": "FastAPI",
             "icon": "SiFastapi",
-            "desc": "Xây dựng API Python hiệu suất cao, tự động hóa tài liệu."
+            "desc": "Xây dựng API Python hiệu suất cao, tự sinh tài liệu."
+          },
+          {
+            "name": "Python",
+            "icon": "SiPython",
+            "desc": "Ngôn ngữ cốt lõi cho xử lý dữ liệu, scripting và dịch vụ AI."
           },
           {
             "name": "RESTful API",
@@ -125,90 +171,136 @@
           {
             "name": "WebSocket",
             "icon": "TbPlugConnected",
-            "desc": "Tích hợp giao tiếp thời gian thực (real-time) cho ứng dụng."
-          },
-          {
-            "name": "JWT & RBAC",
-            "icon": "TbLock",
-            "desc": "Triển khai xác thực và phân quyền người dùng bảo mật."
+            "desc": "Tích hợp giao tiếp thời gian thực cho ứng dụng."
           },
           {
             "name": "Microservices",
             "icon": "TbServerCog",
-            "desc": "Hiểu kiến trúc dịch vụ phân tán để dễ bảo trì và mở rộng."
+            "desc": "Thiết kế kiến trúc dịch vụ phân tán để dễ bảo trì và mở rộng."
+          },
+          {
+            "name": "JWT & RBAC",
+            "icon": "TbLock",
+            "desc": "Triển khai xác thực và phân quyền bảo mật (bao gồm Keycloak SSO)."
           }
         ]
       },
       {
-        "name": "Database",
+        "name": "Cơ sở dữ liệu & Lưu trữ",
         "icon": "Database",
         "skills": [
           {
             "name": "PostgreSQL",
             "icon": "SiPostgresql",
-            "desc": "Quản trị CSDL quan hệ nâng cao, tối ưu index & ACID."
-          },
-          {
-            "name": "MySQL",
-            "icon": "SiMysql",
-            "desc": "Thiết kế và vận hành cơ sở dữ liệu có cấu trúc ổn định."
+            "desc": "Thiết kế schema, tối ưu index và giao dịch ACID cho RDBMS nâng cao."
           },
           {
             "name": "MongoDB",
             "icon": "SiMongodb",
-            "desc": "Thiết kế và vận hành cơ sở dữ liệu NoSQL có cấu trúc linh hoạt."
+            "desc": "Thiết kế và vận hành cơ sở dữ liệu NoSQL dạng document linh hoạt."
+          },
+          {
+            "name": "MinIO",
+            "icon": "TbDatabase",
+            "desc": "Object storage tương thích S3 cho tệp, hình ảnh và asset."
+          },
+          {
+            "name": "Redis",
+            "icon": "TbDatabase",
+            "desc": "Cache in-memory và session store cho dịch vụ high-throughput."
+          },
+          {
+            "name": "ClickHouse",
+            "icon": "TbDatabase",
+            "desc": "Cơ sở dữ liệu OLAP dạng cột cho phân tích quy mô lớn."
           }
         ]
       },
       {
-        "name": "DevOps & Cloud",
+        "name": "AI / LLM (Ứng dụng)",
+        "icon": "Brain",
+        "skills": [
+          {
+            "name": "LangChain",
+            "icon": "SiLangchain",
+            "desc": "Xây dựng pipeline điều phối LLM, agent và tool-calling workflow."
+          },
+          {
+            "name": "RAG",
+            "icon": "TbVector",
+            "desc": "Retrieval-Augmented Generation cho câu trả lời có ngữ cảnh và chính xác."
+          },
+          {
+            "name": "Prompt Engineering",
+            "icon": "TbMessageChatbot",
+            "desc": "Thiết kế prompt có cấu trúc kèm validate JSON Schema & cơ chế retry."
+          },
+          {
+            "name": "OpenAI APIs",
+            "icon": "TbSparkles",
+            "desc": "Tích hợp GPT-4o, Whisper và các model khác vào sản phẩm thực tế."
+          },
+          {
+            "name": "Computer Vision",
+            "icon": "TbBrain",
+            "desc": "OpenCV + YOLOv8 cho phân tích hành vi và phát hiện thời gian thực."
+          }
+        ]
+      },
+      {
+        "name": "Triển Khai & Cloud",
         "icon": "Cloud",
         "skills": [
           {
             "name": "Docker",
             "icon": "SiDocker",
-            "desc": "Đóng gói ứng dụng (containerization) để đồng nhất môi trường."
+            "desc": "Đóng gói container để đồng nhất môi trường dev/prod."
           },
           {
-            "name": "Git / GitHub",
-            "icon": "SiGithub",
-            "desc": "Quản lý mã nguồn, xử lý conflict và làm việc nhóm (PR)."
-          },
-          {
-            "name": "Google Cloud",
-            "icon": "SiGooglecloud",
-            "desc": "Triển khai dịch vụ với GCS, Cloud Run & Compute Engine."
+            "name": "Microsoft Azure",
+            "icon": "FaMicrosoft",
+            "desc": "Host backend production trên Azure (VM, App Service, Storage)."
           },
           {
             "name": "Vercel",
             "icon": "SiVercel",
-            "desc": "Triển khai Frontend nhanh chóng tích hợp CI/CD tự động."
+            "desc": "Triển khai frontend nhanh chóng tích hợp CI/CD tự động."
+          },
+          {
+            "name": "Aiven",
+            "icon": "TbCloud",
+            "desc": "Managed PostgreSQL cho database production ổn định, ít vận hành."
+          },
+          {
+            "name": "Google Cloud",
+            "icon": "SiGooglecloud",
+            "desc": "Nền tảng với GCS, Cloud Run và Compute Engine."
           }
         ]
       },
       {
-        "name": "AI & Thị Giác Máy Tính",
-        "icon": "Cpu",
+        "name": "DevOps & Công cụ",
+        "icon": "Wrench",
         "skills": [
           {
-            "name": "Python",
-            "icon": "SiPython",
-            "desc": "Ngôn ngữ cốt lõi ứng dụng trong xử lý dữ liệu và AI."
+            "name": "Git / GitHub",
+            "icon": "SiGithub",
+            "desc": "Quản lý mã nguồn, xử lý conflict và làm việc nhóm qua PR."
           },
           {
-            "name": "OpenCV",
-            "icon": "SiOpencv",
-            "desc": "Xử lý hình ảnh, trích xuất dữ liệu từ luồng video."
+            "name": "GitLab",
+            "icon": "SiGitlab",
+            "desc": "Thiết lập CI/CD pipeline và cộng tác nhóm trên GitLab."
           },
           {
-            "name": "YOLOv8",
-            "icon": "TbTarget",
-            "desc": "Triển khai mô hình phát hiện đối tượng thời gian thực."
+            "name": "Postman",
+            "icon": "SiPostman",
+            "desc": "Thiết kế, kiểm thử và tài liệu hoá RESTful API."
           },
           {
-            "name": "Computer Vision",
-            "icon": "TbEyeScan",
-            "desc": "Tích hợp AI phân tích hành vi và phát hiện bất thường."
+            "name": "Celery / arq",
+            "icon": "TbClock",
+            "desc": "Hàng đợi tác vụ bất đồng bộ cho job nền và xuất dữ liệu."
           }
         ]
       },
@@ -238,6 +330,34 @@
     "show_more": "Xem chi tiết",
     "show_less": "Ẩn chi tiết",
     "items": [
+      {
+        "id": "starprep",
+        "title": "StarPrep AI – Nền tảng phân tích CV tích hợp AI",
+        "role": "Fullstack Developer",
+        "team": "Nhóm: 2 người",
+        "period": "03/2026 – 06/2026",
+        "date_start": "2026-03",
+        "date_end": "2026-06",
+        "description": "Nền tảng AI full-stack hỗ trợ tối ưu CV theo chuẩn ATS, sinh CV và thư xin việc tự động bằng AI, đồng thời luyện phỏng vấn thông minh.",
+        "highlights": [
+          "Thiết kế pipeline phân tích CV với GPT-4o kèm prompt có cấu trúc, validate JSON Schema và cơ chế retry cho chấm điểm ATS, đối chiếu JD và tối ưu theo phương pháp STAR.",
+          "Xây dựng các module sinh CV và cover letter được cá nhân hoá với tối ưu từ khoá tự động, dịch đa ngôn ngữ và tinh chỉnh giọng văn.",
+          "Phát triển CV Builder phong cách Notion với live preview, tự động lưu, undo/redo state management và xuất PDF bằng Playwright.",
+          "Triển khai module AI usage & analytics để theo dõi token, kiểm soát quota gói thuê bao và tối ưu chi phí vận hành.",
+          "Tích hợp VNPay (HMAC-SHA512) cho thanh toán an toàn, quản lý gói thuê bao (Free/Pro) và thực thi hạn mức sử dụng.",
+          "Triển khai kiến trúc production-ready với Docker: backend trên Azure, frontend trên Vercel và database trên Aiven (PostgreSQL)."
+        ],
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "FastAPI",
+          "PostgreSQL",
+          "OpenAI (GPT-4o, Whisper)",
+          "Docker"
+        ],
+        "github": "https://github.com/GiaLuat2004/StarPrep-AI",
+        "image": "/images/projects/starprep.png"
+      },
       {
         "id": "anomaly",
         "title": "Human Anomaly Localization",

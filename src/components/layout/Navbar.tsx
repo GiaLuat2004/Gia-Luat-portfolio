@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { getImagePath } from '@/lib/utils'
 
-const navItems = ['about', 'skills', 'projects', 'education', 'certifications', 'goals', 'interests','contact'] as const
+const navItems = ['about', 'skills', 'experience', 'projects', 'education', 'certifications', 'goals', 'interests','contact'] as const
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
@@ -24,7 +24,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
 
-      const sections = ['home', 'about', 'skills', 'projects', 'education', 'certifications', 'goals', 'interests', 'contact']
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'certifications', 'goals', 'interests', 'contact']
       const scrollPos = window.scrollY + 100
 
       for (const id of sections.reverse()) {
@@ -76,7 +76,7 @@ export default function Navbar() {
           </motion.button>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1 lg:gap-5 xl:gap-7">
             {navItems.map((item) => (
               <button
                 key={item}

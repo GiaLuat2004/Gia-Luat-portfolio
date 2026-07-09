@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
     "education": "Education",
     "certifications": "Certifications",
@@ -28,8 +29,9 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "SOFTWARE ENGINEER",
-    "bio": "I am a final-year Information Technology student at the University of Transport Ho Chi Minh City (UTH). With a solid foundation in web programming cultivated and accumulated throughout my studies, I focus on developing skills around the React/Next.js and Node.js ecosystems. My goal is to continuously learn and improve myself to create the best products for users and bring value to businesses.",
+    "subtitle": "FULLSTACK DEVELOPER",
+    "objective_label": "Objective",
+    "bio": "Fullstack Developer with hands-on experience in ReactJS, Node.js, and FastAPI, contributing to the development of scalable web applications and enterprise AI solutions. Experienced in integrating LLMs, LangChain, and RAG into real-world products to automate business workflows and enhance user productivity. Passionate about building high-quality software, continuously learning new technologies, and delivering practical solutions that create business value.",
     "info": {
       "dob": "Aug 25, 2004",
       "location": "Tan Binh, Ho Chi Minh City",
@@ -48,6 +50,55 @@
     },
     "available_badge": "Available for Work"
   },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "Where I've been applying my skills to solve real business problems.",
+    "present": "Present",
+    "show_more": "Show all",
+    "show_less": "Show less",
+    "company_label": "Company",
+    "role_label": "Position",
+    "period_label": "Period",
+    "team_label": "Team",
+    "location_label": "Location",
+    "responsibilities": "Key Responsibilities",
+    "tech_stack": "Tech Stack",
+    "items": [
+      {
+        "id": "ai-power",
+        "company": "AI Power Co., Ltd, Vietnam",
+        "company_short": "AI Power",
+        "logo": "/images/companies/aipower.png",
+        "brand_color": "#0891b2",
+        "role": "Fullstack Developer Intern",
+        "team": "Team size: 9",
+        "location": "Tan Binh, HCMC",
+        "period": "04/2026 – Now",
+        "date_start": "2026-04",
+        "date_end": "present",
+        "tech": [
+          "ReactJS",
+          "FastAPI",
+          "LangChain",
+          "RAG",
+          "PostgreSQL",
+          "ClickHouse",
+          "Redis",
+          "Celery/arq",
+          "Docker",
+          "MinIO"
+        ],
+        "responsibilities": [
+          "**Designed and implemented a Keycloak-based Single Sign-On (SSO) solution**, integrating **Redis** for session management to **centralize authentication and user access** across the enterprise ecosystem.",
+          "**Containerized and deployed the SSO service with Docker**, configuring **production-ready environments** and integrating it with multiple applications to **ensure stable authentication services**.",
+          "**Developed an LLM-powered Document Intelligence application** using **LangChain**, **FastAPI**, and **RAG**, supporting **contract and enterprise document analysis** for **legal risk assessment**, unfavorable clause detection, and contextual revision recommendations.",
+          "**Implemented semantic document comparison and a RAG-based Question Answering (QA) system**, enabling **natural-language document retrieval**, contextual answers, and **inline editing of AI-generated recommendations** within the document preview.",
+          "**Built asynchronous document export workflows with Celery/ARQ**, generating **structured PDF reports** and **DOCX Track Changes documents** to support **collaborative document review and revision**.",
+          "**Developed Helpdesk interfaces and backend APIs** using **ReactJS** and **FastAPI**, integrating **MinIO** for file and image storage while **supporting the platform's migration toward a plugin-based architecture**."
+        ]
+      }
+    ]
+  },
   "skills": {
     "title": "Skills & Technologies",
     "subtitle": "The tools and tech stacks I use to solve real-world problems.",
@@ -56,6 +107,16 @@
         "name": "Frontend",
         "icon": "Monitor",
         "skills": [
+          {
+            "name": "ReactJS",
+            "icon": "SiReact",
+            "desc": "Build flexible, component-driven UIs with Hooks and Context."
+          },
+          {
+            "name": "Next.js",
+            "icon": "SiNextdotjs",
+            "desc": "Develop SSR/SSG applications, optimizing SEO and performance."
+          },
           {
             "name": "TypeScript",
             "icon": "SiTypescript",
@@ -67,34 +128,14 @@
             "desc": "Proficient in modern features like async/await and modules."
           },
           {
-            "name": "React.js",
-            "icon": "SiReact",
-            "desc": "Build flexible UIs with Hooks and Context."
-          },
-          {
-            "name": "Next.js",
-            "icon": "SiNextdotjs",
-            "desc": "Develop SSR/SSG apps, optimizing SEO and performance."
-          },
-          {
             "name": "TailwindCSS",
             "icon": "SiTailwindcss",
-            "desc": "Design interfaces quickly with high customizability."
+            "desc": "Design responsive interfaces quickly with high customizability."
           },
           {
             "name": "Framer Motion",
             "icon": "SiFramer",
             "desc": "Create smooth animations and interactive transitions."
-          },
-          {
-            "name": "Redux",
-            "icon": "SiRedux",
-            "desc": "Effective state management for large-scale applications."
-          },
-          {
-            "name": "ShadcnUI",
-            "icon": "TbLayersLinked",
-            "desc": "Utilize and customize modern UI components."
           }
         ]
       },
@@ -115,7 +156,12 @@
           {
             "name": "FastAPI",
             "icon": "SiFastapi",
-            "desc": "Build high-performance Python APIs with automatic docs."
+            "desc": "Build high-performance Python APIs with auto-generated docs."
+          },
+          {
+            "name": "Python",
+            "icon": "SiPython",
+            "desc": "Core language for data processing, scripting and AI services."
           },
           {
             "name": "RESTful API",
@@ -128,87 +174,133 @@
             "desc": "Integrate real-time bidirectional communication for apps."
           },
           {
-            "name": "JWT & RBAC",
-            "icon": "TbLock",
-            "desc": "Implement secure user authentication and authorization."
-          },
-          {
             "name": "Microservices",
             "icon": "TbServerCog",
-            "desc": "Understand distributed service architecture for easy maintenance and scaling."
+            "desc": "Design distributed service architecture for easy maintenance and scaling."
+          },
+          {
+            "name": "JWT & RBAC",
+            "icon": "TbLock",
+            "desc": "Implement secure user authentication and authorization (incl. Keycloak SSO)."
           }
         ]
       },
       {
-        "name": "Database",
+        "name": "Databases & Storage",
         "icon": "Database",
         "skills": [
           {
             "name": "PostgreSQL",
             "icon": "SiPostgresql",
-            "desc": "Advanced RDBMS administration, optimizing indexes & ACID."
-          },
-          {
-            "name": "MySQL",
-            "icon": "SiMysql",
-            "desc": "Design and operate stable structured databases."
+            "desc": "Advanced RDBMS — schema design, indexes, ACID transactions."
           },
           {
             "name": "MongoDB",
             "icon": "SiMongodb",
-            "desc": "Design and operate flexible NoSQL databases."
+            "desc": "Design and operate flexible NoSQL document databases."
+          },
+          {
+            "name": "MinIO",
+            "icon": "TbDatabase",
+            "desc": "S3-compatible object storage for files, images and assets."
+          },
+          {
+            "name": "Redis",
+            "icon": "TbDatabase",
+            "desc": "In-memory cache and session store for high-throughput services."
+          },
+          {
+            "name": "ClickHouse",
+            "icon": "TbDatabase",
+            "desc": "Column-oriented OLAP database for large-scale analytics."
           }
         ]
       },
       {
-        "name": "DevOps & Cloud",
+        "name": "AI / LLM (Applied)",
+        "icon": "Brain",
+        "skills": [
+          {
+            "name": "LangChain",
+            "icon": "SiLangchain",
+            "desc": "Build LLM orchestration pipelines, agents and tool-calling workflows."
+          },
+          {
+            "name": "RAG",
+            "icon": "TbVector",
+            "desc": "Retrieval-Augmented Generation for grounded, contextual AI answers."
+          },
+          {
+            "name": "Prompt Engineering",
+            "icon": "TbMessageChatbot",
+            "desc": "Design structured prompts with JSON Schema validation & retries."
+          },
+          {
+            "name": "OpenAI APIs",
+            "icon": "TbSparkles",
+            "desc": "Integrate GPT-4o, Whisper and other models into production apps."
+          },
+          {
+            "name": "Computer Vision",
+            "icon": "TbBrain",
+            "desc": "OpenCV + YOLOv8 for behavior analysis and real-time detection."
+          }
+        ]
+      },
+      {
+        "name": "Deployment & Cloud",
         "icon": "Cloud",
         "skills": [
           {
             "name": "Docker",
             "icon": "SiDocker",
-            "desc": "Application containerization for environment consistency."
+            "desc": "Containerize services for consistent dev/prod environments."
           },
           {
-            "name": "Git / GitHub",
-            "icon": "SiGithub",
-            "desc": "Source code management, conflict resolution, and teamwork (PR)."
-          },
-          {
-            "name": "Google Cloud",
-            "icon": "SiGooglecloud",
-            "desc": "Deploy services with GCS, Cloud Run & Compute Engine."
+            "name": "Microsoft Azure",
+            "icon": "FaMicrosoft",
+            "desc": "Host production backends on Azure (VM, App Service, Storage)."
           },
           {
             "name": "Vercel",
             "icon": "SiVercel",
             "desc": "Rapid frontend deployment integrated with automated CI/CD."
+          },
+          {
+            "name": "Aiven",
+            "icon": "TbCloud",
+            "desc": "Managed PostgreSQL for reliable, low-ops production databases."
+          },
+          {
+            "name": "Google Cloud",
+            "icon": "SiGooglecloud",
+            "desc": "Familiar with GCS, Cloud Run and Compute Engine foundations."
           }
         ]
       },
       {
-        "name": "AI & Computer Vision",
-        "icon": "Cpu",
+        "name": "DevOps & Tools",
+        "icon": "Wrench",
         "skills": [
           {
-            "name": "Python",
-            "icon": "SiPython",
-            "desc": "Core language applied in data processing and AI."
+            "name": "Git / GitHub",
+            "icon": "SiGithub",
+            "desc": "Source control, conflict resolution and pull-request workflow."
           },
           {
-            "name": "OpenCV",
-            "icon": "SiOpencv",
-            "desc": "Image processing, extracting data from video streams."
+            "name": "GitLab",
+            "icon": "SiGitlab",
+            "desc": "CI/CD pipelines and team collaboration on GitLab."
           },
           {
-            "name": "YOLOv8",
-            "icon": "TbTarget",
-            "desc": "Deploying real-time object detection models."
+            "name": "Postman",
+            "icon": "SiPostman",
+            "desc": "Design, test and document RESTful APIs."
           },
           {
-            "name": "Computer Vision",
-            "icon": "TbEyeScan",
-            "desc": "Integrate AI to analyze behavior and detect anomalies."
+            "name": "Celery / arq",
+            "icon": "TbClock",
+            "desc": "Asynchronous task queues for background jobs and exports."
           }
         ]
       },
@@ -238,6 +330,34 @@
     "show_more": "Show Details",
     "show_less": "Hide Details",
     "items": [
+      {
+        "id": "starprep",
+        "title": "StarPrep AI – AI-powered Resume Intelligence Platform",
+        "role": "Fullstack Developer",
+        "team": "Team: 2 members",
+        "period": "03/2026 – 06/2026",
+        "date_start": "2026-03",
+        "date_end": "2026-06",
+        "description": "Full-stack AI platform for ATS resume optimization, AI-powered resume and cover letter generation, and interview preparation.",
+        "highlights": [
+          "Engineered a GPT-4o resume analysis pipeline with structured prompts, JSON Schema validation, and retry mechanisms for ATS scoring, JD matching, and STAR-based optimization.",
+          "Built AI generation modules for tailored CVs and cover letters featuring automated keyword optimization, multilingual translation, and tone refinement.",
+          "Developed a Notion-style CV Builder with live preview, auto-save, undo/redo state management, and Playwright-powered PDF export.",
+          "Implemented an AI usage & analytics module to track token consumption, enforce subscription quotas, and optimize operational costs.",
+          "Integrated VNPay (HMAC-SHA512) for secure payment processing, subscription management (Free/Pro plans), and quota enforcement.",
+          "Deployed the production-ready architecture using Docker, hosting the backend on Azure, frontend on Vercel, and database on Aiven (PostgreSQL)."
+        ],
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "FastAPI",
+          "PostgreSQL",
+          "OpenAI (GPT-4o, Whisper)",
+          "Docker"
+        ],
+        "github": "https://github.com/GiaLuat2004/StarPrep-AI",
+        "image": "/images/projects/starprep.png"
+      },
       {
         "id": "anomaly",
         "title": "Human Anomaly Localization",

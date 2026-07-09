@@ -127,6 +127,21 @@ export default function About() {
             variants={containerVariants}
             className="lg:col-span-3 space-y-8 flex flex-col justify-center"
           >
+            {/* Objective Label */}
+            <motion.div variants={itemVariants} className="flex items-center gap-3">
+              <span
+                className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
+                style={{
+                  background: 'rgba(99,102,241,0.1)',
+                  color: 'var(--accent-indigo)',
+                  border: '1px solid rgba(99,102,241,0.2)',
+                }}
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                {t.about.objective_label}
+              </span>
+            </motion.div>
+
             {/* Bio */}
             <motion.div variants={itemVariants} className="space-y-4">
               <p

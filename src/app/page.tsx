@@ -7,6 +7,7 @@ import AnimatedBackground from '@/components/ui/AnimatedBackground'
 import Hero from '@/sections/Hero'
 import About from '@/sections/About'
 import Skills from '@/sections/Skills'
+import WorkExperience from '@/sections/WorkExperience'
 import Projects from '@/sections/Projects'
 import Education from '@/sections/Education'
 import Certifications from '@/sections/Certifications'
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <WorkExperience />
         <Projects />
         <Education />
         <Certifications />

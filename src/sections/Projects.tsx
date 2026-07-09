@@ -17,9 +17,10 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 }
 
-const projectAccents = ['#6366f1', '#06b6d4', '#a78bfa']
+const projectAccents = ['#6366f1', '#06b6d4', '#a78bfa', '#f59e0b']
 
 const thumbnailFallbacks = [
+  { label: 'STAR', emoji: '⭐' },
   { label: 'AI', emoji: '🤖' },
   { label: 'JS', emoji: '💎' },
   { label: 'CAR', emoji: '🚗' },

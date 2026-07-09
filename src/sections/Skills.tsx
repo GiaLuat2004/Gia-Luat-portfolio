@@ -7,10 +7,11 @@ import {
   Server,
   Database,
   Cloud,
-  Cpu,
   Languages,
   Sparkles,
   ChevronRight,
+  Brain,
+  Wrench,
 } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
@@ -21,28 +22,36 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiFramer,
-  SiRedux,
   SiNodedotjs,
   SiExpress,
   SiFastapi,
   SiPostgresql,
-  SiMysql,
+  SiMongodb,
   SiDocker,
   SiGithub,
   SiGooglecloud,
   SiVercel,
   SiPython,
-  SiOpencv,
+  SiLangchain,
+  SiGitlab,
+  SiPostman,
 } from 'react-icons/si';
 import {
   TbApi,
   TbPlugConnected,
   TbLock,
   TbServerCog,
-  TbTarget,
   TbScan,
   TbLayersLinked,
+  TbDatabase,
+  TbCloud,
+  TbClock,
+  TbVector,
+  TbMessageChatbot,
+  TbSparkles as TbSparklesIcon,
+  TbBrain,
 } from 'react-icons/tb';
+import { FaMicrosoft } from 'react-icons/fa';
 
 const skillLogos: Record<string, React.ElementType> = {
   SiTypescript,
@@ -51,7 +60,6 @@ const skillLogos: Record<string, React.ElementType> = {
   SiNextdotjs,
   SiTailwindcss,
   SiFramer,
-  SiRedux,
   TbLayersLinked,
   SiNodedotjs,
   SiExpress,
@@ -61,14 +69,23 @@ const skillLogos: Record<string, React.ElementType> = {
   TbLock,
   TbServerCog,
   SiPostgresql,
-  SiMysql,
+  SiMongodb,
+  TbDatabase,
+  SiLangchain,
+  TbVector,
+  TbMessageChatbot,
+  TbSparkles: TbSparklesIcon,
+  TbBrain,
   SiDocker,
   SiGithub,
   SiGooglecloud,
   SiVercel,
+  FaMicrosoft,
+  TbCloud,
+  SiGitlab,
+  SiPostman,
+  TbClock,
   SiPython,
-  SiOpencv,
-  TbTarget,
   TbScan,
   TbEyeScan: TbScan,
   VN: () => <span className="text-xl leading-none">🇻🇳</span>,
@@ -80,17 +97,19 @@ const categoryIcons: Record<string, React.ElementType> = {
   Server,
   Database,
   Cloud,
-  Cpu,
   Languages,
+  Brain,
+  Wrench,
 };
 
 const tabAccents = [
   '#6366f1', // Frontend: Indigo
   '#06b6d4', // Backend: Cyan
   '#10b981', // Database: Emerald
-  '#f59e0b', // DevOps: Amber
-  '#a78bfa', // AI: Violet
-  '#ec4899', // Language: Pink
+  '#a78bfa', // AI/LLM: Violet
+  '#f59e0b', // Deployment: Amber
+  '#ec4899', // DevOps: Pink
+  '#64748b', // Languages: Slate
 ];
 
 const containerVariants = {
