@@ -505,7 +505,7 @@ export default function WorkExperience() {
                               background: `linear-gradient(90deg, ${brandColor}40, transparent)`,
                             }}
                           />
-                          <div
+                          {/* <div
                             className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                             style={{
                               background: `${brandColor}10`,
@@ -513,7 +513,7 @@ export default function WorkExperience() {
                             }}
                           >
                             {exp.responsibilities.length}
-                          </div>
+                          </div> */}
                         </div>
 
                         <motion.ul
