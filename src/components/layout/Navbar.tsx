@@ -1,52 +1,73 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useTheme } from 'next-themes'
-import { Sun, Moon, Menu, X, Globe } from 'lucide-react'
-import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import { getImagePath } from '@/lib/utils'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import { Sun, Moon, Menu, X } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { getImagePath } from '@/lib/utils';
 
-const navItems = ['about', 'skills', 'experience', 'projects', 'education', 'certifications', 'goals', 'interests','contact'] as const
+const navItems = [
+  'about',
+  'skills',
+  'experience',
+  'projects',
+  'education',
+  'certifications',
+  'goals',
+  'interests',
+  'contact',
+] as const;
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme()
-  const { t, toggleLanguage, language } = useLanguage()
-  const [mounted, setMounted] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
+  const { theme, setTheme } = useTheme();
+  const { t, toggleLanguage, language } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    setMounted(true)
+    setMounted(true);
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'certifications', 'goals', 'interests', 'contact']
-      const scrollPos = window.scrollY + 100
+      const sections = [
+        'home',
+        'about',
+        'skills',
+        'experience',
+        'projects',
+        'education',
+        'certifications',
+        'goals',
+        'interests',
+        'contact',
+      ];
+      const scrollPos = window.scrollY + 100;
 
       for (const id of sections.reverse()) {
-        const el = document.getElementById(id)
+        const el = document.getElementById(id);
         if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(id)
-          break
+          setActiveSection(id);
+          break;
         }
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id)
+    const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      setMobileOpen(false)
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setMobileOpen(false);
     }
-  }
+  };
 
   return (
     <>
@@ -58,7 +79,7 @@ export default function Navbar() {
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
             ? 'py-3 backdrop-blur-xl border-b shadow-lg dark:bg-[#0a0a0f]/90 bg-white/90 dark:border-white/5 border-black/5'
-            : 'py-5 bg-transparent'
+            : 'py-5 bg-transparent',
         )}
       >
         <div className="section-container flex items-center justify-between">
@@ -70,7 +91,12 @@ export default function Navbar() {
             className="flex items-center gap-2 font-heading font-bold text-xl select-none"
           >
             <span className="w-9 h-9 relative flex items-center justify-center overflow-hidden rounded-lg">
-              <Image src={getImagePath('/images/logo.png')} alt="Logo" fill className="object-cover" />
+              <Image
+                src={getImagePath('/images/logo.png')}
+                alt="Logo"
+                fill
+                className="object-cover"
+              />
             </span>
             <span className="gradient-text-2">Portfolio</span>
           </motion.button>
@@ -81,30 +107,62 @@ export default function Navbar() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={cn('nav-link capitalize', activeSection === item && 'active')}
+                className={cn(
+                  'nav-link capitalize',
+                  activeSection === item && 'active',
+                )}
               >
                 {t.nav[item as keyof typeof t.nav]}
               </button>
             ))}
           </div>
 
-          {/* Right Controls */}
+          {/* Right Controls (Desktop) */}
           <div className="hidden md:flex items-center gap-2">
-            {/* Language Toggle */}
-            <motion.button
-              onClick={toggleLanguage}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
+            {/* Language Toggle Group (Desktop) */}
+            <div
+              className="inline-flex items-center p-1 rounded-full border text-xs font-medium select-none shadow-sm"
               style={{
-                background: 'var(--surface-alt)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-muted)',
+                backgroundColor: 'var(--surface-alt)',
+                borderColor: 'var(--border)',
               }}
+              role="group"
+              aria-label="Language selector"
             >
-              <Globe className="w-3.5 h-3.5" />
-              {language === 'en' ? 'VI' : 'EN'}
-            </motion.button>
+              {(['en', 'vi'] as const).map((lang) => {
+                const isActive = language === lang;
+                return (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => {
+                      if (!isActive) toggleLanguage();
+                    }}
+                    className={cn(
+                      'relative px-3 py-1 rounded-full transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500',
+                      isActive
+                        ? 'text-white font-semibold'
+                        : 'hover:text-[var(--text)] text-[var(--text-muted)]',
+                    )}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeLangDesktop"
+                        className="absolute inset-0 bg-indigo-500 rounded-full"
+                        transition={{
+                          type: 'spring',
+                          stiffness: 400,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                    <span className="relative z-10 uppercase tracking-wider text-[11px]">
+                      {lang}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
 
             {/* Theme Toggle */}
             {mounted && (
@@ -112,7 +170,7 @@ export default function Navbar() {
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200"
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
                 style={{
                   background: 'var(--surface-alt)',
                   border: '1px solid var(--border)',
@@ -120,27 +178,63 @@ export default function Navbar() {
                 }}
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                {theme === 'dark' ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
               </motion.button>
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Controls */}
           <div className="md:hidden flex items-center gap-2">
-            <motion.button
-              onClick={toggleLanguage}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-semibold"
+            {/* Language Toggle Group (Mobile) */}
+            <div
+              className="inline-flex items-center p-0.5 rounded-full border text-xs font-medium select-none"
               style={{
-                background: 'var(--surface-alt)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-muted)',
+                backgroundColor: 'var(--surface-alt)',
+                borderColor: 'var(--border)',
               }}
+              role="group"
+              aria-label="Language selector"
             >
-              <Globe className="w-3 h-3" />
-              {language === 'en' ? 'VI' : 'EN'}
-            </motion.button>
+              {(['en', 'vi'] as const).map((lang) => {
+                const isActive = language === lang;
+                return (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => {
+                      if (!isActive) toggleLanguage();
+                    }}
+                    className={cn(
+                      'relative px-2.5 py-0.5 rounded-full transition-colors duration-200 outline-none',
+                      isActive
+                        ? 'text-white font-semibold'
+                        : 'text-[var(--text-muted)]',
+                    )}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeLangMobile"
+                        className="absolute inset-0 bg-indigo-500 rounded-full"
+                        transition={{
+                          type: 'spring',
+                          stiffness: 400,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                    <span className="relative z-10 uppercase text-[10px]">
+                      {lang}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
 
+            {/* Theme Toggle Mobile */}
             {mounted && (
               <motion.button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -152,10 +246,15 @@ export default function Navbar() {
                   color: 'var(--text-muted)',
                 }}
               >
-                {theme === 'dark' ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
+                {theme === 'dark' ? (
+                  <Sun className="w-3.5 h-3.5" />
+                ) : (
+                  <Moon className="w-3.5 h-3.5" />
+                )}
               </motion.button>
             )}
 
+            {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setMobileOpen(!mobileOpen)}
               whileTap={{ scale: 0.95 }}
@@ -166,7 +265,11 @@ export default function Navbar() {
                 color: 'var(--text)',
               }}
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </motion.button>
           </div>
         </div>
@@ -199,9 +302,12 @@ export default function Navbar() {
                     'text-left py-3 px-4 rounded-xl text-sm font-medium capitalize transition-all duration-200',
                     activeSection === item
                       ? 'bg-indigo-500/10 text-indigo-500'
-                      : 'hover:bg-[var(--surface-alt)]'
+                      : 'hover:bg-[var(--surface-alt)]',
                   )}
-                  style={{ color: activeSection === item ? undefined : 'var(--text-muted)' }}
+                  style={{
+                    color:
+                      activeSection === item ? undefined : 'var(--text-muted)',
+                  }}
                 >
                   {t.nav[item as keyof typeof t.nav]}
                 </motion.button>
@@ -211,5 +317,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
