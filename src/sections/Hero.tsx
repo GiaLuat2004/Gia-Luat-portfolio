@@ -116,7 +116,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start"
             >
               <motion.a
-                href="CV-CAO-BAO-GIA-LUAT-WEB-INTERN.pdf"
+                href="CAO-BAO-GIA-LUAT-FULLSTACK-DEVELOPER.pdf"
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
